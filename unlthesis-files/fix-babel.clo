@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fix-babel.clo
+%% UNL thesis configuration file
+%%
+%% Minor fixes to babel translation to portuguese
+%%
+%% Order and lnguage for printing the abstracts depending on the language
+%% These macros are just informative for now (it is hardcoded in the
+%% 	unlthesis.clo file)… this must be fixed in the future!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Replace "Conteúdo" with "Índice"
+% Replace "Índice" with "Índice Remissivo"
+% "Listings" in Portuguese
+\addto\captionsportuguese{%
+  \def\contentsname{Índice}%
+  \def\indexname{Índice Remissivo}%
+  \def\lstlistlistingname{Listagens}%
+  \def\lstlistingname{Listagem}%
+}
+\addto\captionsenglish{%
+  \def\lstlistlistingname{Listings}%
+  \def\lstlistingname{Listing}%
+}
+\addto\captionsfrench{%
+  \def\lstlistlistingname{TBD: Listings}%
+}
+\addto\captionsitalian{%
+  \def\lstlistlistingname{TBD: Listings}%
+}
+
+% Corrigir espaço para páginas com numeração romana na ToC
+\renewcommand{\@pnumwidth}{2em}

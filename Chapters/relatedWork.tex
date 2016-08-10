@@ -1,0 +1,278 @@
+\chapter{Related Work}
+\label{cha:related_work}
+
+In this chapter, will be presented various aspect that will help with the work to be developed in this thesis. The following sections cover in particular:
+\begin{itemize}
+\item In section \ref{sec:webrtc}, an overall study of the WebRTC technology is presented.
+
+\item In section \ref{sec:storage_systems}, storage systems mechanisms and examples are depicted, as this is one of the most important topics for this thesis.
+
+\item In section \ref{sec:peer_to_peer_systems}, peer-to-peer system mechanisms are explored, as they are widely used, even in storage systems.
+\end{itemize}
+	
+\section{WebRTC}
+\label{sec:webrtc}
+WebRTC\cite{webrtc} is a framework for the web that enables Real Time Communications among browsers. Before the availability of WebRTC, real time communication was either done via native applications or plugins, which demanded large downloads and/or a great effort for both developers and users to install and keep updated. These disadvantages would make web-based applications that resort to direct communication among clients not viable for both operators and users alike. With WebRTC, the final user can have a much better experience on its browser and the developers can benefit from a structured and easy to use API to develop Web applications.\par
+	WebRTC includes three main components: audio, video and network. In the network component are mechanisms that to deal with network related practical issues. Also included are components for facilitating the establishment of peer-to-peer connections using ICE / STUN / Turn / RTP-over-TCP as well as support for proxies.\par
+	Although WebRTC was design to be used in Peer-to-Peer contexts, it relies on a centralized component for particular interactions:
+	\begin{itemize}
+	\item Before any connection can be made, WebRTC clients (peers) need to exchange network information (signaling protocol).
+	
+	\item For streaming media connections, peers must also exchange data about the media contents being exchanged, such as video encoding and resolution
+	
+	\item Additionally, as clients often reside behind NAT\footnote{Network address translation.} gateways and firewalls, these may have to be traversed using STUN (Session Traversal Utilities for NAT) or TURN (Traversal Using Relays around NAT) servers.
+	\end{itemize}
+	
+\subsection{Signaling}
+\label{sec:signaling}
+Signaling\cite{site_webrtc_signaling} is the process of coordinating communication. In order for a WebRTC application to set up a "call", its clients need to exchange the following information information: \begin{enumerate*}[(i)]
+\item session control messages used to open or close communication;
+\item error messages
+\item media metadata such as codecs and codec settings, bandwidth and media types
+\item key data, used to establish secure connections
+\item network data, such as a host's IP address and port as seen by the outside world
+\end{enumerate*}\par
+This signaling process needs a way for clients to pass messages back and forth. This mechanism is not implemented by the WebRTC APIs, it must be implemented by the application developer. This implementation can be a simple messaging system that uses, for example, a central server.
+
+\subsection{STUN}
+\label{sec:stun}
+NATs provide a device with an IP address for use within a private local network, but this address can't be used externally. Without a public address, there's no way for WebRTC peers to communicate. To get around this problem WebRTC uses STUN.\par
+	STUN severs have the task of checking the IP address and port of an incoming request from an application behind a NAT, and send that address back as response. This makes possible for an application to find its IP address and port from a public perspective.
+	
+\subsection{TURN}
+\label{sec:turn}
+TURN is used to relay audio/video/data streaming between peers. When direct communication via UDP and TCP fails, TURN servers can be used as a fallback. Unlike STUN servers, that do a simple task and do not require much bandwidth, TURN servers are heavier to support, as they relay data between peers.
+
+\section{Storage Systems}
+\label{sec:storage_systems}
+Storage is a fundamental aspect for the majority of applications and web applications in particular. Current web applications demand a set of characteristics that fit with their goals, whether this is strong consistency, high availability, global geo-replication of data, or high performance read and write operations.
+
+\subsection{Data Models}
+\label{sec:data_models}
+A data model that a storage system uses as internal representation will influence the outcome performance of the system at many levels: \begin{enumerate*}[(i)]
+	\item querying speed, as the organization of data will influence how fast can the system find it;
+	\item scalability, because different amounts of data requires different data structures;
+	\item querying functionalities/operations, because how the data is stored will influence the different ways of searching and operating with that information.
+\end{enumerate*}
+
+\subsubsection{Relational Model}
+\label{sec:relational_model}
+The relational model\cite{relational_model} is vastly used in traditional databases. It represents data with a collection of relations. Each relation is a table that stores a collection of entities, where each row is a single entity and each column an attribute. Every table has one or more attributes that together make a unique key. This key allows efficient queries by indexing the table.\par
+	The relational model allows powerful queries by relying on relational algebra. Commonly used operations between tables include Select, Join, Intersect, Union, Difference and Product.
+
+\subsubsection{Key-Value Model}
+\label{sec:key-value_model}
+Key-Value stores use keys associated with values, making a collection of pairs. Storing and retrieving information from a key-value database can be very efficient, because it can rely on a dictionary to keep track of all the keys, using a hash function to access a position of the dictionary. Although more efficient in certain conditions, this model doesn't support such powerful querying as the relational model.\par
+	The key-value model has been getting more traction recently, as multiple databases and storage systems use it due to its scalability potential.
+	
+\subsubsection{Bigtable Model}
+\label{sec:bigtable_model}
+Bigtable\cite{bigtable} uses tables as its data model, but not in a relational way. A table in Bigtable is a sparse, distributed, persistent multidimensional sorted map. Data is organized into three dimensions: rows, columns and timestamps. In order to access a specific storage cell, one needs to reference the row key, column key and timestamp. Columns can be grouped into column families, which form the unit of access control. Table updates are executed at a transactional row level.\par
+	This approach allows the system to scale, while still offering some control over the data. System scalability can be guaranteed by allowing concurrent access to different rows, since Bigtable offers transactions per row.
+
+\subsection{Distributed Storage Systems Techniques}
+\label{sec:distributed_storage_systems_techniques}
+Each storage system has to address multiple aspects related with the storage and manipulation of data. These aspects include data partitioning when considering systems that are materialized by multiple machines, replication to ensure data availability and good performance, data versioning, membership control, failure handling, scalability, and overall system performance.\par
+	Each storage system tackles these aspects using different solutions to best fit a specific working environment or particular needs of the system operating on top of them.
+
+\subsubsection{Consistency Guarantees}
+\label{sec:consistency_guarantees}
+There is a well known trade-of between performance and consistency in replicated systems, and in particular in geo-replicated systems\cite{cap}. In a nutshell, the greater the consistency guarantees offered by a system, the less performant that system becomes. The main consistency models are presented below:
+
+\begin{description}
+  \item[Strong Consistency] With Strong Consistency models strive to have all updates serialized in the same order across all replicas. While this can benefit the programmer by making it easier to reason about the state of a system, offering such guarantees makes the system less performant, and can even halt the system, when replicas cannot be contacted, for instance when there is a network partition.
+  
+  \item[Snapshot Isolation] Snapshot isolation\cite{snapshot_integrity} guarantees that all reads made in a transaction will see a consistent snapshot of the system taken in the start of that transaction. This transaction will be successful if the updated values have not been changed since the beginning of the transaction, when the snapshot was taken.
+  
+  \item[Eventual Consistency] Eventual consistency\cite{eventual} guarantees that all updates will reach every replica eventually and that the state of all replicas will eventually converge. This usually means that update operations (i.e. operations that modify the state of the system) can usually be executed locally at one replica without resorting to coordination(in the critical path of operation execution). This implies that operations return their replies to clients before the operation becomes known by all replicas in the system.\par
+	This allows clients that issue read operations, to observe old, or divergent versions (from other clients reading the same content) of the data depending on which replica processes the client read operation.
+	
+  \item[Causal Consistency] Causal consistency is a consistency model, whose guarantees lie somewhere in between strong consistency and eventual consistency. While it allows clients to observe divergent values, contrary to eventual consistency, it guarantees that clients observe values that respect causal relationships between them\cite{chainreaction, lamport_time}. A causal dependency is formed, for example, when a node performs a read followed later by a write, even on a different variable, the first operation is said to be causally ordered before the second, because the value stored by the write may have been dependent upon the result of the read.\par
+  In practice, respecting the causal relationship on these objects implies that a client should not be able to observe the effect of the write operation discussed above without being able to observe the same (as a latter version) value read by the client that issued that write.
+\end{description}
+
+\subsubsection{Partitioning}
+\label{sec:partitioning}
+In distributed storage systems, multiple nodes materialize the state of the database. This is done to achieve both load balancing and scalability (due to fault tolerance it is also crucial to replicate the same data across multiple nodes). Bellow are presented the main methods to do this:
+
+\begin{description}
+\item[Consistent Hashing] Consistent Hashing\cite{consistent_hashing} is about using a hash function to map each data item to a location(node) in the system. The range of values of the hash function can form a ring by overlapping the highest hash value with the lowest value. Each node in the system is assigned a random value within this range. Searching an entry in such system can be very efficient, because it only requires to apply the hash function to find the item location. Keeping this structure has maintenance costs, because the system needs to update the active nodes as they leave or join.
+
+\item[Directory Based lookups]\cite{data_replication_p2p} Directory-based approaches can place replicas in arbitrary locations but require a lookup to the directory to find the replica location. This may involve one or more round-trips in the network. This technique has less maintenance costs then consistent hashing, as node joins and leaves are not as heavy to update. Finding an item may take more time as the system scales.
+
+\end{description}
+
+\subsubsection{Replication}
+\label{sec:replication}
+For fault tolerance and to guarantee the persistence of data\cite{data_replication_p2p}, each item in the system is replicated across $N$ storage nodes in most distributed storage systems.\par
+	The number of individual replicas $N$, controls a trade-off between performance and fault tolerance. With higher values of $N$, each data item is replicated across more nodes, so the system becomes more tolerant to individual node failures. With lower values of $N$, the system becomes more performant, as write operations have to be propagated to less machines. This trade-off has been explored in the past\cite{cap}, leading to the proposal of multiple replication protocols, such as quorum systems\cite{quorum_commit} among others \cite{state_machine_replication, atomic_broadcast}.\par
+	To determine how to distribute the load of $N$ replicas across all nodes, one can use the following techniques:
+	
+\begin{description}
+
+\item[Master/Slave Replication] In master/slave replication, each master node can have multiple slaves. The role of the master node is to receive the updates and replicate the acquired data to all of the saves that it is connected to. The slave nodes are used to answers read calls.
+
+\item[Publish/Subscribe] The publish/subscribe replication is characterized by listeners subscribing to channels, with publishers sending data to these channels that connect to subscribers. In the particular case of replication, nodes with an interest on a specific source of data (another node) will subscribe to his channel, receiving the updates from it.
+
+\item[Neighbor Replication] Neighbor Replication keeps copies of each item in the $N-1$ neighbors of the node responsible for that key. While this allows to keep tight control on the replication degree, by triggering the creation of new replicas when neighbors change, it has a high maintenance cost, since replicas must be created and destroyed with every change in the network.
+
+\item[Virtual Servers] In a system working with Neighbor Replication, one can use Virtual Servers to improve load balancing of the system.\par
+	Using this approach, each physical node presents itself as multiple distinct identities to the system. Each identity represents a virtual node maintained by that server. On the other hand, this may amplify the effect of churn\footnote{Churn is the participant turnover in the network (the amount of nodes joining and leaving the system per unit of time)}, since the departure of a single node leads to the simultaneous failure of multiple virtual nodes.
+
+\item[Multi-Publication] Multi-Publication stores $N$
+replicas of each data item in different and deterministically correlated positions. While this offers very good load balancing properties, it requires a monitoring scheme to detect departure/failure of nodes.
+
+\item[Resilient Load-Balancing] This policy uses groups to manage the load balancing of the systems. Each group has a collection of data that is replicated between group nodes. When a new node enters the system, it joins the group with fewest members. Load balancing of data is kept by splitting and merging groups when it reaches a certain unbalanced threshold.
+
+\item[Most Available Node] In this policy, data is placed in the nodes predicted to be the most available in the future with higher probability. Using this technique, fewer items are affected by failures and fewer replicas need to be created again. This introduces savings in data transfer costs, but it creates unbalanced load in the system nodes.
+
+\end{description}
+
+\subsubsection{Multi-version tracking}
+\label{sec:versioning}
+Some systems that allow weaker consistency, other than serializability, resort to versioning, where multiple versions of the same data item are maintained at the same time. To distinguish between these, there must exist an unique identifier for each version of an object.
+
+\begin{description}
+\item[Vector Clocks] Each update to a data item is always tagged by a vector clock that uniquely identifies that data item version.\par
+	A vector clock is a list of pairs $(node, counter)$, where $node$ is the identifier of a node in the system that issued the event/operation being tagged and $counter$ is a monotonically increasing value associated with that node.\par
+	With this we can keep separate versions of one data item and we can check if two different versions conflict (meaning that how vector clocks encode concurrent events or divergent versions). To do so, we compare the two vector clocks and verify if either one descends from the other or that there is a conflict caused by two separate updates from the same version(i.e. versions have divergent states of an object).
+\end{description}
+
+\subsubsection{Version Reconciliation and Conflict Resolution}
+\label{sec:conflict_resolution}
+
+When concurrent (and not coordinated) updates are issued over two replicas of a given data object, these replicas will potentially evolve to divergent states, that at some point must be resolved into a single converged state, ideally are that the effects of all operations that generated the divergences. To take this action there are mainly two aspects to consider: how to do it and when to do it. Multiple techniques address this issue, being the main ones briefly described below:
+
+\begin{description}
+\item[Last Writer Wins] With this simple approach the last update based on some notion of time is the one that is adopted by the system. While this is trivial to implement, using local machine clocks, they are usually not synchronized across nodes, which can lead to incorrect decisions and to lost updates.
+	
+\item[Programmatic Merge] This technique leverages on the programmer to specify what happens when two versions conflict. Every node is required to either have a piece of code that decides how to merge divergent versions of an object or to show both states to the end user on-line and delegate on the user the decision concerning the final converged state.
+
+\item[Commutative Operations] \hfill \\
+Another approach is to design the system by only allowing commutative operations to be performed, this means that despite the order in which operations are executed, the final result will be the same, as long as all replicas execute all operations. If we can make every update commutative, then conflict resolution becomes only a matter of ensuring that all replicas executed all operations.\par
+	A simple example is a counter that only allows increment operations. Independently of the order of these increments, the final value will be the same across all replicas.
+	
+\item[Operation Transformation] The goal of this technique is to transform operations issued over the system in an automatic fashion as to ensure that they can be applied in any order and still ensure the correctness of the system. This is specially useful when working on collaborative editing.
+
+\item[CRDTs] Convergent or Commutative Replicated Data Types. These are distributed data types and structures with mathematical properties that ensure eventual consistency and state convergence while being very scalable and fault-tolerant.\par
+	A CRDT\cite{crdt} requires no synchronization during the execution of operations to ensure state convergence, an update executes immediately, unaffected by network latency, faults, or network failures. There are two kinds of CRDTs:\par
+	
+	\begin{description}
+	\item{CvRDTs, }State-based Convergent Replicated Data Types. The successive states of an object should form a monotonic semi-lattice and the replica merge operation computes a least upper bound. In other words, the merging of different states will eventually converge to the same final state at each replica. It allows for weak channel assumptions (i.e. unreliable communication channel). However, sending over the entire state might be inefficient for large objects.\par
+	
+	\item{CmRDTs, }Operation-based Convergent Replicated Data Types. In the operation-based CRDTs, concurrent operations commute. Operation-based replication requires reliable communication channel with ordering guarantees, such as a causal order between operations.
+	\end{description}
+	
+	Both classes of CRDTs are guaranteed (by design) to eventually converge towards a common single state.\par
+	CRDTs tend to become inefficient over time, as metadata accumulate and internal data structures can become unbalanced\cite{crdt}. Garbage collection can be performed using some form of weak synchronization, outside of the critical path of client-level operations.
+	
+\end{description}
+
+\subsubsection{Membership/Failure Handling}
+\label{sec:membership_failure_handling}
+It is important in distributed storage systems to keep track of which nodes join and leave the system, so we can maintain the guaranties of replication and correct mapping of data objects to nodes. There are several techniques to achieve this, in particular:
+
+\begin{description}
+\item[Gossip Protocol] This technique relies on periodic communication between pairs of \\*nodes to synchronize their local information concerning system membership.\par
+	When a node joins the system, it communicates with a set of existing nodes and these periodically contact random peers, synchronizing their membership list. This keeps going until every node in the system knows the existence of the new node. Similar procedure goes for a leaving node.
+	
+\item[Anti Entropy] Anti Entropy mechanisms are useful to recover from scenarios where nodes fail. These mechanisms detect inconsistencies between replicas and are used to synchronize data between them. This is a specialized form of gossip protocol.\par
+	A fast way to detect inconsistencies and minimize the amount of transferred data is to use Merkle Trees\cite{merkle}. Merkle Tree is a hash tree where leaves are hashes of its keys and parent nodes are hashes of the values of their children. To check if two replicas are synchronized, we compare the hash value at the roots, if it is the same value they are synchronized, if not, the values of the hashes at each level of the tree are recursively compared until all divergent nodes are located. Synchronization is then performed only over the nodes whose values have diverged.
+	
+\item[Sloppy Quorum] Usually writes need to be performed in a sub-set of nodes, in order to provide consistency and safe persistence. In scenarios where a temporary failure of one of those nodes happens, such operations could not be executed.\par
+	Sloppy Quorum allows to write the updated data item to another node, other then the ones previously selected. This node is now responsible to periodically try to contact the original node and deliver the updates that it had previously missed.
+	
+\item[Accrual Failure Detection]\cite{accrual} The idea of an Accrual Failure Detection is that the failure detection module does not emit a boolean value stating that node is up or down. Instead, the failure detection module emits a value which represents a suspicion level for each of monitored nodes. The basic idea is to express the value of $\Phi$ on a scale that is dynamically adjusted to reflect network and load conditions at the monitored nodes.
+\end{description}
+
+\subsection{Storage System examples}
+\label{sec:storage_system_examples}
+In this section, we will present some of the distributed storage systems that are important for this thesis:
+
+\begin{description}
+\item[Dynamo~\cite{dynamo}] Dynamo is a distributed storage system used by several services at Amazon, it uses the key-value storage model, the interface supports get and put operations and it guarantees eventual consistency across data replicas.\par
+	It uses an always writable policy for updates, with conflict reconciliation on reads. To do so, data is partitioned and replicated using consistent hashing where the hash values are mapped into node identifiers, that are organized in a circular ring formed by their identifiers, this is done by overlapping the highest hash value next to the lowest one.\par
+	Replication of each data item is configurable with the number of replicas $N$. So besides being stored in the responsible node (according to their hash value) each data object is replicated using neighbor replication. Load balancing is achieved by using virtual servers mapped to the same physical node. It is also possible to adjust the number of nodes that are used to serve read or write operations using parameters $R$ and $W$.\par
+	To keep track of multiple versions of the same item, Dynamo uses vector clocks for version tracking and executes version reconciliation when read operations are submitted on an object. This technique favors write performance.\par
+	To handle temporary node failures Dynamo uses a sloppy quorum. Upon the need to recover from a failed node, it uses an anti entropy mechanism backed by Merkle trees to calculate differences between replicas.\par
+	Membership is maintained in a distributed way using a gossip protocol.
+	
+\item[Redis]\cite{redis} Redis is a non-relational in-memory database that was built to fill the needs of modern web applications, so its focus is mostly on read performance and availability.\par
+	It provides eventual consistency of data while supporting partitioning and replication with publish/subscribe and master/slave techniques. Besides the common key-value interface, it also offers Data structures such as strings, lists, sets, sorted sets, and hashes. Hashes are key-value pairs inside a key and are optimal for storing attributes inside an object.
+
+\item[Cassandra]\cite{cassandra} Cassandra is a distributed storage system for managing very large \\*amounts of structured data spread out across many commodity servers.\par
+	Cassandra uses tables similarly to Bigtable. Table columns can have colums inside themselves. To access these, Cassandra offers an API with \verb|insert|, \verb|get|, and \verb|delete| methods.\par
+	To distribute data across the system nodes, it uses consistent hashing with a ring layout, similar to Dynamo. Replication is handled with three different policies. "Rack Unaware" replicates each item using neighbor replication, "Rack Aware" and "Datacenter Aware" use a system node as a leader to coordinate the ranges of the replicas and spreads the copies of each object across machines that are either on different racks on the same datacenter or in different datacenters. To achieve load balancing it uses resilient load-balancing, based on the analysis of the load information of the ring.\par
+	Membership is handled with an anti-entropy gossip protocol and it further relies on accrual failure detection for failure detection and handling.
+	
+\item[Riak]\cite{riak_core} Riak is a distributed key-value data store system that provides high availability by allowing to chose between strong and eventual consistency. Eventual consistency in Riak uses CRDTs at its core, providing CRDT data types that include counters, sets, flags, registers, and maps.\par
+	It uses many of Dynamo's concepts, such as consistent hashing for partitioning data around the replicas ring, neighbor replication with virtual nodes to guarantee data availability, vector clocks for object versioning, a gossip protocol to communicate membership changes and an anti-entropy mechanism based on Merkle Trees to detect differences between replicas.\par
+	Besides the common interface methods GET, PUT and, DELETE, it also offers Map-reduce querying, secondary indexes, and full-text search functionalities.
+	
+\item[Antidote]\cite{site_antidote} Antidote is a distributed CRDT key-value store written using the Riak Core module that is intended to provide partitioning, Intra-DC (Data center) and Inter-DC replication, while also supporting atomic write transactions.\par
+	Antidote has direct support for read and writing operations over CRDTs, this makes it easier for the programmer to reason about and work with these data structures.\par
+	The system architecture is divided in the following layers: 
+\begin{enumerate*}[(i)]
+	\item across DCs replication layer, is responsible for replicating updates to other DC and include both components need in the sender and the receiver DC. The update propagation is done in a FIFO (First in first out) order;
+	\item transaction layer, is responsible for providing transaction support, Snapshot Isolation and causality tracking between objects;
+	\item materializer, is in charge of forming the objects from the set of operations returned by the logging layer;
+	\item logging layer, is used to provide fast write operations, as it appends an operation to the log before the actual update propagation;
+	\item replication within a DC, uses strict quorum to perform log reads and writes among $N$ replicas within the DC.
+\end{enumerate*}\par
+	This layered architecture design allows to easily add or remove features to the system as well as rely on different strategies for each of these modules.
+
+\end{description}
+
+\subsection{Distributed Caching Systems}
+\label{sec:distributed_caching_systems}
+Traditional caching is about using the main memory to temporarily store the most frequently accessed data, in order to speed up te process of fetching data. Caching in a network context has been used for a long time with the main purpose of improving web access times and reducing traffic and load to the storage to the storage service. With a distributed caching architecture one can achieve better hit ratio, response times, and load balancing\cite{distributed_caching}.\par
+	Distributed Caching is becoming more popular since main memory prices have been lowering. Hence, caching is becoming a more relevant layer of the storage service of web applications. Here are some examples of Distributed Caching Systems:
+	
+	\begin{description}
+	\item[Memcached]\cite{site_memcached} Memcached is a high-performance, distributed memory object caching system originally intended for use in speeding up dynamic web applications by alleviating the database load.\par
+	In Memcached, instead of having a dedicated amount of memory for each node, the whole available memory of the distributed caching service is shared by all the nodes.
+	
+\item[Redis] Redis can also be used as a caching system if configured to only use the main memory, not dumping periodically to disc.
+	\end{description}
+
+\section{Peer-to-Peer Systems}
+\label{sec:peer_to_peer_systems}
+The term “peer-to-peer” (P2P) refers to a class of systems and applications that employ distributed resources to perform a function
+in a decentralized manner\cite{p2p_computing}.\par
+	Peer-to-peer is an alternative to the client-server model, in its purest form there is no notion of server, as every node is a peer that can act as server or client when needed. There are certain characteristics that can be tuned in peer-to-peer systems to achieve a desired working environment. A key aspect of peer-to-peer systems is overlay networks, logical networks that operate at the application level and that are used to manipulate and control the interactions among the participants of the systems.
+	
+\subsection{Degree of Decentralization}
+\label{sec:degree_of_decentralization}
+
+\begin{description}
+\item[Decentralized] \hfill \\
+In a fully decentralized system, every peer is an equal participant. This way we can avoid bottlenecks and single points of failure, while promoting scalability and resilience. On the other hand, it is hard to keep a global view of such a network, since there is no coordinator node. Usually these networks rely on flooding protocols to propagate changes.\par
+	To address this issue, some systems elect supernodes in order to balance load in the network and becoming an entry point for new participants.
+
+\item[Partly Centralized] \hfill \\
+Partly Centralized systems have a centralized component that stores information about the available resources and acts as a coordinator to the other nodes. This component is responsible for managing node connections.\par
+	These systems are simpler to build than fully decentralized ones, but have a potential of bottleneck and single point of failure in the centralized component, where unavailability can potentially render the system impossible to access.
+
+\end{description}
+
+\subsection{Structured vs Unstructured}
+This design option is usually based on how useful it is to have a performant exact match querying mechanism and the amount of churn in the network.
+
+\begin{description}
+\item[Structured Network] \hfill \\
+Structured networks are specially useful to make efficient queries in the network. Each node has a unique identifier that is used to discover its location among the remaining nodes. Most structured overlay networks rely on consistent hashing to operate, forming a ring array with nodes of the system accordingly to their identifiers, behaving as a distributed hash table (DHT). This structure works similarly to a traditional hash table, where a value can be easily found by its key.\par
+	Building and maintaining such structure has costs. The DHT needs to constantly update the list of active nodes, which can be very expensive if network churn is high.
+
+\item[Unstructured Network] \hfill \\
+In an unstructured network each node keeps its own collection of resources that surround it and updates are propagated using flooding mechanisms. Not having a particular structure makes the network more tolerant to churn, but propagating queries becomes a heavier task as the topology preaches no indication of the location of resources, leading the query to be propagated through a gossip like protocol to all the other participants of the system.
+\end{description}
+	
+	
+
+\section{Summary}
+\label{sec:summary}
+This chapter has covered the existing work that will support, influence, and help the development of this thesis.\par
+	The main focus is around storage systems and the many techniques they use to tackle different challenges in the design and operation of those distributed systems. The major aspects surround consistency, partitioning, replication, object/update versioning, version reconciliation and membership/failure handling.\par
+	This chapter also discussed peer-to-peer systems and some aspects of overlay networks, since they are widely used in many distributed systems and in particular to implement storage systems.\par
+	Besides that, the fundamentals of WebRTC, a crucial aspect for the work done on the Legion framework that is also one of the goals of the work to be developed in this thesis, was briefly introduced.\par
+	In the next chapter, we discuss the planned work for this thesis, with its major goals and time planning.

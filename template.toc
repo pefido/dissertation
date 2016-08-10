@@ -1,0 +1,117 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {portuguese}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {portuguese}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {portuguese}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Figures}{ix}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Tables}{xi}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Motivating Problem and Solution}{2}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Expected Contributions}{3}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Document Structure}{3}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}Related Work}{5}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}WebRTC}{5}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Signaling}{6}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}STUN}{6}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}TURN}{6}{subsection.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Storage Systems}{7}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Data Models}{7}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.1.1}Relational Model}{7}{subsubsection.2.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.1.2}Key-Value Model}{7}{subsubsection.2.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.1.3}Bigtable Model}{7}{subsubsection.2.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Distributed Storage Systems Techniques}{8}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2.1}Consistency Guarantees}{8}{subsubsection.2.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2.2}Partitioning}{9}{subsubsection.2.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2.3}Replication}{9}{subsubsection.2.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2.4}Multi-version tracking}{11}{subsubsection.2.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2.5}Version Reconciliation and Conflict Resolution}{11}{subsubsection.2.2.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.2.2.6}Membership/Failure Handling}{13}{subsubsection.2.2.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Storage System examples}{13}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Distributed Caching Systems}{15}{subsection.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Peer-to-Peer Systems}{16}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Degree of Decentralization}{16}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Structured vs Unstructured}{17}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Summary}{17}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Proposed Work}{19}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Proposed Solution}{19}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Riak}{20}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Antidote}{20}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Cassandra}{20}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Evaluation}{22}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Work Plan}{22}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Design of Integration Module}{22}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Implementation of Integration Modules}{22}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Evaluation of the Integration Modules}{23}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Design for adding causal consistency to Legion}{23}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Implementation of causal consistency}{23}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Evaluation of causal consistency}{23}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Writing}{23}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{25}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Webography}{29}{section*.18}

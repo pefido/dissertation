@@ -8,6 +8,10 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
+\select@language {portuguese}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
@@ -24,9 +28,9 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{ix}{section*.3}
+\contentsline {chapter}{List of Figures}{xv}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{xi}{section*.4}
+\contentsline {chapter}{List of Tables}{xvii}{section*.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -88,30 +92,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Proposed Solution}{19}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Riak}{20}{section*.5}
+\contentsline {paragraph}{Riak}{20}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Antidote}{20}{section*.6}
+\contentsline {paragraph}{Antidote}{20}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Cassandra}{20}{section*.7}
+\contentsline {paragraph}{Cassandra}{20}{section*.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Evaluation}{22}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Work Plan}{22}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Design of Integration Module}{22}{section*.8}
+\contentsline {paragraph}{Design of Integration Module}{22}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Implementation of Integration Modules}{22}{section*.9}
+\contentsline {paragraph}{Implementation of Integration Modules}{22}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Evaluation of the Integration Modules}{23}{section*.10}
+\contentsline {paragraph}{Evaluation of the Integration Modules}{23}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Design for adding causal consistency to Legion}{23}{section*.11}
+\contentsline {paragraph}{Design for adding causal consistency to Legion}{23}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Implementation of causal consistency}{23}{section*.12}
+\contentsline {paragraph}{Implementation of causal consistency}{23}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Evaluation of causal consistency}{23}{section*.13}
+\contentsline {paragraph}{Evaluation of causal consistency}{23}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Writing}{23}{section*.14}
+\contentsline {paragraph}{Writing}{23}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{25}{section*.16}
+\contentsline {chapter}{Bibliography}{25}{section*.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{29}{section*.18}
+\contentsline {chapter}{Webography}{29}{section*.19}

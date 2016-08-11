@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 2.5 $
+% $ biblatex bbl format version 2.7 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,406 +16,474 @@
   {}
 \endgroup
 
-\entry{atomic_broadcast}{incollection}{}
-  \name{author}{4}{}{%
-    {{}%
-     {Agrawal}{A.}%
-     {Divyakant}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Alonso}{A.}%
-     {Gustavo}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {El~Abbadi}{E.~A.}%
-     {Amr}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Stanoi}{S.}%
-     {Ioana}{I.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {Springer}%
-  }
-  \strng{namehash}{AD+1}
-  \strng{fullhash}{ADAGEAASI1}
-  \field{sortinit}{A}
-  \field{booktitle}{Euro-Par'97 Parallel Processing}
-  \field{pages}{496\bibrangedash 503}
-  \field{title}{Exploiting atomic broadcast in replicated databases}
-  \field{year}{1997}
-\endentry
+\sortlist[entry]{nyt/global/}
+  \entry{atomic_broadcast}{incollection}{}
+    \name{author}{4}{}{%
+      {{hash=AD}{%
+         family={Agrawal},
+         family_i={A\bibinitperiod},
+         given={Divyakant},
+         given_i={D\bibinitperiod},
+      }}%
+      {{hash=AG}{%
+         family={Alonso},
+         family_i={A\bibinitperiod},
+         given={Gustavo},
+         given_i={G\bibinitperiod},
+      }}%
+      {{hash=EAA}{%
+         family={El\bibnamedelima Abbadi},
+         family_i={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+         given={Amr},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=SI}{%
+         family={Stanoi},
+         family_i={S\bibinitperiod},
+         given={Ioana},
+         given_i={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{AD+1}
+    \strng{fullhash}{ADAGEAASI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Euro-Par'97 Parallel Processing}
+    \field{pages}{496\bibrangedash 503}
+    \field{title}{Exploiting atomic broadcast in replicated databases}
+    \field{year}{1997}
+  \endentry
 
-\entry{chainreaction}{inproceedings}{}
-  \name{author}{3}{}{%
-    {{}%
-     {Almeida}{A.}%
-     {S{\'e}rgio}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Leit{\~a}o}{L.}%
-     {Jo{\~a}o}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Rodrigues}{R.}%
-     {Lu{\'\i}s}{L.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{organization}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{AS+1}
-  \strng{fullhash}{ASLJRL1}
-  \field{sortinit}{A}
-  \field{booktitle}{Proceedings of the 8th ACM European Conference on Computer
-  Systems}
-  \field{pages}{85\bibrangedash 98}
-  \field{title}{ChainReaction: a causal+ consistent datastore based on chain
+  \entry{chainreaction}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=AS}{%
+         family={Almeida},
+         family_i={A\bibinitperiod},
+         given={S{\'e}rgio},
+         given_i={S\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Leit{\~a}o},
+         family_i={L\bibinitperiod},
+         given={Jo{\~a}o},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=RL}{%
+         family={Rodrigues},
+         family_i={R\bibinitperiod},
+         given={Lu{\'\i}s},
+         given_i={L\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{AS+1}
+    \strng{fullhash}{ASLJRL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of the 8th ACM European Conference on
+  Computer Systems}
+    \field{pages}{85\bibrangedash 98}
+    \field{title}{ChainReaction: a causal+ consistent datastore based on chain
   replication}
-  \field{year}{2013}
-\endentry
+    \field{year}{2013}
+  \endentry
 
-\entry{site_antidote}{online}{}
-  \field{sortinit}{A}
-  \field{note}{Accessed: 2016-02-01}
-  \field{title}{{Antidote} README}
-  \verb{url}
-  \verb https://github.com/SyncFree/antidote
-  \endverb
-\endentry
+  \entry{site_antidote}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Accessed: 2016-02-01}
+    \field{title}{{Antidote} README}
+    \verb{url}
+    \verb https://github.com/SyncFree/antidote
+    \endverb
+  \endentry
 
-\entry{eventual}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Bailis}{B.}%
-     {Peter}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Ghodsi}{G.}%
-     {Ali}{A.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{BPGA1}
-  \strng{fullhash}{BPGA1}
-  \field{sortinit}{B}
-  \verb{doi}
-  \verb 10.1145/2447976.2447992
-  \endverb
-  \field{issn}{0001-0782}
-  \field{number}{5}
-  \field{pages}{55\bibrangedash 63}
-  \field{title}{Eventual Consistency Today: Limitations, Extensions, and
+  \entry{eventual}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BP}{%
+         family={Bailis},
+         family_i={B\bibinitperiod},
+         given={Peter},
+         given_i={P\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Ghodsi},
+         family_i={G\bibinitperiod},
+         given={Ali},
+         given_i={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{BPGA1}
+    \strng{fullhash}{BPGA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1145/2447976.2447992
+    \endverb
+    \field{issn}{0001-0782}
+    \field{number}{5}
+    \field{pages}{55\bibrangedash 63}
+    \field{title}{Eventual Consistency Today: Limitations, Extensions, and
   Beyond}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/2447976.2447992
-  \endverb
-  \field{volume}{56}
-  \list{location}{1}{%
-    {New York, NY, USA}%
-  }
-  \field{journaltitle}{Commun. ACM}
-  \field{month}{05}
-  \field{year}{2013}
-\endentry
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/2447976.2447992
+    \endverb
+    \field{volume}{56}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{Commun. ACM}
+    \field{month}{05}
+    \field{year}{2013}
+  \endentry
 
-\entry{webrtc}{article}{}
-  \name{author}{3}{}{%
-    {{}%
-     {Bergkvist}{B.}%
-     {Adam}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Burnett}{B.}%
-     {D}{D}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Jennings}{J.}%
-     {Cullen}{C.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{BA+1}
-  \strng{fullhash}{BABDJC1}
-  \field{sortinit}{B}
-  \field{title}{A. Narayanan," WebRTC 1.0: Real-time Communication Between
+  \entry{webrtc}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BA}{%
+         family={Bergkvist},
+         family_i={B\bibinitperiod},
+         given={Adam},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Burnett},
+         family_i={B\bibinitperiod},
+         given={D},
+         given_i={D},
+      }}%
+      {{hash=JC}{%
+         family={Jennings},
+         family_i={J\bibinitperiod},
+         given={Cullen},
+         given_i={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BA+1}
+    \strng{fullhash}{BABDJC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{A. Narayanan," WebRTC 1.0: Real-time Communication Between
   Browsers}
-  \field{journaltitle}{World Wide Web Consortium WD WD-webrtc-20120821}
-  \field{year}{2012}
-\endentry
+    \field{journaltitle}{World Wide Web Consortium WD WD-webrtc-20120821}
+    \field{year}{2012}
+  \endentry
 
-\entry{redis}{book}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Carlson}{C.}%
-     {Josiah~L.}{J.~L.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {Manning Publications Co.}%
-  }
-  \strng{namehash}{CJL1}
-  \strng{fullhash}{CJL1}
-  \field{sortinit}{C}
-  \field{isbn}{1617290858, 9781617290855}
-  \field{title}{Redis in Action}
-  \list{location}{1}{%
-    {Greenwich, CT, USA}%
-  }
-  \field{year}{2013}
-\endentry
+  \entry{redis}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CJL}{%
+         family={Carlson},
+         family_i={C\bibinitperiod},
+         given={Josiah\bibnamedelima L.},
+         given_i={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Manning Publications Co.}%
+    }
+    \strng{namehash}{CJL1}
+    \strng{fullhash}{CJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{isbn}{1617290858, 9781617290855}
+    \field{title}{Redis in Action}
+    \list{location}{1}{%
+      {Greenwich, CT, USA}%
+    }
+    \field{year}{2013}
+  \endentry
 
-\entry{bigtable}{article}{}
-  \name{author}{9}{}{%
-    {{}%
-     {Chang}{C.}%
-     {Fay}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Dean}{D.}%
-     {Jeffrey}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Ghemawat}{G.}%
-     {Sanjay}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Hsieh}{H.}%
-     {Wilson~C}{W.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Wallach}{W.}%
-     {Deborah~A}{D.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Burrows}{B.}%
-     {Mike}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Chandra}{C.}%
-     {Tushar}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Fikes}{F.}%
-     {Andrew}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Gruber}{G.}%
-     {Robert~E}{R.~E.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{CF+1}
-  \strng{fullhash}{CFDJGSHWCWDABMCTFAGRE1}
-  \field{sortinit}{C}
-  \field{number}{2}
-  \field{pages}{4}
-  \field{title}{Bigtable: A distributed storage system for structured data}
-  \field{volume}{26}
-  \field{journaltitle}{ACM Transactions on Computer Systems (TOCS)}
-  \field{year}{2008}
-\endentry
+  \entry{bigtable}{article}{}
+    \name{author}{9}{}{%
+      {{hash=CF}{%
+         family={Chang},
+         family_i={C\bibinitperiod},
+         given={Fay},
+         given_i={F\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Dean},
+         family_i={D\bibinitperiod},
+         given={Jeffrey},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Ghemawat},
+         family_i={G\bibinitperiod},
+         given={Sanjay},
+         given_i={S\bibinitperiod},
+      }}%
+      {{hash=HWC}{%
+         family={Hsieh},
+         family_i={H\bibinitperiod},
+         given={Wilson\bibnamedelima C},
+         given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=WDA}{%
+         family={Wallach},
+         family_i={W\bibinitperiod},
+         given={Deborah\bibnamedelima A},
+         given_i={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Burrows},
+         family_i={B\bibinitperiod},
+         given={Mike},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=CT}{%
+         family={Chandra},
+         family_i={C\bibinitperiod},
+         given={Tushar},
+         given_i={T\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Fikes},
+         family_i={F\bibinitperiod},
+         given={Andrew},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=GRE}{%
+         family={Gruber},
+         family_i={G\bibinitperiod},
+         given={Robert\bibnamedelima E},
+         given_i={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{CF+1}
+    \strng{fullhash}{CFDJGSHWCWDABMCTFAGRE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{2}
+    \field{pages}{4}
+    \field{title}{Bigtable: A distributed storage system for structured data}
+    \field{volume}{26}
+    \field{journaltitle}{ACM Transactions on Computer Systems (TOCS)}
+    \field{year}{2008}
+  \endentry
 
-\entry{relational_model}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Codd}{C.}%
-     {E.~F.}{E.~F.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \keyw{composition, consistency, data bank, data base, data integrity, data
+  \entry{relational_model}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CEF}{%
+         family={Codd},
+         family_i={C\bibinitperiod},
+         given={E.\bibnamedelima F.},
+         given_i={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{composition, consistency, data bank, data base, data integrity, data
   organization, data structure, derivability, hierarchies of data, join,
   networks of data, predicate calculus, redundancy, relations, retrieval
   language, security}
-  \strng{namehash}{CEF1}
-  \strng{fullhash}{CEF1}
-  \field{sortinit}{C}
-  \verb{doi}
-  \verb 10.1145/362384.362685
-  \endverb
-  \field{issn}{0001-0782}
-  \field{number}{6}
-  \field{pages}{377\bibrangedash 387}
-  \field{title}{A Relational Model of Data for Large Shared Data Banks}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/362384.362685
-  \endverb
-  \field{volume}{13}
-  \list{location}{1}{%
-    {New York, NY, USA}%
-  }
-  \field{journaltitle}{Commun. ACM}
-  \field{month}{06}
-  \field{year}{1970}
-\endentry
+    \strng{namehash}{CEF1}
+    \strng{fullhash}{CEF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1145/362384.362685
+    \endverb
+    \field{issn}{0001-0782}
+    \field{number}{6}
+    \field{pages}{377\bibrangedash 387}
+    \field{title}{A Relational Model of Data for Large Shared Data Banks}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/362384.362685
+    \endverb
+    \field{volume}{13}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{Commun. ACM}
+    \field{month}{06}
+    \field{year}{1970}
+  \endentry
 
-\entry{dynamo}{article}{}
-  \name{author}{9}{}{%
-    {{}%
-     {DeCandia}{D.}%
-     {Giuseppe}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Hastorun}{H.}%
-     {Deniz}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Jampani}{J.}%
-     {Madan}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Kakulapati}{K.}%
-     {Gunavardhan}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lakshman}{L.}%
-     {Avinash}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Pilchin}{P.}%
-     {Alex}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Sivasubramanian}{S.}%
-     {Swaminathan}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Vosshall}{V.}%
-     {Peter}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Vogels}{V.}%
-     {Werner}{W.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \keyw{performance, reliability, scalability}
-  \strng{namehash}{DG+1}
-  \strng{fullhash}{DGHDJMKGLAPASSVPVW1}
-  \field{sortinit}{D}
-  \verb{doi}
-  \verb 10.1145/1323293.1294281
-  \endverb
-  \field{issn}{0163-5980}
-  \field{number}{6}
-  \field{pages}{205\bibrangedash 220}
-  \field{title}{Dynamo: Amazon's Highly Available Key-value Store}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/1323293.1294281
-  \endverb
-  \field{volume}{41}
-  \list{location}{1}{%
-    {New York, NY, USA}%
-  }
-  \field{journaltitle}{SIGOPS Oper. Syst. Rev.}
-  \field{month}{10}
-  \field{year}{2007}
-\endentry
+  \entry{dynamo}{article}{}
+    \name{author}{9}{}{%
+      {{hash=DG}{%
+         family={DeCandia},
+         family_i={D\bibinitperiod},
+         given={Giuseppe},
+         given_i={G\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Hastorun},
+         family_i={H\bibinitperiod},
+         given={Deniz},
+         given_i={D\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Jampani},
+         family_i={J\bibinitperiod},
+         given={Madan},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Kakulapati},
+         family_i={K\bibinitperiod},
+         given={Gunavardhan},
+         given_i={G\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Lakshman},
+         family_i={L\bibinitperiod},
+         given={Avinash},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pilchin},
+         family_i={P\bibinitperiod},
+         given={Alex},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Sivasubramanian},
+         family_i={S\bibinitperiod},
+         given={Swaminathan},
+         given_i={S\bibinitperiod},
+      }}%
+      {{hash=VP}{%
+         family={Vosshall},
+         family_i={V\bibinitperiod},
+         given={Peter},
+         given_i={P\bibinitperiod},
+      }}%
+      {{hash=VW}{%
+         family={Vogels},
+         family_i={V\bibinitperiod},
+         given={Werner},
+         given_i={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{performance, reliability, scalability}
+    \strng{namehash}{DG+1}
+    \strng{fullhash}{DGHDJMKGLAPASSVPVW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{doi}
+    \verb 10.1145/1323293.1294281
+    \endverb
+    \field{issn}{0163-5980}
+    \field{number}{6}
+    \field{pages}{205\bibrangedash 220}
+    \field{title}{Dynamo: Amazon's Highly Available Key-value Store}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/1323293.1294281
+    \endverb
+    \field{volume}{41}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{SIGOPS Oper. Syst. Rev.}
+    \field{month}{10}
+    \field{year}{2007}
+  \endentry
 
-\entry{cap}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Gilbert}{G.}%
-     {Seth}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lynch}{L.}%
-     {Nancy}{N.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{GSLN1}
-  \strng{fullhash}{GSLN1}
-  \field{sortinit}{G}
-  \verb{doi}
-  \verb 10.1145/564585.564601
-  \endverb
-  \field{issn}{0163-5700}
-  \field{number}{2}
-  \field{pages}{51\bibrangedash 59}
-  \field{title}{Brewer's Conjecture and the Feasibility of Consistent,
+  \entry{cap}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GS}{%
+         family={Gilbert},
+         family_i={G\bibinitperiod},
+         given={Seth},
+         given_i={S\bibinitperiod},
+      }}%
+      {{hash=LN}{%
+         family={Lynch},
+         family_i={L\bibinitperiod},
+         given={Nancy},
+         given_i={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{GSLN1}
+    \strng{fullhash}{GSLN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1145/564585.564601
+    \endverb
+    \field{issn}{0163-5700}
+    \field{number}{2}
+    \field{pages}{51\bibrangedash 59}
+    \field{title}{Brewer's Conjecture and the Feasibility of Consistent,
   Available, Partition-tolerant Web Services}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/564585.564601
-  \endverb
-  \field{volume}{33}
-  \list{location}{1}{%
-    {New York, NY, USA}%
-  }
-  \field{journaltitle}{SIGACT News}
-  \field{month}{06}
-  \field{year}{2002}
-\endentry
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/564585.564601
+    \endverb
+    \field{volume}{33}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{SIGACT News}
+    \field{month}{06}
+    \field{year}{2002}
+  \endentry
 
-\entry{accrual}{inproceedings}{}
-  \name{author}{4}{}{%
-    {{}%
-     {Hayashibara}{H.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Defago}{D.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Yared}{Y.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Katayama}{K.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{data communication;distributed processing;fault diagnosis;fault
+  \entry{accrual}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HN}{%
+         family={Hayashibara},
+         family_i={H\bibinitperiod},
+         given={N.},
+         given_i={N\bibinitperiod},
+      }}%
+      {{hash=DX}{%
+         family={Defago},
+         family_i={D\bibinitperiod},
+         given={X.},
+         given_i={X\bibinitperiod},
+      }}%
+      {{hash=YR}{%
+         family={Yared},
+         family_i={Y\bibinitperiod},
+         given={R.},
+         given_i={R\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Katayama},
+         family_i={K\bibinitperiod},
+         given={T.},
+         given_i={T\bibinitperiod},
+      }}%
+    }
+    \keyw{data communication;distributed processing;fault diagnosis;fault
   tolerant computing;system recovery;φ accrual failure detector;adaptive
   mechanism;application requirements;continuous information
   provision;distributed systems;failure detection;fault
@@ -423,459 +491,536 @@
   level;Computer crashes;Condition monitoring;Detectors;Event detection;Failure
   analysis;Fault detection;Fault tolerant systems;H infinity
   control;Information science;Quality of service}
-  \strng{namehash}{HN+1}
-  \strng{fullhash}{HNDXYRKT1}
-  \field{sortinit}{H}
-  \field{booktitle}{Reliable Distributed Systems, 2004. Proceedings of the 23rd
-  IEEE International Symposium on}
-  \verb{doi}
-  \verb 10.1109/RELDIS.2004.1353004
-  \endverb
-  \field{issn}{1060-9857}
-  \field{pages}{66\bibrangedash 78}
-  \field{title}{The phi; accrual failure detector}
-  \field{year}{2004}
-  \warn{\item Invalid format of field 'month'}
-\endentry
+    \strng{namehash}{HN+1}
+    \strng{fullhash}{HNDXYRKT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Reliable Distributed Systems, 2004. Proceedings of the
+  23rd IEEE International Symposium on}
+    \verb{doi}
+    \verb 10.1109/RELDIS.2004.1353004
+    \endverb
+    \field{issn}{1060-9857}
+    \field{pages}{66\bibrangedash 78}
+    \field{title}{The phi; accrual failure detector}
+    \field{year}{2004}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 
-\entry{consistent_hashing}{inproceedings}{}
-  \name{author}{6}{}{%
-    {{}%
-     {Karger}{K.}%
-     {David}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lehman}{L.}%
-     {Eric}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Leighton}{L.}%
-     {Tom}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Panigrahy}{P.}%
-     {Rina}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Levine}{L.}%
-     {Matthew}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lewin}{L.}%
-     {Daniel}{D.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{organization}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{KD+1}
-  \strng{fullhash}{KDLELTPRLMLD1}
-  \field{sortinit}{K}
-  \field{booktitle}{Proceedings of the twenty-ninth annual ACM symposium on
+  \entry{consistent_hashing}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=KD}{%
+         family={Karger},
+         family_i={K\bibinitperiod},
+         given={David},
+         given_i={D\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lehman},
+         family_i={L\bibinitperiod},
+         given={Eric},
+         given_i={E\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={Leighton},
+         family_i={L\bibinitperiod},
+         given={Tom},
+         given_i={T\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Panigrahy},
+         family_i={P\bibinitperiod},
+         given={Rina},
+         given_i={R\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Levine},
+         family_i={L\bibinitperiod},
+         given={Matthew},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lewin},
+         family_i={L\bibinitperiod},
+         given={Daniel},
+         given_i={D\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{KD+1}
+    \strng{fullhash}{KDLELTPRLMLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Proceedings of the twenty-ninth annual ACM symposium on
   Theory of computing}
-  \field{pages}{654\bibrangedash 663}
-  \field{title}{Consistent hashing and random trees: Distributed caching
+    \field{pages}{654\bibrangedash 663}
+    \field{title}{Consistent hashing and random trees: Distributed caching
   protocols for relieving hot spots on the World Wide Web}
-  \field{year}{1997}
-\endentry
+    \field{year}{1997}
+  \endentry
 
-\entry{riak_core}{inproceedings}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Klophaus}{K.}%
-     {Rusty}{R.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{KR1}
-  \strng{fullhash}{KR1}
-  \field{sortinit}{K}
-  \field{booktitle}{ACM SIGPLAN Commercial Users of Functional Programming}
-  \verb{doi}
-  \verb 10.1145/1900160.1900176
-  \endverb
-  \field{isbn}{978-1-4503-0516-7}
-  \field{pages}{14:1\bibrangedash 14:1}
-  \field{series}{CUFP '10}
-  \field{title}{Riak Core: Building Distributed Applications Without Shared
+  \entry{riak_core}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=KR}{%
+         family={Klophaus},
+         family_i={K\bibinitperiod},
+         given={Rusty},
+         given_i={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{KR1}
+    \strng{fullhash}{KR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{ACM SIGPLAN Commercial Users of Functional Programming}
+    \verb{doi}
+    \verb 10.1145/1900160.1900176
+    \endverb
+    \field{isbn}{978-1-4503-0516-7}
+    \field{pages}{14:1\bibrangedash 14:1}
+    \field{series}{CUFP '10}
+    \field{title}{Riak Core: Building Distributed Applications Without Shared
   State}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/1900160.1900176
-  \endverb
-  \list{location}{1}{%
-    {Baltimore, Maryland}%
-  }
-  \field{year}{2010}
-  \warn{\item Can't use 'location' + 'address'}
-\endentry
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/1900160.1900176
+    \endverb
+    \list{location}{1}{%
+      {Baltimore, Maryland}%
+    }
+    \field{year}{2010}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
 
-\entry{cassandra}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Lakshman}{L.}%
-     {Avinash}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Malik}{M.}%
-     {Prashant}{P.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{LAMP1}
-  \strng{fullhash}{LAMP1}
-  \field{sortinit}{L}
-  \verb{doi}
-  \verb 10.1145/1773912.1773922
-  \endverb
-  \field{issn}{0163-5980}
-  \field{number}{2}
-  \field{pages}{35\bibrangedash 40}
-  \field{title}{Cassandra: A Decentralized Structured Storage System}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/1773912.1773922
-  \endverb
-  \field{volume}{44}
-  \list{location}{1}{%
-    {New York, NY, USA}%
-  }
-  \field{journaltitle}{SIGOPS Oper. Syst. Rev.}
-  \field{month}{04}
-  \field{year}{2010}
-\endentry
+  \entry{cassandra}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LA}{%
+         family={Lakshman},
+         family_i={L\bibinitperiod},
+         given={Avinash},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Malik},
+         family_i={M\bibinitperiod},
+         given={Prashant},
+         given_i={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{LAMP1}
+    \strng{fullhash}{LAMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1145/1773912.1773922
+    \endverb
+    \field{issn}{0163-5980}
+    \field{number}{2}
+    \field{pages}{35\bibrangedash 40}
+    \field{title}{Cassandra: A Decentralized Structured Storage System}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/1773912.1773922
+    \endverb
+    \field{volume}{44}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{SIGOPS Oper. Syst. Rev.}
+    \field{month}{04}
+    \field{year}{2010}
+  \endentry
 
-\entry{lamport_time}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Lamport}{L.}%
-     {Leslie}{L.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \strng{namehash}{LL1}
-  \strng{fullhash}{LL1}
-  \field{sortinit}{L}
-  \field{number}{7}
-  \field{pages}{558\bibrangedash 565}
-  \field{title}{Time, clocks, and the ordering of events in a distributed
+  \entry{lamport_time}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LL}{%
+         family={Lamport},
+         family_i={L\bibinitperiod},
+         given={Leslie},
+         given_i={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{LL1}
+    \strng{fullhash}{LL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{7}
+    \field{pages}{558\bibrangedash 565}
+    \field{title}{Time, clocks, and the ordering of events in a distributed
   system}
-  \field{volume}{21}
-  \field{journaltitle}{Communications of the ACM}
-  \field{year}{1978}
-\endentry
+    \field{volume}{21}
+    \field{journaltitle}{Communications of the ACM}
+    \field{year}{1978}
+  \endentry
 
-\entry{snapshot_integrity}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {Lin}{L.}%
-     {Yi}{Y.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Kemme}{K.}%
-     {Bettina}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Jim{\'e}nez-Peris}{J.-P.}%
-     {Ricardo}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Mart\'{\i}nez}{M.}%
-     {Marta}{M.}%
-     {Pati\~{n}o}{P.~n.}%
-     {}{}}%
-    {{}%
-     {Armend\'{a}riz-I\~{n}igo}{A.-I.~n.}%
-     {Jos{\'e}~Enrique}{J.~E.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {ACM}%
-  }
-  \keyw{Replication, integrity constraints, snapshot isolation}
-  \strng{namehash}{LY+1}
-  \strng{fullhash}{LYKBJPRMMPnAInJE1}
-  \field{sortinit}{L}
-  \verb{doi}
-  \verb 10.1145/1538909.1538913
-  \endverb
-  \field{issn}{0362-5915}
-  \field{number}{2}
-  \field{pages}{11:1\bibrangedash 11:49}
-  \field{title}{Snapshot Isolation and Integrity Constraints in Replicated
+  \entry{snapshot_integrity}{article}{}
+    \name{author}{5}{}{%
+      {{hash=LY}{%
+         family={Lin},
+         family_i={L\bibinitperiod},
+         given={Yi},
+         given_i={Y\bibinitperiod},
+      }}%
+      {{hash=KB}{%
+         family={Kemme},
+         family_i={K\bibinitperiod},
+         given={Bettina},
+         given_i={B\bibinitperiod},
+      }}%
+      {{hash=JPR}{%
+         family={Jim{\'e}nez-Peris},
+         family_i={J\bibinitperiod-P\bibinitperiod},
+         given={Ricardo},
+         given_i={R\bibinitperiod},
+      }}%
+      {{hash=PnMM}{%
+         prefix={Pati\~{n}o},
+         prefix_i={P\bibinitperiod\bibinitdelim n\bibinitperiod},
+         family={Mart\'{\i}nez},
+         family_i={M\bibinitperiod},
+         given={Marta},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=AInJE}{%
+         family={Armend\'{a}riz-I\~{n}igo},
+         family_i={A\bibinitperiod-I\bibinitperiod\bibinitdelim
+  n\bibinitperiod},
+         given={Jos{\'e}\bibnamedelima Enrique},
+         given_i={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{Replication, integrity constraints, snapshot isolation}
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYKBJPRMMPnAInJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1145/1538909.1538913
+    \endverb
+    \field{issn}{0362-5915}
+    \field{number}{2}
+    \field{pages}{11:1\bibrangedash 11:49}
+    \field{title}{Snapshot Isolation and Integrity Constraints in Replicated
   Databases}
-  \verb{url}
-  \verb http://doi.acm.org/10.1145/1538909.1538913
-  \endverb
-  \field{volume}{34}
-  \list{location}{1}{%
-    {New York, NY, USA}%
-  }
-  \field{journaltitle}{ACM Trans. Database Syst.}
-  \field{month}{07}
-  \field{year}{2009}
-\endentry
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/1538909.1538913
+    \endverb
+    \field{volume}{34}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Trans. Database Syst.}
+    \field{month}{07}
+    \field{year}{2009}
+  \endentry
 
-\entry{site_memcached}{online}{}
-  \field{sortinit}{M}
-  \field{note}{Accessed: 2016-01-26}
-  \field{title}{{Memcached} About}
-  \verb{url}
-  \verb http://memcached.org/about
-  \endverb
-\endentry
+  \entry{site_memcached}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{Accessed: 2016-01-26}
+    \field{title}{{Memcached} About}
+    \verb{url}
+    \verb http://memcached.org/about
+    \endverb
+  \endentry
 
-\entry{p2p_computing}{misc}{}
-  \name{author}{8}{}{%
-    {{}%
-     {Milojicic}{M.}%
-     {Dejan~S}{D.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Kalogeraki}{K.}%
-     {Vana}{V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Lukose}{L.}%
-     {Rajan}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Nagaraja}{N.}%
-     {Kiran}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Pruyne}{P.}%
-     {Jim}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Richard}{R.}%
-     {Bruno}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Rollins}{R.}%
-     {Sami}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Xu}{X.}%
-     {Zhichen}{Z.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {Technical Report HPL-2002-57, HP Labs}%
-  }
-  \strng{namehash}{MDS+1}
-  \strng{fullhash}{MDSKVLRNKPJRBRSXZ1}
-  \field{sortinit}{M}
-  \field{title}{Peer-to-peer computing}
-  \field{year}{2002}
-\endentry
+  \entry{p2p_computing}{misc}{}
+    \name{author}{8}{}{%
+      {{hash=MDS}{%
+         family={Milojicic},
+         family_i={M\bibinitperiod},
+         given={Dejan\bibnamedelima S},
+         given_i={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=KV}{%
+         family={Kalogeraki},
+         family_i={K\bibinitperiod},
+         given={Vana},
+         given_i={V\bibinitperiod},
+      }}%
+      {{hash=LR}{%
+         family={Lukose},
+         family_i={L\bibinitperiod},
+         given={Rajan},
+         given_i={R\bibinitperiod},
+      }}%
+      {{hash=NK}{%
+         family={Nagaraja},
+         family_i={N\bibinitperiod},
+         given={Kiran},
+         given_i={K\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pruyne},
+         family_i={P\bibinitperiod},
+         given={Jim},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=RB}{%
+         family={Richard},
+         family_i={R\bibinitperiod},
+         given={Bruno},
+         given_i={B\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Rollins},
+         family_i={R\bibinitperiod},
+         given={Sami},
+         given_i={S\bibinitperiod},
+      }}%
+      {{hash=XZ}{%
+         family={Xu},
+         family_i={X\bibinitperiod},
+         given={Zhichen},
+         given_i={Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Technical Report HPL-2002-57, HP Labs}%
+    }
+    \strng{namehash}{MDS+1}
+    \strng{fullhash}{MDSKVLRNKPJRBRSXZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Peer-to-peer computing}
+    \field{year}{2002}
+  \endentry
 
-\entry{data_replication_p2p}{inproceedings}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Paiva}{P.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Rodrigues}{R.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{data handling;peer-to-peer computing;counter-intuitive approach;data
+  \entry{data_replication_p2p}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=PJ}{%
+         family={Paiva},
+         family_i={P\bibinitperiod},
+         given={J.},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=RL}{%
+         family={Rodrigues},
+         family_i={R\bibinitperiod},
+         given={L.},
+         given_i={L\bibinitperiod},
+      }}%
+    }
+    \keyw{data handling;peer-to-peer computing;counter-intuitive approach;data
   replication policies;data transfer costs;large scale P2P systems;load
   unbalance costs;monitoring costs;replicated data;Data transfer;Load
   management;Measurement;Monitoring;Peer-to-peer
   computing;Reliability;Servers;Bandwidth;Data
   replication;Fault-tolerance;Group-based DHTs;Load balancing;P2P}
-  \strng{namehash}{PJRL1}
-  \strng{fullhash}{PJRL1}
-  \field{sortinit}{P}
-  \field{booktitle}{Parallel and Distributed Systems (ICPADS), 2013
+    \strng{namehash}{PJRL1}
+    \strng{fullhash}{PJRL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Parallel and Distributed Systems (ICPADS), 2013
   International Conference on}
-  \verb{doi}
-  \verb 10.1109/ICPADS.2013.63
-  \endverb
-  \field{issn}{1521-9097}
-  \field{pages}{404\bibrangedash 411}
-  \field{title}{Policies for Efficient Data Replication in P2P Systems}
-  \field{year}{2013}
-  \warn{\item Invalid format of field 'month'}
-\endentry
+    \verb{doi}
+    \verb 10.1109/ICPADS.2013.63
+    \endverb
+    \field{issn}{1521-9097}
+    \field{pages}{404\bibrangedash 411}
+    \field{title}{Policies for Efficient Data Replication in P2P Systems}
+    \field{year}{2013}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
 
-\entry{distributed_caching}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Paul}{P.}%
-     {S}{S}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Fei}{F.}%
-     {Z}{Z}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Centralized control}
-  \strng{namehash}{PSFZ1}
-  \strng{fullhash}{PSFZ1}
-  \field{sortinit}{P}
-  \verb{doi}
-  \verb http://dx.doi.org/10.1016/S0140-3664(00)00322-4
-  \endverb
-  \field{issn}{0140-3664}
-  \field{number}{2}
-  \field{pages}{256 \bibrangedash  268}
-  \field{title}{Distributed caching with centralized control}
-  \verb{url}
-  \verb http://www.sciencedirect.com/science/article/pii/S0140366400003224
-  \endverb
-  \field{volume}{24}
-  \field{journaltitle}{Computer Communications}
-  \field{year}{2001}
-\endentry
+  \entry{distributed_caching}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PS}{%
+         family={Paul},
+         family_i={P\bibinitperiod},
+         given={S},
+         given_i={S},
+      }}%
+      {{hash=FZ}{%
+         family={Fei},
+         family_i={F\bibinitperiod},
+         given={Z},
+         given_i={Z},
+      }}%
+    }
+    \keyw{Centralized control}
+    \strng{namehash}{PSFZ1}
+    \strng{fullhash}{PSFZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb http://dx.doi.org/10.1016/S0140-3664(00)00322-4
+    \endverb
+    \field{issn}{0140-3664}
+    \field{number}{2}
+    \field{pages}{256 \bibrangedash  268}
+    \field{title}{Distributed caching with centralized control}
+    \verb{url}
+    \verb http://www.sciencedirect.com/science/article/pii/S0140366400003224
+    \endverb
+    \field{volume}{24}
+    \field{journaltitle}{Computer Communications}
+    \field{year}{2001}
+  \endentry
 
-\entry{state_machine_replication}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Schenider}{S.}%
-     {F}{F}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{SF1}
-  \strng{fullhash}{SF1}
-  \field{sortinit}{S}
-  \field{pages}{169\bibrangedash 198}
-  \field{title}{Replication management using the state-machine approach,
+  \entry{state_machine_replication}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SF}{%
+         family={Schenider},
+         family_i={S\bibinitperiod},
+         given={F},
+         given_i={F},
+      }}%
+    }
+    \strng{namehash}{SF1}
+    \strng{fullhash}{SF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{169\bibrangedash 198}
+    \field{title}{Replication management using the state-machine approach,
   Distributed Systems}
-  \field{journaltitle}{Ed. Sape Mullender,}
-  \field{year}{1993}
-\endentry
+    \field{journaltitle}{Ed. Sape Mullender,}
+    \field{year}{1993}
+  \endentry
 
-\entry{crdt}{report}{}
-  \name{author}{4}{}{%
-    {{}%
-     {Shapiro}{S.}%
-     {Marc}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Pregui{\c c}a}{P.}%
-     {Nuno}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Baquero}{B.}%
-     {Carlos}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Zawirski}{Z.}%
-     {Marek}{M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{eventual consistency ; optimistic replication ; replicated data types ;
-  distributed algorithms ; distributed systems ; Data replication ; commutative
-  operations}
-  \strng{namehash}{SM+1}
-  \strng{fullhash}{SMPNBCZM1}
-  \field{sortinit}{S}
-  \field{number}{RR-7506}
-  \field{pages}{50}
-  \field{title}{{A comprehensive study of Convergent and Commutative Replicated
-  Data Types}}
-  \verb{url}
-  \verb https://hal.inria.fr/inria-00555588
-  \endverb
-  \list{institution}{1}{%
-    {{Inria -- Centre Paris-Rocquencourt ; INRIA}}%
-  }
-  \verb{file}
-  \verb https://hal.inria.fr/inria-00555588/file/techreport.pdf
-  \endverb
-  \field{type}{Research Report}
-  \field{month}{01}
-  \field{year}{2011}
-\endentry
+  \entry{crdt}{report}{}
+    \name{author}{4}{}{%
+      {{hash=SM}{%
+         family={Shapiro},
+         family_i={S\bibinitperiod},
+         given={Marc},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=PN}{%
+         family={Pregui{\c c}a},
+         family_i={P\bibinitperiod},
+         given={Nuno},
+         given_i={N\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Baquero},
+         family_i={B\bibinitperiod},
+         given={Carlos},
+         given_i={C\bibinitperiod},
+      }}%
+      {{hash=ZM}{%
+         family={Zawirski},
+         family_i={Z\bibinitperiod},
+         given={Marek},
+         given_i={M\bibinitperiod},
+      }}%
+    }
+    \keyw{eventual consistency ; optimistic replication ; replicated data types
+  ; distributed algorithms ; distributed systems ; Data replication ;
+  commutative operations}
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMPNBCZM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{RR-7506}
+    \field{pages}{50}
+    \field{title}{{A comprehensive study of Convergent and Commutative
+  Replicated Data Types}}
+    \verb{url}
+    \verb https://hal.inria.fr/inria-00555588
+    \endverb
+    \list{institution}{1}{%
+      {{Inria -- Centre Paris-Rocquencourt ; INRIA}}%
+    }
+    \verb{file}
+    \verb https://hal.inria.fr/inria-00555588/file/techreport.pdf
+    \endverb
+    \field{type}{Research Report}
+    \field{month}{01}
+    \field{year}{2011}
+  \endentry
 
-\entry{quorum_commit}{report}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Skeen}{S.}%
-     {Dale}{D.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{SD1}
-  \strng{fullhash}{SD1}
-  \field{sortinit}{S}
-  \field{title}{A quorum-based commit protocol}
-  \list{institution}{1}{%
-    {Cornell University}%
-  }
-  \field{type}{techreport}
-  \field{year}{1982}
-\endentry
+  \entry{quorum_commit}{report}{}
+    \name{author}{1}{}{%
+      {{hash=SD}{%
+         family={Skeen},
+         family_i={S\bibinitperiod},
+         given={Dale},
+         given_i={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SD1}
+    \strng{fullhash}{SD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{A quorum-based commit protocol}
+    \list{institution}{1}{%
+      {Cornell University}%
+    }
+    \field{type}{techreport}
+    \field{year}{1982}
+  \endentry
 
-\entry{merkle}{inproceedings}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Szydlo}{S.}%
-     {Michael}{M.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{organization}{1}{%
-    {Springer}%
-  }
-  \strng{namehash}{SM1}
-  \strng{fullhash}{SM1}
-  \field{sortinit}{S}
-  \field{booktitle}{Advances in Cryptology-EUROCRYPT 2004}
-  \field{pages}{541\bibrangedash 554}
-  \field{title}{Merkle tree traversal in log space and time}
-  \field{year}{2004}
-\endentry
+  \entry{merkle}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Szydlo},
+         family_i={S\bibinitperiod},
+         given={Michael},
+         given_i={M\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Advances in Cryptology-EUROCRYPT 2004}
+    \field{pages}{541\bibrangedash 554}
+    \field{title}{Merkle tree traversal in log space and time}
+    \field{year}{2004}
+  \endentry
 
-\entry{site_webrtc_signaling}{online}{}
-  \field{sortinit}{W}
-  \field{note}{Accessed: 2016-02-08}
-  \field{title}{{WebRTC in the real world:} STUN, TURN and signaling}
-  \verb{url}
-  \verb http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
-  \endverb
-\endentry
-
-\lossort
-\endlossort
-
+  \entry{site_webrtc_signaling}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{note}{Accessed: 2016-02-08}
+    \field{title}{{WebRTC in the real world:} STUN, TURN and signaling}
+    \verb{url}
+    \verb http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
+    \endverb
+  \endentry
+\endsortlist
 \endinput

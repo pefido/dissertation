@@ -326,6 +326,40 @@
     \field{year}{1970}
   \endentry
 
+  \entry{distributed}{book}{}
+    \name{author}{3}{}{%
+      {{hash=CGF}{%
+         family={Coulouris},
+         family_i={C\bibinitperiod},
+         given={George\bibnamedelima F},
+         given_i={G\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Dollimore},
+         family_i={D\bibinitperiod},
+         given={Jean},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kindberg},
+         family_i={K\bibinitperiod},
+         given={Tim},
+         given_i={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {pearson education}%
+    }
+    \strng{namehash}{CGF+1}
+    \strng{fullhash}{CGFDJKT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Distributed systems: concepts and design}
+    \field{year}{2005}
+  \endentry
+
   \entry{dynamo}{article}{}
     \name{author}{9}{}{%
       {{hash=DG}{%
@@ -507,6 +541,47 @@
     \field{title}{The phi; accrual failure detector}
     \field{year}{2004}
     \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{zookeeper}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HP}{%
+         family={Hunt},
+         family_i={H\bibinitperiod},
+         given={Patrick},
+         given_i={P\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Konar},
+         family_i={K\bibinitperiod},
+         given={Mahadev},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=JFP}{%
+         family={Junqueira},
+         family_i={J\bibinitperiod},
+         given={Flavio\bibnamedelima Paiva},
+         given_i={F\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=RB}{%
+         family={Reed},
+         family_i={R\bibinitperiod},
+         given={Benjamin},
+         given_i={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HP+1}
+    \strng{fullhash}{HPKMJFPRB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{USENIX Annual Technical Conference}
+    \field{pages}{9}
+    \field{title}{ZooKeeper: Wait-free Coordination for Internet-scale
+  Systems.}
+    \field{volume}{8}
+    \field{year}{2010}
   \endentry
 
   \entry{consistent_hashing}{inproceedings}{}

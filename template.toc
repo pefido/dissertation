@@ -90,17 +90,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Distributed Coordination Services}{17}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Summary}{17}{section.2.5}
+\contentsline {section}{\numberline {2.5}Summary}{18}{section.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Integration Design and Architecture}{19}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Technical decisions}{19}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Components Overview}{19}{section.3.2}
+\contentsline {section}{\numberline {3.2}Components Overview}{20}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Legion to Antidote flow}{19}{section.3.3}
+\contentsline {section}{\numberline {3.3}Legion to Antidote flow}{20}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{19}{section.3.4}
+\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{20}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Integration Implementation}{21}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -120,34 +120,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Evaluation}{23}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Proposed Work}{25}{chapter.6}
+\contentsline {chapter}{Bibliography}{25}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Proposed Solution}{25}{section.6.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Riak}{26}{section*.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Antidote}{26}{section*.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Cassandra}{26}{section*.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Evaluation}{28}{section.6.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Work Plan}{28}{section.6.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Design of Integration Module}{28}{section*.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Implementation of Integration Modules}{28}{section*.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Evaluation of the Integration Modules}{29}{section*.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Design for adding causal consistency to Legion}{29}{section*.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Implementation of causal consistency}{29}{section*.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Evaluation of causal consistency}{29}{section*.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Writing}{29}{section*.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{31}{section*.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{35}{section*.19}
+\contentsline {chapter}{Webography}{29}{section*.9}

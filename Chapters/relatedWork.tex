@@ -270,8 +270,32 @@ In an unstructured network each node keeps its own collection of resources that 
 \section{Distributed Coordination}
 \label{sec:distributed_coordination}
 
+In large scale distributed applications, there is a need for some sort of coordination mechanism that suits specifically the application's working environment.\par
+	Coordination in distributed systems helps tackle problems such as\cite{distributed}
+\begin{enumerate*}[(i)]
+\item event ordering,
+\item mutual exclusion,
+\item atomicity,
+\item concurrency control,
+\item deadlock handling,
+\item leader election,
+\item reaching an agreement.
+\end{enumerate*}
+
 \subsection{Distributed Coordination Services}
-	
+
+\begin{description}
+
+\item[ZooKeeper ~\cite{zookeeper}] ZooKeeper is a service for coordinating processes of distributed applications. This service exposes an API as a coordination kernel that provides the necessary tools for the developer to create coordination mechanisms. In order to show the developer how to use the API to create high level coordination primitives, these mechanisms are then integrated in a package of coordination recipes. These allow to build primitives such as 
+\begin{enumerate*}[(i)]
+\item configuration management, allowing to implement dynamic configuration in distributed applications;
+\item rendezvous, this is useful to share information between a master process and several workers;
+\item group membership, in order to keep track of the operational nodes in the system;
+\item locks, as a method to modify a certain variable in mutual exclusion mode. Besides this, there can also be implemented read and write locks.
+\end{enumerate*}\par
+	ZooKeeper provides to it's clients an abstraction of a set of data nodes that are organized by hierarchical name spaces. This data structure can be manipulated by the clients in order to implement the coordination mechanisms mentioned before.
+
+\end{description}
 
 \section{Summary}
 \label{sec:summary}

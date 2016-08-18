@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.10)  17 AUG 2016 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.10)  18 AUG 2016 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2577,41 +2577,16 @@ LaTeX Warning: Reference `cha:proposed_work' on page 3 undefined on input line
 ] [5] [6] [7] [8] [9] [10] [11] [12]
 [13] [14] [15] [16] [17]) (./Chapters/integrationDesign.tex [18] [19
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+] [20])
+(./Chapters/integrationImplementation.tex [21] [22
 
- []
+]) (./Chapters/evaluation.tex [23] [24
 
+]) [25] [26
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+] [27] [28] [29] [30
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-) (./Chapters/integrationImplementation.tex [20]) (./Chapters/evaluation.tex
-[21
-
-] [22
-
-]) [23] [24
-
-] [25] [26] [27] [28
-
-] [29] [30
+] [31] [32
 
 ]
 \tf@toc=\write8
@@ -2629,7 +2604,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: 8A781B14D6A7814BD19F134B96E0BF9C;2514.
+(rerunfilecheck)             Checksum: 85F2F855D56C64AC48935F0E696DC65A;2516.
 
 
 LaTeX Warning: There were undefined references.
@@ -2642,8 +2617,8 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37437 strings out of 493014
- 644453 string characters out of 6139325
+ 37439 strings out of 493014
+ 644469 string characters out of 6139325
  1243010 words of memory out of 5000000
  39841 multiletter control sequences out of 15000+600000
  204718 words of font info for 321 fonts, out of 8000000 for 9000
@@ -2660,10 +2635,10 @@ usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/share/texmf-
 dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb
 8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (48 pages, 295061 bytes).
+Output written on template.pdf (50 pages, 297896 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 584 compressed objects within 6 object streams
- 164 named destinations out of 1000 (max. 500000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 591 compressed objects within 6 object streams
+ 166 named destinations out of 1000 (max. 500000)
  62282 words of extra memory for PDF output out of 74296 (max. 10000000)
 

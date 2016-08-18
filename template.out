@@ -23,7 +23,7 @@
 \BOOKMARK [1][-]{section.2.5}{Summary}{chapter.2}% 23
 \BOOKMARK [0][-]{chapter.3}{Integration Design and Architecture}{}% 24
 \BOOKMARK [1][-]{section.3.1}{Technical decisions}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.2}{Components Overview}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.2}{Architecture Overview}{chapter.3}% 26
 \BOOKMARK [1][-]{section.3.3}{Legion to Antidote flow}{chapter.3}% 27
 \BOOKMARK [1][-]{section.3.4}{Antidote to Legion flow}{chapter.3}% 28
 \BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 29

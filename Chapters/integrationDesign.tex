@@ -20,22 +20,32 @@ Our first integration design thought was to use the CRDT's data structures of bo
 After acknowledging this, the design of the integration was changed to be based on propagating operations, by executing on one system the operation that was made on the other.
 
 
-\section{Components Overview}
-\label{sec:components_overview}
-The integration of Legion and Antidote can be depicted into the following components:
+\section{Architecture Overview}
+\label{sec:architecture_overview}
+Integrating Legion with other storage systems, should be made in a modular and decoupled way, so if one decides to add support for another storage system, the recipe should be similar. This can be achieved by having system components that can easily be replaced.\par
+	The integration of Legion and Antidote can be depicted into the following components:
 \begin{description}
-\item[Antidote Client] \hfill \\
-
 
 \item[Antidote] \hfill \\
+The storage system to be integrated with Legion. Antidote will act as a persistent, stable, client-server model storage system. It will be synchronized with Legion, so both will have the entire set of updated objects in the system. An Antidote node can have it's data updated directly from an antidote client, or from an update that was propagated from Legion nodes.\par
+Besides that, Antidote will also keep meta-data related to the system synchronization, such as propagated operations identifiers and elements' unique tokens.
+
+\item[Antidote Client] \hfill \\
+This component is one of the entry points of information into the system. An Antidote client can manipulate the system's data set by making calls to modify the state of Antidote's objects.\par
+	This client is written in javascript and it uses the integration proxy in order to make read and write requests.
 
 
 \item[Legion Client] \hfill \\
+This component is a Legion instance in the system. It acts as an entry point of information to the system and it also as the responsibility to keep it self and the other Legion nodes updated and synchronized.
 
-\item[Legion's Object Server] \hfill \\
+
+\item[Legion's Objects Server] \hfill \\
+This component keeps a global view of what is happening in the Legion network. There can be one or more objects servers in the system, and Legion's synchronization events will pass through at least one of these. In the objects server also resides the logic for the synchronization between Antidote and Legion. This is done by watching for object update events and then propagating them.\par
+This component is written in NodeJS and it uses the integration proxy for the communication with Antidote, by making read and write calls.
 
 \item[Integration Proxy] \hfill \\
-
+This component is needed to establish communication with Antidote. It takes advantage of Antidote's protocol buffer interface to make read and write calls.\par
+The proxy can receive requests from either a Antidote client or a Legion's object server synchronization method. The request is parsed and a call is sent to Antidote. When the answer from antidote is received, it is redirected to who made the request. This component is written in NodeJS.
 
 \end{description}
 

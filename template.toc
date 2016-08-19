@@ -90,36 +90,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Distributed Coordination Services}{17}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Summary}{18}{section.2.5}
+\contentsline {section}{\numberline {2.5}Data Serialization}{18}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Integration Design and Architecture}{19}{chapter.3}
+\contentsline {subsection}{\numberline {2.5.1}Data Serialization mechanisms}{18}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Technical decisions}{19}{section.3.1}
+\contentsline {section}{\numberline {2.6}Summary}{19}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Architecture Overview}{20}{section.3.2}
+\contentsline {chapter}{\chapternumberline {3}Integration Design and Architecture}{21}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Legion to Antidote flow}{21}{section.3.3}
+\contentsline {section}{\numberline {3.1}Technical decisions}{21}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{21}{section.3.4}
+\contentsline {section}{\numberline {3.2}Architecture Overview}{22}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Integration Implementation}{23}{chapter.4}
+\contentsline {section}{\numberline {3.3}Legion to Antidote flow}{23}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Supported Data Types}{23}{section.4.1}
+\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{23}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Antidote changes}{23}{section.4.2}
+\contentsline {chapter}{\chapternumberline {4}Integration Implementation}{25}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Legion changes}{23}{section.4.3}
+\contentsline {section}{\numberline {4.1}Supported Data Types}{25}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Proxy Development}{23}{section.4.4}
+\contentsline {section}{\numberline {4.2}Antidote changes}{25}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Operation Propagation}{23}{section.4.5}
+\contentsline {section}{\numberline {4.3}Legion changes}{25}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Legion to Antidote flow}{23}{section.4.6}
+\contentsline {section}{\numberline {4.4}Proxy Development}{25}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Antidote to Legion flow}{23}{section.4.7}
+\contentsline {section}{\numberline {4.5}Operation Propagation}{25}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Evaluation}{25}{chapter.5}
+\contentsline {section}{\numberline {4.6}Legion to Antidote flow}{25}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{27}{section*.7}
+\contentsline {section}{\numberline {4.7}Antidote to Legion flow}{25}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{31}{section*.9}
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{27}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{29}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Webography}{33}{section*.9}

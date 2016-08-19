@@ -297,6 +297,32 @@ In large scale distributed applications, there is a need for some sort of coordi
 
 \end{description}
 
+\section{Data Serialization}
+\label{sec:data_serialization}
+
+In a distributed system messages are constantly being sent and received between several nodes. This communication between nodes takes a crucial role in the system performance\cite{serialization}, so most systems today use data structure serialization mechanisms. These mechanisms turn the application's internal objects into a structured format that can be sent to another node.\par
+	These formats usually support a way to manipulate the written data, so it can be easily created by the sending node and easily read and parsed by the receiving node.
+
+\subsection{Data Serialization mechanisms}
+
+\begin{description}
+
+\item[XML ~\cite{xml}] XML is a serialization mechanism that is expressed as a markup language. XML was developed by members of the W3C and has been around for a while, thus creating a large user base around the world.\par
+	XML was developed having in mind a straightforwardly use over the internet, so it is widely supported. The message's format allows to be parsed without knowing it's schema in advance and it is human readable.\par
+	Despite it's easy usability and support, one of it's drawbacks is the very verbose syntax.
+
+\item[JSON ~\cite{json}] JSON, JavaScript Object Notation is a lightweight format to serialize data. JSON expresses the content of a javascript object and so it can represent four primitive data types (string, numbers, booleans and null) and two structured types (objects and arrays).\par
+	It is widely used in a browser context, and as well as XML, it is human readable, but it removes the overhead of the verbose markup.\par
+	However, JSON also has it's shortcomings, such as extensibility drawbacks and lack of input validation.
+
+\item[Protocol Buffers ~\cite{protocol_buffers}]
+Protocol buffers is the google's solution for data serialization. Opposingly to XML and JSON, it encodes data into a binary format, so it can have a smaller size going through the network. Also, the message format are defined in a .proto file, that will be used to serialize and parse the content of the message. Without the knowledge of the it's format it is not trivial to decode the message.\par
+	The message format specification is done a syntax similar to JSON. The field types can be numbers (integer or floating-point), booleans, strings, raw bytes, or even other protocol buffer message.\par
+	This binary format suits the needs of modern distributed applications by reducing the size of the messages traded between nodes. A drawback of using a binary serialization is not being human readable.
+
+\end{description}
+
+
 \section{Summary}
 \label{sec:summary}
 This chapter has covered the existing work that will support, influence, and help the development of this thesis.\par

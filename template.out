@@ -20,20 +20,22 @@
 \BOOKMARK [2][-]{subsection.2.3.2}{Structured vs Unstructured}{section.2.3}% 20
 \BOOKMARK [1][-]{section.2.4}{Distributed Coordination}{chapter.2}% 21
 \BOOKMARK [2][-]{subsection.2.4.1}{Distributed Coordination Services}{section.2.4}% 22
-\BOOKMARK [1][-]{section.2.5}{Summary}{chapter.2}% 23
-\BOOKMARK [0][-]{chapter.3}{Integration Design and Architecture}{}% 24
-\BOOKMARK [1][-]{section.3.1}{Technical decisions}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.2}{Architecture Overview}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.3}{Legion to Antidote flow}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.4}{Antidote to Legion flow}{chapter.3}% 28
-\BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 29
-\BOOKMARK [1][-]{section.4.1}{Supported Data Types}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.2}{Antidote changes}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.3}{Legion changes}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.4}{Proxy Development}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.5}{Operation Propagation}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.6}{Legion to Antidote flow}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.7}{Antidote to Legion flow}{chapter.4}% 36
-\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 37
-\BOOKMARK [0][-]{section*.7}{Bibliography}{}% 38
-\BOOKMARK [0][-]{section*.9}{Webography}{}% 39
+\BOOKMARK [1][-]{section.2.5}{Data Serialization}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.5.1}{Data Serialization mechanisms}{section.2.5}% 24
+\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}% 25
+\BOOKMARK [0][-]{chapter.3}{Integration Design and Architecture}{}% 26
+\BOOKMARK [1][-]{section.3.1}{Technical decisions}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.2}{Architecture Overview}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.3}{Legion to Antidote flow}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.4}{Antidote to Legion flow}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Supported Data Types}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Antidote changes}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Legion changes}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Proxy Development}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Operation Propagation}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.6}{Legion to Antidote flow}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.7}{Antidote to Legion flow}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 39
+\BOOKMARK [0][-]{section*.7}{Bibliography}{}% 40
+\BOOKMARK [0][-]{section*.9}{Webography}{}% 41

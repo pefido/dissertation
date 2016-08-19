@@ -19,53 +19,53 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Database file #1: template-blx.bib
 Database file #2: bibliography.bib
 Warning--I'm ignoring distributed_caching's extra "keywords" field
---line 199 of file bibliography.bib
-Warning--I'm ignoring distributed_caching's extra "keywords" field
---line 200 of file bibliography.bib
+--line 201 of file bibliography.bib
 Warning--I'm ignoring distributed_caching's extra "keywords" field
 --line 202 of file bibliography.bib
+Warning--I'm ignoring distributed_caching's extra "keywords" field
+--line 204 of file bibliography.bib
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
-You've used 28 entries,
+You've used 32 entries,
             6256 wiz_defined-function locations,
-            1373 strings with 15308 characters,
-and the built_in function-call counts, 166143 in all, are:
-= -- 11739
-> -- 2897
-< -- 971
-+ -- 4266
-- -- 1008
-* -- 12003
-:= -- 16542
+            1392 strings with 16013 characters,
+and the built_in function-call counts, 184189 in all, are:
+= -- 12886
+> -- 3198
+< -- 1063
++ -- 4674
+- -- 1121
+* -- 13310
+:= -- 18249
 add.period$ -- 0
-call.type$ -- 28
-change.case$ -- 572
+call.type$ -- 32
+change.case$ -- 608
 chr.to.int$ -- 74
-cite$ -- 54
-duplicate$ -- 18609
-empty$ -- 15403
-format.name$ -- 1805
-if$ -- 33893
+cite$ -- 62
+duplicate$ -- 20679
+empty$ -- 17224
+format.name$ -- 2011
+if$ -- 37627
 int.to.chr$ -- 0
-int.to.str$ -- 77
+int.to.str$ -- 85
 missing$ -- 0
-newline$ -- 1068
-num.names$ -- 1370
-pop$ -- 9456
+newline$ -- 1174
+num.names$ -- 1499
+pop$ -- 10825
 preamble$ -- 1
-purify$ -- 732
+purify$ -- 784
 quote$ -- 0
-skip$ -- 4939
+skip$ -- 5485
 stack$ -- 0
-substring$ -- 19114
-swap$ -- 4652
-text.length$ -- 717
-text.prefix$ -- 31
+substring$ -- 20942
+swap$ -- 5157
+text.length$ -- 810
+text.prefix$ -- 35
 top$ -- 1
-type$ -- 934
+type$ -- 1070
 warning$ -- 0
-while$ -- 2146
+while$ -- 2360
 width$ -- 0
-write$ -- 1041
+write$ -- 1143
 (There were 3 warnings)

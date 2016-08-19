@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.10)  18 AUG 2016 17:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.10)  19 AUG 2016 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2455,7 +2455,7 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 251
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-<unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf, id=163, 597.23125pt 
+<unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf, id=171, 597.23125pt 
 x 845.1575pt>
 File: unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf Graphic file (ty
 pe pdf)
@@ -2529,11 +2529,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
 ] [12
 
-] (./template.toc
-Underfull \vbox (badness 2103) has occurred while \output is active []
-
- [13])
-[14] (./template.lof) [15
+] (./template.toc [13]) [14]
+(./template.lof) [15
 
 
 ] [16
@@ -2575,18 +2572,20 @@ LaTeX Warning: Reference `cha:proposed_work' on page 3 undefined on input line
 ) (./Chapters/relatedWork.tex [3] [4
 
 ] [5] [6] [7] [8] [9] [10] [11] [12]
-[13] [14] [15] [16] [17]) (./Chapters/integrationDesign.tex [18] [19
+[13] [14] [15] [16] [17] [18]) (./Chapters/integrationDesign.tex [19] [20
 
-] [20])
-(./Chapters/integrationImplementation.tex [21] [22
+]
+[21] [22]) (./Chapters/integrationImplementation.tex [23] [24
 
-]) (./Chapters/evaluation.tex [23] [24
+])
+(./Chapters/evaluation.tex [25] [26
 
-]) [25] [26
+]) [27] [28
 
-] [27] [28] [29] [30
+] [29] [30] [31] [32
 
-] [31] [32
+] [33]
+[34
 
 ]
 \tf@toc=\write8
@@ -2604,7 +2603,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: 85F2F855D56C64AC48935F0E696DC65A;2516.
+(rerunfilecheck)             Checksum: 8E34A77E2542D7D31104EDAEAC30FCF2;2664.
 
 
 LaTeX Warning: There were undefined references.
@@ -2617,28 +2616,30 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37439 strings out of 493014
- 644469 string characters out of 6139325
- 1243010 words of memory out of 5000000
- 39841 multiletter control sequences out of 15000+600000
+ 37463 strings out of 493014
+ 645053 string characters out of 6139325
+ 1244010 words of memory out of 5000000
+ 39857 multiletter control sequences out of 15000+600000
  204718 words of font info for 321 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,13n,74p,1953b,2651s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fon
-ts/enc/dvips/kpfonts/kpfonts-expert.enc}</usr/share/texmf-dist/fonts/type1/publ
-ic/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbsc
-8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/
-texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfo
-nts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></
-usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/share/texmf-
-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb
-8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (50 pages, 297896 bytes).
+ 68i,13n,74p,1953b,2642s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share
+/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/publ
+ic/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbne
+.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbsc8a.pfb></usr/share
+/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfont
+s/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmite.pfb></
+usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-d
+ist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
+sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
+are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
+/type1/urw/helvetic/uhvr8a.pfb>
+Output written on template.pdf (52 pages, 307648 bytes).
 PDF statistics:
- 668 PDF objects out of 1000 (max. 8388607)
- 591 compressed objects within 6 object streams
- 166 named destinations out of 1000 (max. 500000)
- 62282 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 623 compressed objects within 7 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 62298 words of extra memory for PDF output out of 74296 (max. 10000000)
 

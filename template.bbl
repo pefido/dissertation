@@ -185,6 +185,73 @@
     \field{year}{2012}
   \endentry
 
+  \entry{json}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BT}{%
+         family={Bray},
+         family_i={B\bibinitperiod},
+         given={Tim},
+         given_i={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BT1}
+    \strng{fullhash}{BT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{The javascript object notation (json) data interchange
+  format}
+    \field{year}{2014}
+  \endentry
+
+  \entry{xml}{article}{}
+    \name{author}{5}{}{%
+      {{hash=BT}{%
+         family={Bray},
+         family_i={B\bibinitperiod},
+         given={Tim},
+         given_i={T\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Paoli},
+         family_i={P\bibinitperiod},
+         given={Jean},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=SMCM}{%
+         family={Sperberg-McQueen},
+         family_i={S\bibinitperiod-M\bibinitperiod},
+         given={C\bibnamedelima Michael},
+         given_i={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=ME}{%
+         family={Maler},
+         family_i={M\bibinitperiod},
+         given={Eve},
+         given_i={E\bibinitperiod},
+      }}%
+      {{hash=YF}{%
+         family={Yergeau},
+         family_i={Y\bibinitperiod},
+         given={Fran{\c{c}}ois},
+         given_i={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BT+1}
+    \strng{fullhash}{BTPJSMCMMEYF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{16}
+    \field{title}{Extensible markup language (XML)}
+    \field{volume}{16}
+    \field{journaltitle}{World Wide Web Consortium Recommendation
+  REC-xml-19980210. http://www. w3. org/TR/1998/REC-xml-19980210}
+    \field{year}{1998}
+  \endentry
+
   \entry{redis}{book}{}
     \name{author}{1}{}{%
       {{hash=CJL}{%
@@ -964,6 +1031,17 @@
     \field{year}{2001}
   \endentry
 
+  \entry{protocol_buffers}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{note}{Accessed: 2016-08-19}
+    \field{title}{{Protocol buffers:} Google's data interchange format}
+    \verb{url}
+    \verb https://developers.google.com/protocol-buffers/docs/overview
+    \endverb
+  \endentry
+
   \entry{state_machine_replication}{article}{}
     \name{author}{1}{}{%
       {{hash=SF}{%
@@ -1061,6 +1139,38 @@
     }
     \field{type}{techreport}
     \field{year}{1982}
+  \endentry
+
+  \entry{serialization}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SA}{%
+         family={Sumaray},
+         family_i={S\bibinitperiod},
+         given={Audie},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=MSK}{%
+         family={Makki},
+         family_i={M\bibinitperiod},
+         given={S\bibnamedelima Kami},
+         given_i={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{SAMSK1}
+    \strng{fullhash}{SAMSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Proceedings of the 6th international conference on
+  ubiquitous information management and communication}
+    \field{pages}{48}
+    \field{title}{A comparison of data serialization formats for optimal
+  efficiency on a mobile platform}
+    \field{year}{2012}
   \endentry
 
   \entry{merkle}{inproceedings}{}

@@ -23,6 +23,16 @@ After acknowledging this, the design of the integration was changed to be based 
 \section{Architecture Overview}
 \label{sec:architecture_overview}
 Integrating Legion with other storage systems, should be made in a modular and decoupled way, so if one decides to add support for another storage system, the recipe should be similar. This can be achieved by having system components that can easily be replaced.\par
+	The following diagram shows the architecture of the integration between the two systems:
+	
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{files/architecture.png}
+\caption{Integration Architecture}
+\label{architecture}
+\end{figure}
+
+\par
 	The integration of Legion and Antidote can be depicted into the following components:
 \begin{description}
 
@@ -51,6 +61,16 @@ The proxy can receive requests from either a Antidote client or a Legion's objec
 
 \section{Legion to Antidote flow}
 \label{sec:legion_to_antidote_flow}
+This section explains the process of propagating an update issued by a Legion node into Antidote.\par
+	In order to send the updates from Legion to Antidote we must first detect these updates. To do so, we opted for an event driven model, by relying on Legion's objects server, since every update issued by a Legion node will end up in at least one of the objects servers.\par
+	Once the event is detected in the objects server, the incoming message is filtered based on the event type. If the event contained in the message is indeed an update, that objects server will issue one or more update requests to the integration proxy. Once a request reaches the integration proxy, this one will decouple the request into the the actual update data and meta-data. These two are then sent to Antidote as write requests. Besides writing the data into Antidote, the Integration proxy certifies that the operation has not been executed already, since there can be more than one objects server to issue the request. This is done by checking the meta-data stored in Antidote.\par
+	Once the update reaches Antidote successfully, the integration proxy returns to the objects server.
 
 \section{Antidote to Legion flow}
 \label{sec:antidote to legion flow}
+This section explains the process of propagating an update issued by an Antidote client into Legion.\par
+	When an Antidote client issues an update, it is firstly sent to the integration Proxy. This one receives the request and creates the needed data and meta-data write requests, sending them to Antidote. The integration proxy returns to the client when the update is successful.\par
+	The next step is to send this update to every Legion node. This can be done by sending the update to the objects servers, which will then propagate the message to every node.\par
+	At this point there are two methods of sending the update to the objects server. It can be done with a public/subscribe system that fires an event each time an Antidote object is updated, or having Legion's objects servers to probe periodically for new updates on Antidote. The first option would definitely be more performant, because scanning Antidote periodically for updates would have some overhead. With this in mind we talked to the development team in order to know the best way to to this. One alternative was to use Antidote's internal updates propagation mechanism to also fire an event to the exterior, but this solution had two major problems. The update propagation mechanism would not handle lost messages, this would have to be handled by us, and to exposed such internal mechanism to the outside would go against the Antidote's design path. With this, we concluded that we should proceed to the second option.\par
+	In order to periodically check for updates in Antidote, we used the system log to get the operations executed since a certain timestamp.\par
+	Legion's objects servers will periodically make a request to the integration proxy, in order to check the operations executed in Antidote since the last seen timestamp. The proxy relays the request to antidote and returns the result. If there are no new updates, then the objects server only updates it's last seen timestamp. If there are new updates that were not propagated to legion, the objects server executes the operation locally, and then propagates it to every Legion node.

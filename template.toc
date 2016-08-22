@@ -104,26 +104,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Legion to Antidote flow}{23}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{23}{section.3.4}
+\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{24}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Integration Implementation}{25}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Integration Implementation}{27}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Supported Data Types}{25}{section.4.1}
+\contentsline {section}{\numberline {4.1}Supported Data Types}{27}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Antidote changes}{25}{section.4.2}
+\contentsline {section}{\numberline {4.2}Antidote changes}{27}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Legion changes}{25}{section.4.3}
+\contentsline {section}{\numberline {4.3}Legion changes}{27}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Proxy Development}{25}{section.4.4}
+\contentsline {section}{\numberline {4.4}Proxy Development}{27}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Operation Propagation}{25}{section.4.5}
+\contentsline {section}{\numberline {4.5}Operation Propagation}{27}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Legion to Antidote flow}{25}{section.4.6}
+\contentsline {section}{\numberline {4.6}Legion to Antidote flow}{27}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Antidote to Legion flow}{25}{section.4.7}
+\contentsline {section}{\numberline {4.7}Antidote to Legion flow}{27}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Evaluation}{27}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{29}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{29}{section*.7}
+\contentsline {chapter}{Bibliography}{31}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{33}{section*.9}
+\contentsline {chapter}{Webography}{35}{section*.9}

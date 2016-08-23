@@ -1,11 +1,55 @@
 \chapter{Integration Implementation}
 \label{cha:integration_implementation}
 
+In this chapter we will focus on the implementation of the integration, describing the work done in each component, the connection between components and emphasizing some important implementation details.\par
+	To cover this chapter we will start by
+\begin{enumerate*}[(i)]
+
+\item describing the supported data types and how they translate between systems, then we will 
+
+\item enumerate the changes we deemed needed to Antidote, which are mainly an afford to make the system more language abstract. After this, we will show as well the 
+
+\item changes made to Legion, in the objects server. The next component depicted is the 
+
+\item integration proxy, which was developed from scratch in order to communicate with Antidote. After the component's description we will get a more in depth description of the update propagation flow, from
+
+\item Legion to Antidote, and then from
+
+\item Antidote to Legion.
+
+\end{enumerate*}	
+
 \section{Supported Data Types}
 \label{sec:supported_data_types}
+This section describes the supported data types from Legion and how they translate to the correspondent Antidote data type.
+
+\subsection{Sets}
+\label{sec:sets}
+This integration supports sets as one of the CRDTs that Legion offers. More precisely, the supported sets in this integration are operation sets.\par
+	Legion holds it's data types in the objectStore component and internally implements this operation set as a ORSet, as described in \cite{crdt}. An ORSet is a CmRDT, which characterizes it self as an operation based CRDT that propagates it's changes based on the operations done. This suits our model of operation propagation.\par
+	In order to store this data type in Antidote, we naturally also chose an ORSet, as Antidote supports it natively.\par
+	When an operation is done in a system's ORSet, the same operation will be issued to the other system's ORSet. This process is straight forward, but we need to keep track of the unique identifiers that pair with each element of the set. This is important, for example, when deleting an element from the set. We want to delete a particular element with a unique id, not any element that matches. Because of this, there are also metadata sets in Antidote that store this correspondence between Legion and Antidote unique tokens.
+
+\subsection{Counters}
+\label{sec:counters}
 
 \section{Antidote changes}
 \label{sec:antidote_changes}
+In this section we will describe the changes to Antidote that were needed in order to make this integration possible.\par
+	Antidote is a storage system based in Riak Core and it is still in a fresh stage of development. It is written in Erlang and it offers two interfaces for clients to communicate with: 
+\begin{enumerate*}[(i)]
+\item destributed Erlang interface, and 
+\item protocol buffer interface.
+\end{enumerate*}
+\par
+	The first one uses distributed Erlang and can only be used by an Erlang client, which is of no use to us in the integration.\par
+	The second one uses google's protocol buffer serialization mechanism to offer an interface that can be language abstract. This would suit our needs since we want to be able to communicate with Antidote via other javascript or NodeJS components. Although we were able to communicate with Antidote like this, we soon discovered that this interface was using Erlang binaries over the protocol buffers, which were extremely difficult to encode/ decode in the javascript side. Besides this, it was missing some important calls comparing to the distributed Erlang interface.\par
+	In order to proceed with the integration the following features needed to be available in the protocol buffer interface:
+	\begin{itemize}
+	\item protocol buffer messages could would contain basic data types, like numbers or strings for the interface to be language abstract.
+	\item API methods that returned not only the object's value, but also it's hidden information, like commit timestamps and unique identifiers.
+	\item An API method that returns the content of the system log since a certain timestamp. 
+	\end{itemize}
 
 \section{Legion changes}
 \label{sec:legion_changes}
@@ -13,8 +57,8 @@
 \section{Proxy Development}
 \label{sec:proxy_development}
 
-\section{Operation Propagation}
-\label{sec:operation_propagation}
+%\section{Operation Propagation}
+%\label{sec:operation_propagation}
 
 \section{Legion to Antidote flow}
 \label{sec:legion_to_antidote_flow}

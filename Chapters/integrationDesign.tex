@@ -45,7 +45,7 @@ This component is one of the entry points of information into the system. An Ant
 	This client is written in javascript and it uses the integration proxy in order to make read and write requests.
 
 
-\item[Legion Client] \hfill \\
+\item[Legion Node] \hfill \\
 This component is a Legion instance in the system. It acts as an entry point of information to the system and it also as the responsibility to keep it self and the other Legion nodes updated and synchronized.
 
 
@@ -67,7 +67,7 @@ This section explains the process of propagating an update issued by a Legion no
 	Once the update reaches Antidote successfully, the integration proxy returns to the objects server.
 
 \section{Antidote to Legion flow}
-\label{sec:antidote to legion flow}
+\label{sec:antidote_to_legion_flow}
 This section explains the process of propagating an update issued by an Antidote client into Legion.\par
 	When an Antidote client issues an update, it is firstly sent to the integration Proxy. This one receives the request and creates the needed data and meta-data write requests, sending them to Antidote. The integration proxy returns to the client when the update is successful.\par
 	The next step is to send this update to every Legion node. This can be done by sending the update to the objects servers, which will then propagate the message to every node.\par

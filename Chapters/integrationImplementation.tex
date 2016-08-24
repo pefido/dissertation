@@ -53,7 +53,7 @@ In this section we will describe the changes to Antidote that were needed in ord
 \par
 	With the help from Antidote's development team, these requirements were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those to the exterior.\par
 	In order to make the interface language abstract, it was implemented a JSON data structure over protocol buffer messages. This was possible by having a JSON encoding/ decoding component in Antidote's protocol buffer interface. Although this might not be the best solution, since it partially defeats the purpose of protocol buffers, it was the more practical solution regarding this thesis time span.\par
-	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the value field is a JSON object with the request.
+	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the 'value' field is a JSON object with the request.
 \begin{lstlisting}[caption={Protocol Buffer interface methods before},label={lst:proto1}]
 message ApbReadObjects {
   repeated ApbBoundObject boundobjects = 1;
@@ -92,6 +92,70 @@ message ApbJsonRequest {
 
 \section{Legion changes}
 \label{sec:legion_changes}
+The majority of the code from the implementation was developed in Legion, more specifically in the objects server component. This is where the logic of the synchronization resides.\par
+	To manage the synchronization between Legion and Antidote there two main parts that needed to be implemented: 
+\begin{enumerate*}[(i)]
+\item propagate updates that reach the objects server from a legion node, and 
+\item periodically check for updates that were issued directly to Antidote.
+\end{enumerate*}
+
+\subsection{Legion to Antidote flow}
+\label{sec:legion_changes_legion_to_antidote_flow}
+As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by a Legion node will be caught in the objects server. A message that reaches the objects server can be of several types, but the ones that interests us are the ones having the type 'contentFromNetwork'. By catching this event we know that an update has been issued, so now we can parse the message and get the details that we need in order to propagate the operation to Antidote. Listing \ref{lst:update_example} shows an example of an incoming update message.\par
+	After parsing the message, a request is sent to the integration proxy, containing the element, the operation and the unique identifiers needed. The remaining process is then handled by the integration proxy, that returns when the update propagation was successful.
+
+\begin{lstlisting}[caption={Legion update content message example},label={lst:update_example}]
+{
+  type:"OS:C",
+  sender:1,
+  ID:7012120591,
+  content:{
+    type:"OPLIST",
+    objectID:"objectID2",
+    operations:[
+      {
+        dependencyVV:{},
+        opID:1,
+        result:{
+          element:"a",
+          unique:"6651411189259640"
+        },
+        opName:"add",
+        clientID:"1"
+      }
+    ]
+  },
+  destination:"localhost:8004"
+}
+\end{lstlisting}
+
+\subsection{Antidote to Legion flow}
+\label{sec:legion_changes_antidote to legion flow}
+As mentioned before in \ref{sec:antidote_to_legion_flow}, the process of propagating updates from Antidote to the Legion network is based on periodic probing.\par
+	In order to periodically check for new updates in Antidote, there is a method that starts running when both the objects servers and Antidote start. This method fires an event every two seconds that makes a request to the integration proxy for the getLogOperations method. This request contains the element to search for and the vector clock that matches the last seen timestamp of Antidote's state in the objects server. An example of  the operations log response is shown in listing \ref{lst:log_example}.\par
+	If there exists new updates to the element, these will be locally executed in the objects server, and then propagated to the all the Legion nodes. After this, another request is made to the integration proxy, in order to keep the track of the correspondent unique identifiers from Antidote to Legion.\par
+	At the end of this process we also need to update the last seen timestamp of Antidote's state in the objects server. This information also comes in the answer from the getLogOperations request.
+	
+\begin{lstlisting}[caption={Antidote log response example},label={lst:log_example}]
+{log_operations:[
+  {
+    clocksi_payload:{
+        key: {json_value:"objectID2"}
+    },
+    type:"crdt_orset",
+    update:{
+      add:[
+        {json_value:"b"},
+        {binary64:"YySEUYb9uvr4EMO3glI8BWTKurw="}
+      ]
+    },
+       commit_time:[
+         {dcid:["antidote@127.0.0.1",1472,53665,947954]},
+         1472053805871290
+   ]
+  }
+]}
+\end{lstlisting}
 
 \section{Proxy Development}
 \label{sec:proxy_development}
@@ -99,8 +163,8 @@ message ApbJsonRequest {
 %\section{Operation Propagation}
 %\label{sec:operation_propagation}
 
-\section{Legion to Antidote flow}
-\label{sec:legion_to_antidote_flow}
+%\section{Legion to Antidote flow}
+%\label{sec:legion_to_antidote_flow}
 
-\section{Antidote to Legion flow}
-\label{sec:antidote to legion flow}
+%\section{Antidote to Legion flow}
+%\label{sec:antidote to legion flow}

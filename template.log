@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  24 AUG 2016 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  24 AUG 2016 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2243,14 +2243,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count443
 \@quotereset=\count444
-(./template.aux
-
-LaTeX Warning: Label `sec:legion_to_antidote_flow' multiply defined.
-
-
-LaTeX Warning: Label `sec:antidote to legion flow' multiply defined.
-
-)
+(./template.aux)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 281.
@@ -2596,20 +2589,26 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 )
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-)) (./Chapters/evaluation.tex
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
-[30]) (./Chapters/conclusion.tex [31
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+) [30]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+)) (./Chapters/evaluation.tex
+[31] [32
 
-] [32
+]) (./Chapters/conclusion.tex [33] [34
 
-]) [33] [34
+]) [35] [36
 
-] [35] [36] [37] [38
+] [37] [38] [39]
+[40
 
-]
-[39] [40
+] [41] [42
 
 ]
 \tf@toc=\write8
@@ -2627,23 +2626,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 311.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: AF5F4D815A619C96504DBD1B517030C2;2762.
+(rerunfilecheck)             Checksum: D6D8F1B9D5106D5DEE9D48663865F315;2776.
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'template.run.xml'.
 \openout1 = `template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37927 strings out of 493013
- 649623 string characters out of 6139317
+ 38004 strings out of 493013
+ 650912 string characters out of 6139317
  1295513 words of memory out of 5000000
- 40261 multiletter control sequences out of 15000+600000
+ 40288 multiletter control sequences out of 15000+600000
  205621 words of font info for 324 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,74p,1953b,2642s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2660,10 +2656,10 @@ blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
 sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (58 pages, 346153 bytes).
+Output written on template.pdf (60 pages, 354507 bytes).
 PDF statistics:
- 802 PDF objects out of 1000 (max. 8388607)
- 711 compressed objects within 8 object streams
- 223 named destinations out of 1000 (max. 500000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 773 compressed objects within 8 object streams
+ 269 named destinations out of 1000 (max. 500000)
  62831 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -159,6 +159,60 @@ As mentioned before in \ref{sec:antidote_to_legion_flow}, the process of propaga
 
 \section{Proxy Development}
 \label{sec:proxy_development}
+This component, as mentioned in \ref{sec:architecture_overview}, links Antidote to the other components that need to exchange data.\par
+	The integration proxy as two main objectives in this system: 
+\begin{enumerate*}[(i)]
+\item work as a proxy by relaying the requests from both Antidote clients and Legion's objects servers to Antidote, and 
+\item handle the meta-data stored in Antidote, by always keeping it updated.
+\end{enumerate*}
+\par
+	In order to receive requests from the above mentioned components, this proxy acts as an HTTP server that exposes an interface with API routes to communicate with Antidote. The available API is shown in listing \ref{lst:proxy_api}. The API methods are simple, the methods are the same for all data types, being this resolved by the route in case of a GET or in the request payload in case of a PUT.\par
+	After this, the proxy will need to send a request of it's own to Antidote. In order to do so, we make use of the protocol buffer interface mentioned in \ref{lst:proto2}.\par
+	The second goal of the proxy is to keep the system's meta-data updated in Antidote. To attain this, every time an update is requested to the proxy, this one has to make a request to Antidote, in order to update the object, and another request to update the meta-data object. When handling an object's meta-data, there can be data corruption when more then one update is done concurrently over the same object, so in order to avoid this, we used the ZooKeeper system to act as a distributed locking mechanism that makes each update request to acquire a lock. This guarantees that we have mutual exclusion per object when manipulating the meta-data objects.\par
+	Every Antidote object as a meta-data object related. For example, if we have a set called 'objectID2', then there is a meta-data object called 'objectID2\_tokens' that contains a set of pairs that represents the correspondence between Antidote and Legion unique identifiers.
+	
+\begin{lstlisting}[caption={Integration proxy API},label={lst:proxy_api}]
+server.route({
+  method: 'GET',
+  path: '/ping',
+  handler: function (request, reply) {
+    ...
+  }
+}
+
+server.route({
+  method: 'GET',
+  path: '/readObjects/{key}/{type}',
+  handler: function (request, reply) {
+    ...
+  }
+}
+
+server.route({
+  method: 'GET',
+  path: '/getObjects/{key}/{type}',
+  handler: function (request, reply) {
+    ...
+  }
+}
+
+server.route({
+  method: 'PUT',
+  path: '/updateObjects',
+  handler: function (request, reply) {
+    ...
+  }
+}
+
+server.route({
+  method: 'GET',
+  path: '/getLogOps/{key}/{type}/{vClock}',
+  handler: function (request, reply) {
+    ...
+  }
+}
+\end{lstlisting}
+
 
 %\section{Operation Propagation}
 %\label{sec:operation_propagation}

@@ -1,5 +1,19 @@
 \chapter{Conclusion}
 \label{cha:conclusion}
+The work done in this thesis centers around Legion, a framework that uses peer-to-peer communication between clients in order to achieve improvements in client-to-client latency, lowering bandwidth usage on the server and supported disconnected operations from the centralized component.\par
+	One of the possible development paths for legion is the persistence integration with legacy storage systems, in order to offer a safe and stable storage solution and to allow users running new and old application to interact. This would make possible for client-server applications to run alongside Legion leveraged applications. Starting from this point, this thesis' work focuses in integrating Legion with Antidote, in order to achieve one of the goals for the Legion project.\par
+	We designed and implemented this integration, so that an Antidote based application can run alongside an application that uses Legion. In order to keep the two systems synchronized, we used an operation propagation logic, being reactive to events from Legion to Antidote and pro-active probing from Antidote to Legion.\par
+	To validate the implementation, we conducted a stack of benchmarks tests that can show us some metrics related to the integration performance and scalability. This metrics are based on message propagation time, stored meta-data size and variables such as number of clients, number of operations and operation message size.\par
+In summary, the main contributions of the work presented in this thesis are as follows:
+
+\begin{itemize}
+\item The development of a more language abstract interface for Antidote.
+\item The design and implementation of the integration between Legion and Antidote.
+\item An evaluation of the integration implementation.
+\end{itemize}
 
 \section{Future Work}
 \label{sec:future_work}
+After this thesis development, in order to consolidate and complement this integration, a number of future improvements can be mentioned.\par
+	The data types available in this implementation are sufficient to demonstrate a working application that uses both these systems, but in a real world scenario, there would be the need to have more data types in order to correctly support the creation of different application types.\par
+	The current Antidote protocol buffer interface allows us send and receive JSON objects serialized as protocol buffers 'bytes' data type. As this suffices for a working interface, it is not how protocol buffers were intended to be used. Another upgrade, not only to this integration, but also to the Antidote project, would be a refactoring of Antidote's protocol buffer interface.

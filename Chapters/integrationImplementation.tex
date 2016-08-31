@@ -21,17 +21,19 @@ In this chapter we will focus on the implementation of the integration, describi
 
 \section{Supported Data Types}
 \label{sec:supported_data_types}
-This section describes the supported data types from Legion and how they translate to the correspondent Antidote data type.
+This section describes the supported data types from Legion and how they translate to the correspondent Antidote data types.
 
 \subsection{Sets}
 \label{sec:sets}
 This integration supports sets as one of the CRDTs that Legion offers. More precisely, the supported sets in this integration are operation sets.\par
-	Legion holds it's data types in the objectStore component and internally implements this operation set as a ORSet, as described in \cite{crdt}. An ORSet is a CmRDT, which characterizes it self as an operation based CRDT that propagates it's changes based on the operations done. This suits our model of operation propagation.\par
-	In order to store this data type in Antidote, we naturally also chose an ORSet, as Antidote supports it natively.\par
-	When an operation is done in a system's ORSet, the same operation will be issued to the other system's ORSet. This process is straight forward, but we need to keep track of the unique identifiers that pair with each element of the set. This is important, for example, when deleting an element from the set. We want to delete a particular element with a unique id, not any element that matches. Because of this, there are also metadata sets in Antidote that store this correspondence between Legion and Antidote unique tokens.
+	Legion holds it's data types in the objectStore component and internally implements this operation set as a OR-Set, as described in \cite{crdt}. An ORSet is a CmRDT, which characterizes it self as an operation based CRDT that propagates it's changes based on the operations done. This suits our model of operation propagation.\par
+	In order to store this data type in Antidote, we naturally also chose an OR-Set, as Antidote supports it natively.\par
+	When an operation is done in a system's OR-Set, the same operation will be issued to the other system's OR-Set. This process is straight forward, but we need to keep track of the unique identifiers that pair with each element of the set. This is important, for example, when deleting an element from the set. We want to delete a particular element with a unique id, not any element that matches. Because of this, there are also metadata sets in Antidote that store this correspondence between Legion and Antidote unique tokens.
 
 \subsection{Counters}
 \label{sec:counters}
+One of the supported data types in Legion are Counters. They are internally implemented as a state based PN-Counter, as described in \cite{crdt}. Using a CvRDT means that the object will converge by propagating and merging its state. In order to match this data type in Antidote, we used a operation based PN-Counter.\par
+	To make the two counters synchronized, we must execute increments and decrements based on who issued the update. When a counter is updated in Legion, since this is a state based PN-Counter, its internal state will be propagated to at least one object server. With the counter's state in our hands, we will make a diff based on the current state of the Antidote's counter, the changes are then applied, in order to get the same state on both. When updating a counter in Antidote, since this one is operation based, we can simply apply the increments and decrements directly in the object server. In both cases we have to keep a meta data set to store the correspondence between operation IDs. This is necessary to avoid duplicated operations when more than one object server catches the same update.
 
 \section{Antidote changes}
 \label{sec:antidote_changes}

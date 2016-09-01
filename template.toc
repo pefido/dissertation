@@ -128,6 +128,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.1}Operation Propagation Time}{35}{section.5.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Legion to Antidote}{35}{subsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}Antidote to Legion}{35}{subsection.5.1.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Meta-Data Size}{35}{section.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Conclusion}{37}{chapter.6}

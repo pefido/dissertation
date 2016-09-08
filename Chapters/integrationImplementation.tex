@@ -32,7 +32,7 @@ This integration supports sets as one of the CRDTs that Legion offers. More prec
 
 \subsection{Counters}
 \label{sec:counters}
-One of the supported data types in Legion are Counters. They are internally implemented as a state based PN-Counter, as described in \cite{crdt}. Using a CvRDT means that the object will converge by propagating and merging its state. In order to match this data type in Antidote, we used a operation based PN-Counter.\par
+One of the supported data types in Legion are Counters. They are internally implemented as a state based PN-Counter, as described in \cite{crdt}. Using a CvRDT means that the object will converge by propagating and merging its state. In order to match this data type in Antidote, we used an operation based PN-Counter.\par
 	To make the two counters synchronized, we must execute increments and decrements based on who issued the update. When a counter is updated in Legion, since this is a state based PN-Counter, its internal state will be propagated to at least one object server. With the counter's state in our hands, we will make a diff based on the current state of the Antidote's counter, the changes are then applied, in order to get the same state on both. When updating a counter in Antidote, since this one is operation based, we can simply apply the increments and decrements directly in the object server. In both cases we have to keep a meta data set to store the correspondence between operation IDs. This is necessary to avoid duplicated operations when more than one object server catches the same update.
 
 \section{Antidote changes}
@@ -103,8 +103,26 @@ The majority of the code from the implementation was developed in Legion, more s
 
 \subsection{Legion to Antidote flow}
 \label{sec:legion_changes_legion_to_antidote_flow}
-As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by a Legion node will be caught in the objects server. A message that reaches the objects server can be of several types, but the ones that interests us are the ones having the type 'contentFromNetwork'. By catching this event we know that an update has been issued, so now we can parse the message and get the details that we need in order to propagate the operation to Antidote. Listing \ref{lst:update_example} shows an example of an incoming update message.\par
+As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by a Legion node will be caught in the objects server. Algorithm \ref{objects_server_update_propagation} shows the steps needed for the objects server to propagate each message. A message that reaches the objects server can be of several types, but the ones that interests us are the ones having the type 'contentFromNetwork'. By catching this event we know that an update has been issued, so now we can parse the message and get the details that we need in order to propagate the operation to Antidote. Listing \ref{lst:update_example} shows an example of an incoming update message.\par
 	After parsing the message, a request is sent to the integration proxy, containing the element, the operation and the unique identifiers needed. The remaining process is then handled by the integration proxy, that returns when the update propagation was successful.
+	
+\begin{algorithm}
+\caption{Objects Server update propagation}\label{objects_server_update_propagation}
+\begin{algorithmic}[1]
+%\Upon receive(update)
+\algblock{Upon}{End}
+\Upon { message:}
+  \If {$message.type$ = "contentFromNetwork"}
+      \State {$operationInfo$ $\gets$ parse($message.content$)}
+      \State {Send request($operationInfo$)}
+      \Upon { $Answer$:}
+        \Return {$Answer$}
+      \End
+  \EndIf
+\End
+\end{algorithmic}
+\end{algorithm}
+	
 
 \begin{lstlisting}[caption={Legion update content message example},label={lst:update_example}]
 {

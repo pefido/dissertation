@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  8 SEP 2016 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  9 SEP 2016 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2271,57 +2271,57 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./template.aux)
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 286.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 286.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 290.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 290.
 
  (/usr/share/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 286.
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 286.
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 286.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 286.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 290.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 290.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 290.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 290.
 
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 286.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 286.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 290.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 290.
 
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 286.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 286
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 290.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 290
 .
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 286.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 286.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 290.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 290.
 
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 286.
-LaTeX Font Info:    ... okay on input line 286.
-LaTeX Font Info:    Try loading font information for T1+jkp on input line 286.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 290.
+LaTeX Font Info:    ... okay on input line 290.
+LaTeX Font Info:    Try loading font information for T1+jkp on input line 290.
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 )
-LaTeX Info: Redefining \microtypecontext on input line 286.
+LaTeX Info: Redefining \microtypecontext on input line 290.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -2372,7 +2372,7 @@ e
 ))
 \AtBeginShipoutBox=\box55
 \c@lstlisting=\count459
-Package hyperref Info: Link coloring ON on input line 286.
+Package hyperref Info: Link coloring ON on input line 290.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2384,10 +2384,10 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 286.
-LaTeX Info: Redefining \ref on input line 286.
-LaTeX Info: Redefining \pageref on input line 286.
-LaTeX Info: Redefining \nameref on input line 286.
+LaTeX Info: Redefining \nameref on input line 290.
+LaTeX Info: Redefining \ref on input line 290.
+LaTeX Info: Redefining \pageref on input line 290.
+LaTeX Info: Redefining \nameref on input line 290.
 (./template.out) (./template.out)
 \@outlinefile=\write7
 \openout7 = `template.out'.
@@ -2419,13 +2419,13 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 286.
-Package biblatex Info: Reference segment=0 on input line 286.
+Package biblatex Info: Reference section=0 on input line 290.
+Package biblatex Info: Reference segment=0 on input line 290.
  ABD: EveryShipout initializing macros
 \mpwidth=\skip294
 \mpheight=\skip295
 \unlthesis@coverbox=\box56
-LaTeX Font Info:    Try loading font information for T1+phv on input line 291.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 295.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -2435,11 +2435,11 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 295.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 295.
 \unlthesis@savebox=\box57
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 291.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 295.
 
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
@@ -2449,25 +2449,25 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `jkp' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 291
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 295
 .
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 291
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 295
 .
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 291
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 295
 .
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 291
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 295
 .
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
@@ -2479,12 +2479,12 @@ File: unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf Graphic file (ty
 pe pdf)
  <use unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf>
 Package pdftex.def Info: unlthesis-files/Schools/unl/fct/Images/cover-msc-std.p
-df used on input line 291.
+df used on input line 295.
 (pdftex.def)             Requested size: 597.54874pt x 845.06516pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 295.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 295.
 
 [1
 
@@ -2492,13 +2492,13 @@ Package babel Info: Redefining portuges shorthand "|
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./unlthesis-files/Schools/
 unl/fct/Images/cover-msc-std.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 295.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 295.
  [2
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 293.
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 297.
 
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
@@ -2509,8 +2509,8 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 293.
-LaTeX Font Info:    Try loading font information for T1+jkptt on input line 293
+(babel)             in language  on input line 297.
+LaTeX Font Info:    Try loading font information for T1+jkptt on input line 297
 .
 
 (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
@@ -2559,12 +2559,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--7
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls) o
-n input line 300.
+n input line 304.
 
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={acrony
 m}]. Rerun may be required (or you may have forgotten to use commands like \gls
-) on input line 300.
+) on input line 304.
 
 (./Chapters/introduction.tex
 Underfull \vbox (badness 1609) has occurred while \output is active []
@@ -2609,28 +2609,31 @@ l.40 ...that was propagated from Legion nodes.\par
 [23]) (./Chapters/integrationImplementation.tex [24] [25] [26
 
 ] [27] [28]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 62.
+
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [29]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 )
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 110.
+Underfull \vbox (badness 1546) has occurred while \output is active []
 
-(/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-) [30]
+ [30]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [31]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-) [32])
-(./Chapters/evaluation.tex [33] [34
+) [32]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+) [33])
+(./Chapters/evaluation.tex [34] [35] [36
 
 ]
-<files/graph1.png, id=760, 602.25pt x 372.39125pt>
+<files/graph1.png, id=774, 602.25pt x 372.39125pt>
 File: files/graph1.png Graphic file (type png)
  <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 13.
@@ -2638,14 +2641,14 @@ Package pdftex.def Info: files/graph1.png used on input line 13.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
-<files/chart2.png, id=765, 602.25pt x 372.39125pt>
+ [37]
+<files/chart2.png, id=780, 602.25pt x 372.39125pt>
 File: files/chart2.png Graphic file (type png)
  <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 20.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2658,26 +2661,26 @@ l.26
                                                   \fi \fi 
 l.26 
       <./files/graph1.png> <./files/chart2.png>]
-<files/chart3.png, id=775, 602.25pt x 372.39125pt>
+<files/chart3.png, id=791, 602.25pt x 372.39125pt>
 File: files/chart3.png Graphic file (type png)
  <use files/chart3.png>
 Package pdftex.def Info: files/chart3.png used on input line 35.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 )
-(./Chapters/conclusion.tex [37pdfTeX warning (ext4): destination with the same 
+(./Chapters/conclusion.tex [39pdfTeX warning (ext4): destination with the same 
 identifier (name{figure.5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Conclusion} <./files/chart3.png>] [38
+            {Conclusion} <./files/chart3.png>] [40
 
-] [39]) [40] [41
+] [41]) [42] [43
 
-] [42]
-[43] [44
+] [44]
+[45] [46
 
-] [45] [46
+] [47] [48
 
 ]
 \tf@toc=\write8
@@ -2689,11 +2692,11 @@ l.1 \chapter
 \tf@lot=\write10
 \openout10 = `template.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 316.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 316.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 320.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 320.
  (./template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 316.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 316.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 320.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 320.
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: 1B32379525CC705899D210ECE6B85E1C;2968.
 
@@ -2705,10 +2708,10 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38643 strings out of 493013
- 660310 string characters out of 6139317
- 1319356 words of memory out of 5000000
- 40855 multiletter control sequences out of 15000+600000
+ 38720 strings out of 493013
+ 661464 string characters out of 6139317
+ 1307420 words of memory out of 5000000
+ 40927 multiletter control sequences out of 15000+600000
  206524 words of font info for 327 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,74p,1953b,3864s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2726,10 +2729,10 @@ sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttbn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on template.pdf (64 pages, 413112 bytes).
+Output written on template.pdf (66 pages, 418073 bytes).
 PDF statistics:
- 979 PDF objects out of 1000 (max. 8388607)
- 874 compressed objects within 9 object streams
- 322 named destinations out of 1000 (max. 500000)
+ 995 PDF objects out of 1000 (max. 8388607)
+ 888 compressed objects within 9 object streams
+ 327 named destinations out of 1000 (max. 500000)
  63382 words of extra memory for PDF output out of 74296 (max. 10000000)
 

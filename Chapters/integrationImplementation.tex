@@ -55,7 +55,30 @@ In this section we will describe the changes to Antidote that were needed in ord
 \par
 	With the help from Antidote's development team, these requirements were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those to the exterior.\par
 	In order to make the interface language abstract, it was implemented a JSON data structure over protocol buffer messages. This was possible by having a JSON encoding/ decoding component in Antidote's protocol buffer interface. Although this might not be the best solution, since it partially defeats the purpose of protocol buffers, it was the more practical solution regarding this thesis time span.\par
-	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the 'value' field is a JSON object with the request.
+	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the 'value' field is a JSON object with the request.\par
+	After these changes were implemented, we were able to proceed with the system integration. Algorithm \ref{antidote_interaction} shows how Antidote interacts with the other components. When handling a write request, Antidote propagates the update internally and replies with information from that transaction. When the request is a read, Antidote replies with the object itself, including unique identifiers and transaction information. The requests are always paired with a timestamp that stands for the last moment that the system was synchronized. The internal object update propagation can be intra-datacenter or inter-datacenter, depending on the current system setup.
+	
+\begin{algorithm}
+\caption{Antidote request interaction}\label{antidote_interaction}
+\begin{algorithmic}[1]
+\algblock{Upon}{End}
+\Upon { $request$:}
+  \algblock{Switch}{End}
+  \Switch { $request.type$}
+    \algblock{case}{End}
+    \case { "write"}
+      \State {$answer$ $\gets$ updateObjects($request.objectId$, $request.timestamp$)}
+      \State {Send reply($answer$)}
+    \End
+    \case { "read"}
+    \State {$answer$ $\gets$ getObjects($request.objectId, request.timestamp$)}
+    \State {Send reply($answer$)}
+    \End
+  \End
+\End
+\end{algorithmic}
+\end{algorithm}
+
 \begin{lstlisting}[caption={Protocol Buffer interface methods before},label={lst:proto1}]
 message ApbReadObjects {
   repeated ApbBoundObject boundobjects = 1;
@@ -107,16 +130,15 @@ As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by
 	After parsing the message, a request is sent to the integration proxy, containing the element, the operation and the unique identifiers needed. The remaining process is then handled by the integration proxy, that returns when the update propagation was successful.
 	
 \begin{algorithm}
-\caption{Objects Server update propagation}\label{objects_server_update_propagation}
+\caption{Objects Server Legion to Antidote update propagation}\label{objects_server_update_propagation}
 \begin{algorithmic}[1]
-%\Upon receive(update)
 \algblock{Upon}{End}
 \Upon { message:}
   \If {$message.type$ = "contentFromNetwork"}
       \State {$operationInfo$ $\gets$ parse($message.content$)}
       \State {Send request($operationInfo$)}
-      \Upon { $Answer$:}
-        \Return {$Answer$}
+      \Upon { $answer$:}
+        \Return {$answer$}
       \End
   \EndIf
 \End
@@ -152,9 +174,25 @@ As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by
 \subsection{Antidote to Legion flow}
 \label{sec:legion_changes_antidote to legion flow}
 As mentioned before in \ref{sec:antidote_to_legion_flow}, the process of propagating updates from Antidote to the Legion network is based on periodic probing.\par
-	In order to periodically check for new updates in Antidote, there is a method that starts running when both the objects servers and Antidote start. This method fires an event every two seconds that makes a request to the integration proxy for the getLogOperations method. This request contains the element to search for and the vector clock that matches the last seen timestamp of Antidote's state in the objects server. An example of  the operations log response is shown in listing \ref{lst:log_example}.\par
+	Algorithm \ref{objects_server_update_propagation2} shows the pseudo-code of the objects server work in propagating updates from Antidote to Legion. In order to periodically check for new updates in Antidote, there is a method that starts running when both the objects server and Antidote start. This method fires an event every two seconds that makes a request to the integration proxy for the getLogOperations method. This request contains the element to search for and the vector clock that matches the last seen timestamp of Antidote's state in the objects server. This method returns an object with the list of updates that were executed in Antidote since the given timestamp until the current time. An example of  the operations log response is shown in listing \ref{lst:log_example}.\par
 	If there exists new updates to the element, these will be locally executed in the objects server, and then propagated to the all the Legion nodes. After this, another request is made to the integration proxy, in order to keep the track of the correspondent unique identifiers from Antidote to Legion.\par
-	At the end of this process we also need to update the last seen timestamp of Antidote's state in the objects server. This information also comes in the answer from the getLogOperations request.
+	At the end of this process we also need to update the last seen timestamp of Antidote's state in the objects server, this information also comes in the answer from the getLogOperations request. On a side note, the time interval between probes to the Antidote log should be tuned to best fit the current setup.
+	
+\begin{algorithm}[H]
+\caption{Objects Server Antidote to Legion update propagation}\label{objects_server_update_propagation2}
+\begin{algorithmic}[1]
+\algblock{Every}{End}
+\Every { 2 seconds:}
+      \State {$updateList$ $\gets$ getLogOperations($elements$, $lastSeenTimestamp$)}
+      \ForEach {$update \in updateList$}
+        \State {$identifiers$ $\gets$ execute($update$)}
+        \State {propagate($update$)}
+        \State Send request($upxdate.Id, identifiers$)
+      \EndFor
+      \State {$lastSeenTimestamp \gets updateList.timestamp$}
+\End
+\end{algorithmic}
+\end{algorithm}
 	
 \begin{lstlisting}[caption={Antidote log response example},label={lst:log_example}]
 {log_operations:[
@@ -185,11 +223,11 @@ This component, as mentioned in \ref{sec:architecture_overview}, links Antidote 
 \item work as a proxy by relaying the requests from both Antidote clients and Legion's objects servers to Antidote, and 
 \item handle the meta-data stored in Antidote, by always keeping it updated.
 \end{enumerate*}
-\par
+Algorithm \ref{integration_proxy_algorithm} depict the logic of the work done by the integration proxy.\par
 	In order to receive requests from the above mentioned components, this proxy acts as an HTTP server that exposes an interface with API routes to communicate with Antidote. The available API is shown in listing \ref{lst:proxy_api}. The API methods are simple, the methods are the same for all data types, being this resolved by the route in case of a GET or in the request payload in case of a PUT.\par
 	After this, the proxy will need to send a request of it's own to Antidote. In order to do so, we make use of the protocol buffer interface mentioned in \ref{lst:proto2}.\par
-	The second goal of the proxy is to keep the system's meta-data updated in Antidote. To attain this, every time an update is requested to the proxy, this one has to make a request to Antidote, in order to update the object, and another request to update the meta-data object. When handling an object's meta-data, there can be data corruption when more then one update is done concurrently over the same object, so in order to avoid this, we used the ZooKeeper system to act as a distributed locking mechanism that makes each update request to acquire a lock. This guarantees that we have mutual exclusion per object when manipulating the meta-data objects.\par
-	Every Antidote object as a meta-data object related. For example, if we have a set called 'objectID2', then there is a meta-data object called 'objectID2\_tokens' that contains a set of pairs that represents the correspondence between Antidote and Legion unique identifiers.
+	The second goal of the proxy is to keep the system's meta-data updated in Antidote. To attain this, every time an update is requested to the proxy, this one has to make a request to Antidote in order to update the object, and another request to update the meta-data object. When handling an object's meta-data, there can be data corruption when more then one update is done concurrently over the same object, so in order to avoid this, we used the ZooKeeper system to act as a distributed locking mechanism that makes each update request to acquire a lock. This guarantees that we have mutual exclusion per object when manipulating the meta-data objects.\par
+	Every Antidote object as a related meta-data object. For example, if we have a set called 'objectID2', then there is a meta-data object called 'objectID2\_tokens' that contains a set of pairs that represents the correspondence between Antidote and Legion unique identifiers.
 	
 \begin{lstlisting}[caption={Integration proxy API},label={lst:proxy_api}]
 server.route({
@@ -232,6 +270,39 @@ server.route({
   }
 }
 \end{lstlisting}
+
+\begin{algorithm}
+\caption{Integration Proxy request handling}
+\label{integration_proxy_algorithm}
+\begin{algorithmic}[1]
+\algblock{Upon}{End}
+\Upon { $request$:}
+  \algblock{Switch}{End}
+  \Switch { $request.type$}
+    \algblock{case}{End}
+    \case { "write"}
+      \State {$data$, $metadata$ $\gets$ parse($request$)}
+      \State {lock($metadata$)}
+      \State {Send request($metadata$)}
+      \Upon { $answer$:}
+        \State {unlock($metadata$)}
+      \End
+      \State {Send request($data$)}
+      \Upon { $answer$:}
+        \State {Send reply($answer$)}
+      \End
+    \End
+    \case { "read"}
+    \State {$data$ $\gets$ parse($request$)}
+    \State {Send request($data$)}
+    \Upon { $answer$:}
+      \State {Send reply($answer$)}
+    \End
+    \End
+  \End
+\End
+\end{algorithmic}
+\end{algorithm}
 
 
 %\section{Operation Propagation}

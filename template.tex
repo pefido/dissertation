@@ -120,6 +120,10 @@
     frame=single,
 }
 
+\algtext*{End}
+\algrenewcommand\Return{\State \algorithmicreturn{} }
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 %\algnewcommand\algorithmicupon{\textbf{Upon}}
 %\algnewcommand\Upon{\item[\algorithmicupon]}
 

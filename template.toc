@@ -118,22 +118,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Legion changes}{30}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Legion to Antidote flow}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Legion to Antidote flow}{31}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Antidote to Legion flow}{31}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Antidote to Legion flow}{32}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Proxy Development}{32}{section.4.4}
+\contentsline {section}{\numberline {4.4}Proxy Development}{33}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Evaluation}{35}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{37}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Operation Propagation Time}{35}{section.5.1}
+\contentsline {section}{\numberline {5.1}Operation Propagation Time}{37}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Meta-Data Size}{37}{section.5.2}
+\contentsline {section}{\numberline {5.2}Meta-Data Size}{39}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{39}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{41}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Future Work}{40}{section.6.1}
+\contentsline {section}{\numberline {6.1}Future Work}{42}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{41}{section*.7}
+\contentsline {chapter}{Bibliography}{43}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{45}{section*.9}
+\contentsline {chapter}{Webography}{47}{section*.9}

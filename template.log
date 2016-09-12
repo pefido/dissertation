@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  9 SEP 2016 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  12 SEP 2016 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2582,18 +2582,14 @@ ine 29.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
+ [2])
+(./Chapters/relatedWork.tex [3] [4
 
-LaTeX Warning: Reference `cha:proposed_work' on page 3 undefined on input line 
-45.
+] [5] [6] [7] [8] [9] [10] [11] [12] [13]
+[14] [15] [16] [17] [18]) (./Chapters/integrationDesign.tex [19] [20
 
-) (./Chapters/relatedWork.tex [3] [4
-
-] [5] [6] [7] [8] [9] [10] [11] [12]
-[13] [14] [15] [16] [17] [18]) (./Chapters/integrationDesign.tex [19] [20
-
-]
-[21] <files/architecture.png, id=558, 636.3775pt x 626.34pt>
+] [21]
+<files/architecture.png, id=561, 636.3775pt x 626.34pt>
 File: files/architecture.png Graphic file (type png)
 
 <use files/architecture.png>
@@ -2633,7 +2629,7 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 (./Chapters/evaluation.tex [34] [35] [36
 
 ]
-<files/graph1.png, id=774, 602.25pt x 372.39125pt>
+<files/graph1.png, id=777, 602.25pt x 372.39125pt>
 File: files/graph1.png Graphic file (type png)
  <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 13.
@@ -2642,7 +2638,7 @@ Package pdftex.def Info: files/graph1.png used on input line 13.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-<files/chart2.png, id=780, 602.25pt x 372.39125pt>
+<files/chart2.png, id=783, 602.25pt x 372.39125pt>
 File: files/chart2.png Graphic file (type png)
  <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 20.
@@ -2661,7 +2657,7 @@ l.26
                                                   \fi \fi 
 l.26 
       <./files/graph1.png> <./files/chart2.png>]
-<files/chart3.png, id=791, 602.25pt x 372.39125pt>
+<files/chart3.png, id=794, 602.25pt x 372.39125pt>
 File: files/chart3.png Graphic file (type png)
  <use files/chart3.png>
 Package pdftex.def Info: files/chart3.png used on input line 35.
@@ -2708,10 +2704,10 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38720 strings out of 493013
- 661464 string characters out of 6139317
+ 38719 strings out of 493013
+ 661445 string characters out of 6139317
  1307420 words of memory out of 5000000
- 40927 multiletter control sequences out of 15000+600000
+ 40926 multiletter control sequences out of 15000+600000
  206524 words of font info for 327 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,74p,1953b,3864s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2729,10 +2725,10 @@ sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttbn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 418073 bytes).
+Output written on template.pdf (66 pages, 418440 bytes).
 PDF statistics:
- 995 PDF objects out of 1000 (max. 8388607)
- 888 compressed objects within 9 object streams
+ 998 PDF objects out of 1000 (max. 8388607)
+ 891 compressed objects within 9 object streams
  327 named destinations out of 1000 (max. 500000)
  63382 words of extra memory for PDF output out of 74296 (max. 10000000)
 

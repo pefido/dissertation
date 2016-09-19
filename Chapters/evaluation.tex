@@ -22,7 +22,23 @@ In this section we will focus on measuring the propagation time of system operat
 \label{chart2}
 \end{figure}
 
-Secondly, in \ref{chart2} we  measure the scalability of the message propagation time with the size of the message. As we can see, the time needed to propagate a message does not seem to scale with the size of the message. Although the updates from Antidote to Legion still propagate faster, both update directions are not influenced by the size of the message, resulting in a chart with fluctuating time values and no growing pattern.
+Secondly, in \ref{chart2} we  measure the scalability of the message propagation time with the size of the message. As we can see, the time needed to propagate a message does not seem to scale with the size of the message. Although the updates from Antidote to Legion still propagate faster, both update directions are not influenced by the size of the message, resulting in a chart with fluctuating time values and no growing pattern.\par
+	In the next evaluation scenario, we will measure the scalability of propagating data between two separate Legion groups that can only share information via Antidote. In order to do so, this evaluation setup is composed by one Antidote instance, two Legion object server instances and two Legion nodes connected to separate object servers. In this scenario, the time measured starts when a legion node issues an update and ends when the other group's Legion node receives the update. In order to propagate updates between Legion groups, Antidote is used as a synchronization point, where one Legion node updates the storage system, and the other fetches the updates. In image \ref{chart4} we measure the time of propagating messages between the two Legion nodes scaling with the number of operations in each message. As we can see, the time needed scales nearly linearly with the number of operations, having a consistent result with the charts shown before.\par
+	In image \ref{chart5} we measure the scalability of the message propagation time with the size of each message. Similarly to chart \ref{chart2}, it does not seem to exist a scaling pattern with the increasing message size.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{files/chart4.png}
+\caption{Propagation time scaling with operations per message between two Legion groups}
+\label{chart4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{files/chart5.png}
+\caption{Propagation time scaling with message size between two Legion groups}
+\label{chart5}
+\end{figure}
 
 \section{Meta-Data Size}
 \label{sec:meta-data_size}
@@ -36,3 +52,4 @@ As explained in \ref{sec:proxy_development}, in order to keep the system from pr
 \caption{Meta-data size scaling with propagated operations}
 \label{chart3}
 \end{figure}
+

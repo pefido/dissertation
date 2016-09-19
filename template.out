@@ -24,23 +24,25 @@
 \BOOKMARK [2][-]{subsection.2.5.1}{Data Serialization mechanisms}{section.2.5}% 24
 \BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}% 25
 \BOOKMARK [0][-]{chapter.3}{Integration Design and Architecture}{}% 26
-\BOOKMARK [1][-]{section.3.1}{Technical decisions}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.2}{Architecture Overview}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.3}{Legion to Antidote flow}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.4}{Antidote to Legion flow}{chapter.3}% 30
-\BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Supported Data Types}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.1.1}{Sets}{section.4.1}% 33
-\BOOKMARK [2][-]{subsection.4.1.2}{Counters}{section.4.1}% 34
-\BOOKMARK [1][-]{section.4.2}{Antidote changes}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.3}{Legion changes}{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.3.1}{Legion to Antidote flow}{section.4.3}% 37
-\BOOKMARK [2][-]{subsection.4.3.2}{Antidote to Legion flow}{section.4.3}% 38
-\BOOKMARK [1][-]{section.4.4}{Proxy Development}{chapter.4}% 39
-\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 40
-\BOOKMARK [1][-]{section.5.1}{Operation Propagation Time}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.2}{Meta-Data Size}{chapter.5}% 42
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 43
-\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 44
-\BOOKMARK [0][-]{section*.13}{Bibliography}{}% 45
-\BOOKMARK [0][-]{section*.15}{Webography}{}% 46
+\BOOKMARK [1][-]{section.3.1}{Systems introduction}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.2}{Technical decisions}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.3}{Architecture Overview}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.4}{Integration challenges}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.5}{Legion to Antidote flow}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.6}{Antidote to Legion flow}{chapter.3}% 32
+\BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 33
+\BOOKMARK [1][-]{section.4.1}{Supported Data Types}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.1.1}{Sets}{section.4.1}% 35
+\BOOKMARK [2][-]{subsection.4.1.2}{Counters}{section.4.1}% 36
+\BOOKMARK [1][-]{section.4.2}{Antidote changes}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.3}{Legion changes}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.3.1}{Legion to Antidote flow}{section.4.3}% 39
+\BOOKMARK [2][-]{subsection.4.3.2}{Antidote to Legion flow}{section.4.3}% 40
+\BOOKMARK [1][-]{section.4.4}{Proxy Development}{chapter.4}% 41
+\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 42
+\BOOKMARK [1][-]{section.5.1}{Operation Propagation Time}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.2}{Meta-Data Size}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 45
+\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 46
+\BOOKMARK [0][-]{section*.13}{Bibliography}{}% 47
+\BOOKMARK [0][-]{section*.15}{Webography}{}% 48

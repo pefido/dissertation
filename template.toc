@@ -98,13 +98,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Integration Design and Architecture}{21}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Technical decisions}{21}{section.3.1}
+\contentsline {section}{\numberline {3.1}Systems introduction}{21}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Architecture Overview}{22}{section.3.2}
+\contentsline {section}{\numberline {3.2}Technical decisions}{22}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Legion to Antidote flow}{23}{section.3.3}
+\contentsline {section}{\numberline {3.3}Architecture Overview}{22}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Antidote to Legion flow}{24}{section.3.4}
+\contentsline {section}{\numberline {3.4}Integration challenges}{24}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Legion to Antidote flow}{25}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Antidote to Legion flow}{25}{section.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Integration Implementation}{27}{chapter.4}
 \defcounter {refsection}{0}\relax 

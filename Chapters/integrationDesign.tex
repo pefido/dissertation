@@ -1,17 +1,20 @@
 \chapter{Integration Design and Architecture}
 \label{cha:integration_design_and_architecture}
 
-In this chapter it will be presented the path taken in the integration design process, as well as the architecture on which the implementation has its basis.\par
-	The main topics for this section will be displayed as it follows:
-\begin{itemize}
-\item Technical decisions
+This chapter presents the design of the solution developed in this work to connect Legion clients to Antidote data storage. We start by briefly presenting Antidote and Legion, focusing on the mechanisms necessary for integrating both systems. After this introduction, we presents an overview of the proposed design and the interaction between Legion and Antidote.
 
-\item Components Overview
+\section{Systems introduction}
+\label{sec:system_introduction}
+In order to design an integration between Legion and Antidote, it is imperative that we understand how both systems work, so we can take advantage of their internal mechanisms to our advantage. Next follows a brief presentation of the mentioned systems, as well as some important working details.
 
-\item Legion to Antidote flow
+\begin{description}
 
-\item Antidote to Legion flow
-\end{itemize}
+\item[Legion] is a framework that exploits new features, such as WebRTC, STUN and TURN, to enrich web applications with direct data replication between browsers. In Legion each client maintains a local data storage with replicas of a subset of the application objects. Objects in Legion are translated as CRDTs that guarantee a synchronization free approach to deliver eventual consistency to the system. Making use of new technologies that not all browsers support, Legion was built thinking about legacy storage systems extensions. It is possible to add modules that enable Legion's integration with centralized storage systems.
+
+\item[Antidote] is a key-value storage system that uses CRDTs as internal data structure. In Antidote, interactive transactions can be used to modify the state of the CRDTs. These transactions can be given a timestamp in order to read or write at a certain snapshot of the system. Antidote's API also allows to get the log of operations executed since a certain timestamp.\par
+	In a distributed environment, Antidote can run with different data-centers. Inside each data-center, the data is replicated in each node.
+
+\end{description}
 
 \section{Technical decisions}
 \label{sec:technical_decisions}
@@ -25,7 +28,7 @@ After acknowledging this, the design of the integration was changed to be based 
 Integrating Legion with other storage systems, should be made in a modular and decoupled way, so if one decides to add support for another storage system, the recipe should be similar. This can be achieved by having system components that can easily be replaced.\par
 	The following diagram shows the architecture of the integration between the two systems:
 	
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{files/architecture.png}
 \caption{Integration Architecture}
@@ -42,7 +45,7 @@ Besides that, Antidote will also keep meta-data related to the system synchroniz
 
 \item[Antidote Client] \hfill \\
 This component is one of the entry points of information into the system. An Antidote client can manipulate the system's data set by making calls to modify the state of Antidote's objects.\par
-	This client is written in javascript and it uses the integration proxy in order to make read and write requests.
+	This client is written in javascript and it uses the integration proxy in order to make read and write requests because a direct request can not be made from a browser due to cross-origin security. These requests have a flag to distinguish them from the objects server requests.
 
 
 \item[Legion Node] \hfill \\
@@ -54,23 +57,76 @@ This component keeps a global view of what is happening in the Legion network. T
 This component is written in NodeJS and it uses the integration proxy for the communication with Antidote, by making read and write calls.
 
 \item[Integration Proxy] \hfill \\
-This component is needed to establish communication with Antidote. It takes advantage of Antidote's protocol buffer interface to make read and write calls.\par
+This component is needed to establish communication with Antidote. There can be one or more integration proxies in the system. It takes advantage of Antidote's protocol buffer interface to make read and write calls.\par
 The proxy can receive requests from either a Antidote client or a Legion's object server synchronization method. The request is parsed and a call is sent to Antidote. When the answer from antidote is received, it is redirected to who made the request. This component is written in NodeJS.
+
+\item[ZooKeeper Service] \hfill \\
+ZooKeeper is used in the system as a service in order to guarantee mutual exclusion of meta-data updates from different sources. It receives locking requests from all the integration proxies and keeps information of the locking status of each system object.
 
 \end{description}
 
+\section{Integration challenges}
+\label{sec:integration_challenges}
+When integrating both systems, there were some challenges there we had to tackle and overcome. The main effort in this integration is the synchronization, initially we tried to follow the path of merging CRDTs directly, but as explained before, Antidote didn't offer the needed mechanisms to make this happen. The synchronization was then changed to be about operation propagation. This brings some questions regarding the needed metadata and the operations order. For the first topic, it was needed to keep operation identifiers, as well as CRDT tokens, both stored in Antidote. Having metadata modified from different sources heeds concerns about data corruption. We need to assure that updates to this structure is done safely. About the second topic, applying past operations in another systems requires that the updates are executed at a certain system snapshot.\par
+	The solution of these challenges are depicted next in sections \ref{sec:legion_to_antidote_flow} and \ref{sec:antidote_to_legion_flow}, by explaining step by step how the data is propagated between systems, keeping the system's objects synchronized along with the related metadata.
+
 \section{Legion to Antidote flow}
 \label{sec:legion_to_antidote_flow}
-This section explains the process of propagating an update issued by a Legion node into Antidote.\par
+This section explains the process of propagating an update issued by a Legion node into Antidote. Algorithm \ref{legion_to_antidote_algorithm} depicts the sequence of events.\par
 	In order to send the updates from Legion to Antidote we must first detect these updates. To do so, we opted for an event driven model, by relying on Legion's objects server, since every update issued by a Legion node will end up in at least one of the objects servers.\par
 	Once the event is detected in the objects server, the incoming message is filtered based on the event type. If the event contained in the message is indeed an update, that objects server will issue one or more update requests to the integration proxy. Once a request reaches the integration proxy, this one will decouple the request into the the actual update data and meta-data. These two are then sent to Antidote as write requests. Besides writing the data into Antidote, the Integration proxy certifies that the operation has not been executed already, since there can be more than one objects server to issue the request. This is done by checking the meta-data stored in Antidote.\par
 	Once the update reaches Antidote successfully, the integration proxy returns to the objects server.
+	
+\begin{algorithm}
+\caption{Legion to Antidote flow}
+\label{legion_to_antidote_algorithm}
+\begin{algorithmic}[1]
+\algblock{Upon}{End}
+\Upon { $event$:}
+  \If {$event.type$ = $update$}
+    \State {objectsServer.apply($update$)}
+    \State {$metaData$ $\gets$ parse($update$)}
+    \State {$doneOperation$ $\gets$ antidote.read($doneOperations$)}
+    \If {!($update.id$ in $doneOperations$)}
+      \State {zooKeeper.lock($metadata.objectId$)}
+      \State {antidote.write($metadata$)}
+      \State {zooKeeper.unlock($metadata.objectId$)}
+      \State {antidote.write($update.operations, lastSeenTimestamp$)}
+      \State {return}
+    \EndIf
+  \EndIf
+\End
+\end{algorithmic}
+\end{algorithm}
 
 \section{Antidote to Legion flow}
 \label{sec:antidote_to_legion_flow}
-This section explains the process of propagating an update issued by an Antidote client into Legion.\par
-	When an Antidote client issues an update, it is firstly sent to the integration Proxy. This one receives the request and creates the needed data and meta-data write requests, sending them to Antidote. The integration proxy returns to the client when the update is successful.\par
+This section explains the process of propagating an update issued by an Antidote client into Legion. Algorithm \ref{antidote_to_legion_algorithm} shows this process step by step.\par
+	When an Antidote client issues an update, it is firstly sent to the integration Proxy. This one receives the request and sends them to Antidote. This is due to the cross-origin security. The integration proxy returns to the client when the update is successful.\par
 	The next step is to send this update to every Legion node. This can be done by sending the update to the objects servers, which will then propagate the message to every node.\par
 	At this point there are two methods of sending the update to the objects server. It can be done with a public/subscribe system that fires an event each time an Antidote object is updated, or having Legion's objects servers to probe periodically for new updates on Antidote. The first option would definitely be more performant, because scanning Antidote periodically for updates would have some overhead. With this in mind we talked to the development team in order to know the best way to to this. One alternative was to use Antidote's internal updates propagation mechanism to also fire an event to the exterior, but this solution had two major problems. The update propagation mechanism would not handle lost messages, this would have to be handled by us, and to exposed such internal mechanism to the outside would go against the Antidote's design path. With this, we concluded that we should proceed to the second option.\par
 	In order to periodically check for updates in Antidote, we used the system log to get the operations executed since a certain timestamp.\par
 	Legion's objects servers will periodically make a request to the integration proxy, in order to check the operations executed in Antidote since the last seen timestamp. The proxy relays the request to antidote and returns the result. If there are no new updates, then the objects server only updates it's last seen timestamp. If there are new updates that were not propagated to legion, the objects server executes the operation locally, and then propagates it to every Legion node.
+	
+\begin{algorithm}
+\caption{Antidote to Legion flow}
+\label{antidote_to_legion_algorithm}
+\begin{algorithmic}[1]
+  \algblock{Every}{End}
+  \Every { 2 seconds:}
+  \State {$logOperations$ $\gets$ antidote.get($logOperations$, $lastSeenTimeStamp$)}
+    \ForEach {$operation \in logOperations$}
+      \If {!($operation.id$ in objectsServer.$doneOperations$)}
+        \State {$metadata$ $\gets$ parse($operation$)}
+        \State {zooKeeper.lock($metadata.objectId$)}
+        \State {antidote.write($metadata$)}
+        \State {zooKeeper.unlock($metadata.objectId$)}
+        \State {objectsServer.Apply($operation$)}
+        \State {legion.Propagate($operation$)}
+      \EndIf
+    \EndFor
+    \State {objectsServer.update($lastSeenTimestamp$)}
+    \State {return}
+  \End
+\end{algorithmic}
+\end{algorithm}

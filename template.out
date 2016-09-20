@@ -1,48 +1,47 @@
 \BOOKMARK [0][-]{section*.4}{List of Figures}{}% 1
-\BOOKMARK [0][-]{section*.5}{List of Tables}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
-\BOOKMARK [1][-]{section.1.1}{Context}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Motivating Problem and Solution}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{Expected Contributions}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.4}{Document Structure}{chapter.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 8
-\BOOKMARK [1][-]{section.2.1}{WebRTC}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.1.1}{Signaling}{section.2.1}% 10
-\BOOKMARK [2][-]{subsection.2.1.2}{STUN}{section.2.1}% 11
-\BOOKMARK [2][-]{subsection.2.1.3}{TURN}{section.2.1}% 12
-\BOOKMARK [1][-]{section.2.2}{Storage Systems}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.1}{Data Models}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.2}{Distributed Storage Systems Techniques}{section.2.2}% 15
-\BOOKMARK [2][-]{subsection.2.2.3}{Storage System examples}{section.2.2}% 16
-\BOOKMARK [2][-]{subsection.2.2.4}{Distributed Caching Systems}{section.2.2}% 17
-\BOOKMARK [1][-]{section.2.3}{Peer-to-Peer Systems}{chapter.2}% 18
-\BOOKMARK [2][-]{subsection.2.3.1}{Degree of Decentralization}{section.2.3}% 19
-\BOOKMARK [2][-]{subsection.2.3.2}{Structured vs Unstructured}{section.2.3}% 20
-\BOOKMARK [1][-]{section.2.4}{Distributed Coordination}{chapter.2}% 21
-\BOOKMARK [2][-]{subsection.2.4.1}{Distributed Coordination Services}{section.2.4}% 22
-\BOOKMARK [1][-]{section.2.5}{Data Serialization}{chapter.2}% 23
-\BOOKMARK [2][-]{subsection.2.5.1}{Data Serialization mechanisms}{section.2.5}% 24
-\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}% 25
-\BOOKMARK [0][-]{chapter.3}{Integration Design and Architecture}{}% 26
-\BOOKMARK [1][-]{section.3.1}{Systems introduction}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.2}{Technical decisions}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.3}{Architecture Overview}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.4}{Integration challenges}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.5}{Legion to Antidote flow}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.6}{Antidote to Legion flow}{chapter.3}% 32
-\BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 33
-\BOOKMARK [1][-]{section.4.1}{Supported Data Types}{chapter.4}% 34
-\BOOKMARK [2][-]{subsection.4.1.1}{Sets}{section.4.1}% 35
-\BOOKMARK [2][-]{subsection.4.1.2}{Counters}{section.4.1}% 36
-\BOOKMARK [1][-]{section.4.2}{Antidote changes}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.3}{Legion changes}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.3.1}{Legion to Antidote flow}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.2}{Antidote to Legion flow}{section.4.3}% 40
-\BOOKMARK [1][-]{section.4.4}{Proxy Development}{chapter.4}% 41
-\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 42
-\BOOKMARK [1][-]{section.5.1}{Operation Propagation Time}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{Meta-Data Size}{chapter.5}% 44
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 45
-\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 46
-\BOOKMARK [0][-]{section*.13}{Bibliography}{}% 47
-\BOOKMARK [0][-]{section*.15}{Webography}{}% 48
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Context}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Motivating Problem and Solution}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Expected Contributions}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Document Structure}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 7
+\BOOKMARK [1][-]{section.2.1}{WebRTC}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Signaling}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.2}{STUN}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.3}{TURN}{section.2.1}% 11
+\BOOKMARK [1][-]{section.2.2}{Storage Systems}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{Data Models}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.2}{Distributed Storage Systems Techniques}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.3}{Storage System examples}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.4}{Distributed Caching Systems}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Peer-to-Peer Systems}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Degree of Decentralization}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{Structured vs Unstructured}{section.2.3}% 19
+\BOOKMARK [1][-]{section.2.4}{Distributed Coordination}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{Distributed Coordination Services}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{Data Serialization}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{Data Serialization mechanisms}{section.2.5}% 23
+\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}% 24
+\BOOKMARK [0][-]{chapter.3}{Integration Design and Architecture}{}% 25
+\BOOKMARK [1][-]{section.3.1}{Systems introduction}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.2}{Technical decisions}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{Architecture Overview}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{Integration challenges}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.5}{Legion to Antidote flow}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.6}{Antidote to Legion flow}{chapter.3}% 31
+\BOOKMARK [0][-]{chapter.4}{Integration Implementation}{}% 32
+\BOOKMARK [1][-]{section.4.1}{Supported Data Types}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.1.1}{Sets}{section.4.1}% 34
+\BOOKMARK [2][-]{subsection.4.1.2}{Counters}{section.4.1}% 35
+\BOOKMARK [1][-]{section.4.2}{Antidote changes}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.3}{Legion changes}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.3.1}{Legion to Antidote flow}{section.4.3}% 38
+\BOOKMARK [2][-]{subsection.4.3.2}{Antidote to Legion flow}{section.4.3}% 39
+\BOOKMARK [1][-]{section.4.4}{Proxy Development}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 41
+\BOOKMARK [1][-]{section.5.1}{Operation Propagation Time}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{Meta-Data Size}{chapter.5}% 43
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 44
+\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 45
+\BOOKMARK [0][-]{section*.12}{Bibliography}{}% 46
+\BOOKMARK [0][-]{section*.14}{Webography}{}% 47

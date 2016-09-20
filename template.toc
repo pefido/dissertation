@@ -30,8 +30,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{List of Figures}{xv}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{xvii}{section*.5}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}
@@ -138,6 +136,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Future Work}{44}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{45}{section*.13}
+\contentsline {chapter}{Bibliography}{45}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{49}{section*.15}
+\contentsline {chapter}{Webography}{49}{section*.14}

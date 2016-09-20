@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  20 SEP 2016 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  20 SEP 2016 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -89,7 +89,7 @@ citenames=2,mincitenames=1,firstinits=true,uniquename=init,sortcites=true,
 'otherlistsat'=front
 'aftercover'=false
 'linkscolor'=darkblue
-'printcommittee'=true
+'printcommittee'=false
 'spine'=false
 'biblatex'=style=numeric, sorting=nyt, firstinits=true, sortcites=true, hyperre
 f=true
@@ -2728,11 +2728,11 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39820 strings out of 493013
- 681791 string characters out of 6139317
- 1327787 words of memory out of 5000000
- 42016 multiletter control sequences out of 15000+600000
- 206524 words of font info for 327 fonts, out of 8000000 for 9000
+ 39797 strings out of 493013
+ 681398 string characters out of 6139317
+ 1326786 words of memory out of 5000000
+ 41998 multiletter control sequences out of 15000+600000
+ 201445 words of font info for 315 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,92p,1953b,3852s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share
@@ -2749,10 +2749,10 @@ sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttbn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 462166 bytes).
+Output written on template.pdf (66 pages, 461065 bytes).
 PDF statistics:
  1018 PDF objects out of 1200 (max. 8388607)
  906 compressed objects within 10 object streams
  328 named destinations out of 1000 (max. 500000)
- 63400 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 61352 words of extra memory for PDF output out of 61914 (max. 10000000)
 

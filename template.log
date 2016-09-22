@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  20 SEP 2016 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  22 SEP 2016 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2513,7 +2513,7 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 299
 (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-<unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf, id=195, 597.23125pt 
+<unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf, id=203, 597.23125pt 
 x 845.1575pt>
 File: unlthesis-files/Schools/unl/fct/Images/cover-msc-std.pdf Graphic file (ty
 pe pdf)
@@ -2622,45 +2622,67 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [14] [15] [16] [17] [18]) (./Chapters/integrationDesign.tex [19] [20
 
 ] [21]
-<files/architecture.png, id=559, 636.3775pt x 626.34pt>
-File: files/architecture.png Graphic file (type png)
+[22] <files/legionArchitecture.png, id=579, 491.8375pt x 740.7675pt>
+File: files/legionArchitecture.png Graphic file (type png)
 
-<use files/architecture.png>
-Package pdftex.def Info: files/architecture.png used on input line 33.
-(pdftex.def)             Requested size: 318.18797pt x 313.16922pt.
+<use files/legionArchitecture.png>
+Package pdftex.def Info: files/legionArchitecture.png used on input line 24.
+(pdftex.def)             Requested size: 196.7315pt x 296.30174pt.
+
+<files/antidoteArchitecture.png, id=581, 963.6pt x 722.7pt>
+File: files/antidoteArchitecture.png Graphic file (type png)
+
+<use files/antidoteArchitecture.png>
+Package pdftex.def Info: files/antidoteArchitecture.png used on input line 31.
+(pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
+
+Overfull \hbox (55.79883pt too wide) in paragraph at lines 31--32
+ [][] 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-[23 <./files/architecture.png>] [24]
+ [23 <./files/legionArchitecture.png>]
+<files/architecture.png, id=588, 636.3775pt x 626.34pt>
+File: files/architecture.png Graphic file (type png)
+
+<use files/architecture.png>
+Package pdftex.def Info: files/architecture.png used on input line 43.
+(pdftex.def)             Requested size: 318.18797pt x 313.16922pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24 <./files/antidoteArchitecture.png>] [25 <./files/architecture.png>]
+[26]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 81.
- [25])
-(./Chapters/integrationImplementation.tex [26] [27
+put line 91.
+ [27]) (./Chapters/integrationImplementation.tex [28] [29
 
-] [28]
-(/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-) [29]
-(/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-)
-Underfull \vbox (badness 1546) has occurred while \output is active []
-
- [30]
+] [30]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [31]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-) [32]
+)
+Underfull \vbox (badness 1546) has occurred while \output is active []
+
+ [32]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-) [33])
-(./Chapters/evaluation.tex [34] [35] [36
+) [33]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+) [34]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+) [35])
+(./Chapters/evaluation.tex [36] [37] [38
 
 ]
-<files/graph1.png, id=781, 602.25pt x 372.39125pt>
+<files/graph1.png, id=810, 602.25pt x 372.39125pt>
 File: files/graph1.png Graphic file (type png)
  <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 13.
@@ -2668,21 +2690,21 @@ Package pdftex.def Info: files/graph1.png used on input line 13.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-<files/chart2.png, id=787, 602.25pt x 372.39125pt>
+ [39]
+<files/chart2.png, id=816, 602.25pt x 372.39125pt>
 File: files/chart2.png Graphic file (type png)
  <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 20.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-[38 <./files/graph1.png> <./files/chart2.png>]
-<files/chart4.png, id=798, 602.25pt x 372.39125pt>
+[40 <./files/graph1.png> <./files/chart2.png>]
+<files/chart4.png, id=827, 602.25pt x 372.39125pt>
 File: files/chart4.png Graphic file (type png)
  <use files/chart4.png>
 Package pdftex.def Info: files/chart4.png used on input line 31.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-<files/chart5.png, id=799, 602.25pt x 372.39125pt>
+<files/chart5.png, id=828, 602.25pt x 372.39125pt>
 File: files/chart5.png Graphic file (type png)
  <use files/chart5.png>
 Package pdftex.def Info: files/chart5.png used on input line 38.
@@ -2690,7 +2712,7 @@ Package pdftex.def Info: files/chart5.png used on input line 38.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./files/chart4.png>] <files/chart3.png, id=808, 602.25pt x 372.39125pt>
+ [41 <./files/chart4.png>] <files/chart3.png, id=836, 602.25pt x 372.39125pt>
 File: files/chart3.png Graphic file (type png)
 
 <use files/chart3.png>
@@ -2700,14 +2722,14 @@ Package pdftex.def Info: files/chart3.png used on input line 51.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./Chapters/conclusion.tex [40 <./files/chart5.png>] [41 <./files/chart3.png>
-] [42
+) (./Chapters/conclusion.tex [42 <./files/chart5.png>] [43 <./files/chart3.png>
+] [44
 
-] [43]) [44] [45
+] [45]) [46] [47
 
-] [46] [47] [48
+] [48] [49] [50
 
-] [49] [50
+] [51] [52
 
 ]
 \tf@toc=\write8
@@ -2722,16 +2744,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: D323AF2EEC3C9FA2A8069BB0028AD44D;3055.
+(rerunfilecheck)             Checksum: CD25328C56FBB173FD29BF02EF2915C3;3181.
 Package logreq Info: Writing requests to 'template.run.xml'.
 \openout1 = `template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39797 strings out of 493013
- 681398 string characters out of 6139317
+ 39819 strings out of 493013
+ 681912 string characters out of 6139317
  1326786 words of memory out of 5000000
- 41998 multiletter control sequences out of 15000+600000
+ 42012 multiletter control sequences out of 15000+600000
  201445 words of font info for 315 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,92p,1953b,3852s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2749,10 +2771,10 @@ sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttbn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 461065 bytes).
+Output written on template.pdf (68 pages, 544838 bytes).
 PDF statistics:
- 1018 PDF objects out of 1200 (max. 8388607)
- 906 compressed objects within 10 object streams
- 328 named destinations out of 1000 (max. 500000)
- 61352 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1048 PDF objects out of 1200 (max. 8388607)
+ 930 compressed objects within 10 object streams
+ 334 named destinations out of 1000 (max. 500000)
+ 61378 words of extra memory for PDF output out of 61914 (max. 10000000)
 

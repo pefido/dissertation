@@ -7,36 +7,38 @@ This chapter presents the design of the solution developed in this work to conne
 \label{sec:system_introduction}
 In order to design an integration between Legion and Antidote, it is imperative that we understand how both systems work, so we can take advantage of their internal mechanisms to our advantage. Next follows a brief presentation of the mentioned systems, as well as some important working details.
 
-\begin{description}
-
-\item[Legion] \hfill \\
+\subsection{Legion}
+\label{sec:legion_intro}
 A large number of web application are built around direct interactions among clients, such as collaborative applications, social networks and multi-user games. These applications manage a set of shared objects, with each user reading and writing to a subset of these objects. These kind of applications are usually implemented using a centralized infrastructure that maintains the shared state and mediates all interactions among users. This approach has some drawbacks, such as the servers becoming a scalability bottleneck, the service interrupt when the servers are unavailable and the latency of nearby users being unnecessarily high.\par
 	One alternative to this model, is to rely on direct communication between users. In a not so far past, such an alternative would be troublesome when combining peer-to-peer and Web applications. Due to the lack of supporting mechanisms for this, it was often needed browser extensions or plugins to implement such a scenario.\par
 	With the recent development of tools such as WebRTC, that enables direct communication between browsers and connectivity utilities such as STUN and TURN that can overcome the trouble of connecting users between NATs and firewalls, a new set of peer-to-peer web applications started to be developed.\par
-	Legion is a framework that exploits these new features for enriching web applications with direct data replication between browsers. Each client maintains a local data storage with replicas of a subset of application shared objects. Legion uses an eventual consistency model, where each client can modify its local objects without coordination, this allows updates to be performed concurrently on different replicas while modifications are propagated asynchronously. To guarantee that all replicas converge to the same correct state after updates have been applied on different replicas, Legion relies of CRDTs as its internal data structure. To support these interactions in a peer-to-peer manner, clients form overlay networks to propagate objects and updates among them. In each overlay network, a few clients act as synchronization point of a possible centralized component. These clients have an objects server component that is design to support extensions with legacy storage systems to act as centralized persistent storage.
+	Legion is a framework that exploits these new features for enriching web applications with direct data replication between browsers. Each client maintains a local data storage with replicas of a subset of application shared objects. Legion uses an eventual consistency model, where each client can modify its local objects without coordination, this allows updates to be performed concurrently on different replicas while modifications are propagated asynchronously. To guarantee that all replicas converge to the same correct state after updates have been applied on different replicas, Legion relies of CRDTs as its internal data structure. To support these interactions in a peer-to-peer manner, clients form overlay networks to propagate objects and updates among them. In each overlay network, a few clients act as synchronization point of a possible centralized component. These clients have an objects server component that is design to support extensions with legacy storage systems to act as centralized persistent storage. This component has a view of the Legion group objects, which can be used as a replication point of the system state to a centralized storage system. The external system will use Legion's primitives, available in the communication API, in order to propagate updates back and forward. These updates are sent in a point-to-multipoint fashion, by delegating the afford of propagating the updates to all the legion clients in the group to a node which carries the objects server. Overall, image \ref{legion_architecture} illustrates how an external centralized storage system can interact with Legion, as well as Legion's architecture.
 
+\subsection{Antidote}
+\label{sec:antidote_intro}
+Traditional databases provide strong guarantees but are slow and unavailable under failures and network partition. Hence, they are not suitable for geo-replication. The alternatives are NoSQL-style databases which are fast and available even under network partition. They provide a low-level key-value interface and expose data inconsistencies due to asynchronous communication among the servers. It takes significant effort and expertise from programmers to deal with these inconsistencies and develop correct applications on top of these databases. Antidote provides features that aid programmers to write correct applications, while having the same performance and horizontal scalability as NoSQL, from a single machine to geo-replicated deployments, with the added guarantees of Causal Highly-Available Transactions, and provable absence of data corruption due to concurrency.\par
+	Internally, Antidote uses CRDTs as data structures. To modify these, one can make use of interactive transaction composed by three steps: start, update/read and finally commit. Transactions can receive a timestamp to force the read/update to be executed at a certain system snapshot. Another import API method is the ability to request the executed operations log since a certain timestamp. Antidote clients can use this API via the distributed Erlang interface that can only be used by Erlang clients, or the protocol buffer interface, which is language independent. Antidote can work in cluster mode, with several nodes in the same cluster that replicate data using the saved logs, or in inter-dc mode by simply replicating data in a FIFO (First in first out) operation order. The system architecture can be visualize in image \ref{antidote_architecture}.
 
-is a framework that exploits new features, such as WebRTC, STUN and TURN, to enrich web applications with direct data replication between browsers. In Legion each client maintains a local data storage with replicas of a subset of the application objects. Objects in Legion are translated as CRDTs that guarantee a synchronization free approach to deliver eventual consistency to the system. Making use of new technologies that not all browsers support, Legion was built thinking about legacy storage systems extensions. It is possible to add modules that enable Legion's integration with centralized storage systems.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{files/legionArchitecture.png}
+\caption{Legion Architecture}
+\label{legion_architecture}
+\end{figure}
 
-\item[Antidote] \hfill \\
-is a key-value storage system that uses CRDTs as internal data structure. In Antidote, interactive transactions can be used to modify the state of the CRDTs. These transactions can be given a timestamp in order to read or write at a certain snapshot of the system. Antidote's API also allows to get the log of operations executed since a certain timestamp.\par
-	In a distributed environment, Antidote can run with different data-centers. Inside each data-center, the data is replicated in each node.
-
-\end{description}
-
-\section{Technical decisions}
-\label{sec:technical_decisions}
-In the starting point of this thesis, the main objective was to integrate Legion with two data storage systems that also used CRDTs, Riak and Antidote. Riak is more enterprise oriented, with several real world use cases, while Antidote is still very fresh and under development. Even thought Antidote uses Riak Core, the two systems diverge a lot based on design options and it's objectives. We started by speaking to a few developers from each of the systems, being able to conclude that Antidote's development environment would be much more beneficial for us regarding support. This was a critical matter since no one directly involved in this thesis was an expert in either of the systems, neither we had much experience in the programming language used (Erlang). With this in mind, we followed to start the integration with Antidote.\par
-Our first integration design thought was to use the CRDT's data structures of both systems, translate one to another, and then merge them in order to propagate the state of the system. Once again we talked to the development team as to get a guideline of how this could be done. As we understood, it was not the intended design path to expose the internal CRDT's data structure to the outside of the system. The system's CRDTs were meant to only be accessed as an object abstraction.\par
-After acknowledging this, the design of the integration was changed to be based on propagating operations, by executing on one system the operation that was made on the other.
-
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{files/antidoteArchitecture.png}
+\caption{Antidote Architecture}
+\label{antidote_architecture}
+\end{figure}
 
 \section{Architecture Overview}
 \label{sec:architecture_overview}
 Integrating Legion with other storage systems, should be made in a modular and decoupled way, so if one decides to add support for another storage system, the recipe should be similar. This can be achieved by having system components that can easily be replaced.\par
 	The following diagram shows the architecture of the integration between the two systems:
 	
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{files/architecture.png}
 \caption{Integration Architecture}

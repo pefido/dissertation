@@ -13,6 +13,12 @@ In summary, the main contributions of the work presented in this thesis are as f
 \item An evaluation of the integration implementation.
 \end{itemize}
 
+\section{Technical decisions}
+\label{sec:technical_decisions}
+In the starting point of this thesis, the main objective was to integrate Legion with two data storage systems that also used CRDTs, Riak and Antidote. Riak is more enterprise oriented, with several real world use cases, while Antidote is still very fresh and under development. Even thought Antidote uses Riak Core, the two systems diverge a lot based on design options and it's objectives. We started by speaking to a few developers from each of the systems, being able to conclude that Antidote's development environment would be much more beneficial for us regarding support. This was a critical matter since no one directly involved in this thesis was an expert in either of the systems, neither we had much experience in the programming language used (Erlang). With this in mind, we followed to start the integration with Antidote.\par
+Our first integration design thought was to use the CRDT's data structures of both systems, translate one to another, and then merge them in order to propagate the state of the system. Once again we talked to the development team as to get a guideline of how this could be done. As we understood, it was not the intended design path to expose the internal CRDT's data structure to the outside of the system. The system's CRDTs were meant to only be accessed as an object abstraction.\par
+After acknowledging this, the design of the integration was changed to be based on propagating operations, by executing on one system the operation that was made on the other.
+
 \section{Future Work}
 \label{sec:future_work}
 After this thesis development, in order to consolidate and complement this integration, a number of future improvements can be mentioned.\par

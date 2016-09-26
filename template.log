@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  26 SEP 2016 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.8.22)  26 SEP 2016 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2657,10 +2657,7 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [31]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-)
-Underfull \vbox (badness 1546) has occurred while \output is active []
-
- [32]
+) [32]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [33]
@@ -2670,10 +2667,8 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [35])
-(./Chapters/evaluation.tex [36] [37] [38
-
-]
-<files/graph1.png, id=811, 602.25pt x 372.39125pt>
+(./Chapters/evaluation.tex [36]
+<files/graph1.png, id=802, 602.25pt x 372.39125pt>
 File: files/graph1.png Graphic file (type png)
  <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 13.
@@ -2681,21 +2676,23 @@ Package pdftex.def Info: files/graph1.png used on input line 13.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-<files/chart2.png, id=817, 602.25pt x 372.39125pt>
+ [37
+
+]
+<files/chart2.png, id=807, 602.25pt x 372.39125pt>
 File: files/chart2.png Graphic file (type png)
  <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 20.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-[40 <./files/graph1.png> <./files/chart2.png>]
-<files/chart4.png, id=828, 602.25pt x 372.39125pt>
+[38 <./files/graph1.png> <./files/chart2.png>]
+<files/chart4.png, id=818, 602.25pt x 372.39125pt>
 File: files/chart4.png Graphic file (type png)
  <use files/chart4.png>
 Package pdftex.def Info: files/chart4.png used on input line 31.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-<files/chart5.png, id=829, 602.25pt x 372.39125pt>
+<files/chart5.png, id=819, 602.25pt x 372.39125pt>
 File: files/chart5.png Graphic file (type png)
  <use files/chart5.png>
 Package pdftex.def Info: files/chart5.png used on input line 38.
@@ -2703,7 +2700,7 @@ Package pdftex.def Info: files/chart5.png used on input line 38.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41 <./files/chart4.png>] <files/chart3.png, id=837, 602.25pt x 372.39125pt>
+ [39 <./files/chart4.png>] <files/chart3.png, id=828, 602.25pt x 372.39125pt>
 File: files/chart3.png Graphic file (type png)
 
 <use files/chart3.png>
@@ -2713,14 +2710,14 @@ Package pdftex.def Info: files/chart3.png used on input line 51.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./Chapters/conclusion.tex [42 <./files/chart5.png>] [43 <./files/chart3.png>
-] [44
+) (./Chapters/conclusion.tex [40 <./files/chart5.png>] [41 <./files/chart3.png>
+] [42
 
-] [45]) [46] [47
+] [43]) [44] [45
 
-] [48] [49] [50
+] [46] [47] [48
 
-] [51] [52
+] [49] [50
 
 ]
 \tf@toc=\write8
@@ -2741,10 +2738,10 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39819 strings out of 493013
- 681912 string characters out of 6139317
- 1327786 words of memory out of 5000000
- 42012 multiletter control sequences out of 15000+600000
+ 39818 strings out of 493013
+ 681923 string characters out of 6139317
+ 1315786 words of memory out of 5000000
+ 42014 multiletter control sequences out of 15000+600000
  201445 words of font info for 315 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,92p,1953b,3852s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2762,10 +2759,10 @@ sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttbn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on template.pdf (68 pages, 548095 bytes).
+Output written on template.pdf (66 pages, 540819 bytes).
 PDF statistics:
- 1049 PDF objects out of 1200 (max. 8388607)
- 931 compressed objects within 10 object streams
- 334 named destinations out of 1000 (max. 500000)
+ 1039 PDF objects out of 1200 (max. 8388607)
+ 923 compressed objects within 10 object streams
+ 331 named destinations out of 1000 (max. 500000)
  61378 words of extra memory for PDF output out of 61914 (max. 10000000)
 

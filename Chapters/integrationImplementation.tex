@@ -9,9 +9,7 @@ In this chapter we will focus on the implementation of the integration, describi
 
 \item enumerate the changes we deemed needed to Antidote, which are mainly an afford to make the system more language abstract. After this, we will show as well the 
 
-\item changes made to Legion, in the objects server. The next component depicted is the 
-
-\item integration proxy, which was developed from scratch in order to communicate with Antidote. After the component's description we will get a more in depth description of the update propagation flow, from
+\item changes made to Legion, in the objects server. After the component's description we will get a more in depth description of the update propagation flow, from
 
 \item Legion to Antidote, and then from
 
@@ -45,18 +43,17 @@ In this section we will describe the changes to Antidote that were needed in ord
 \end{enumerate*}
 \par
 	The first one uses distributed Erlang and can only be used by an Erlang client, which is of no use to us in the integration.\par
-	The second one uses google's protocol buffer serialization mechanism to offer an interface that can be language abstract. This would suit our needs since we want to be able to communicate with Antidote via the integration proxy written in NodeJS. Although we were able to communicate with Antidote like this, we soon discovered that this interface was using Erlang binaries over the protocol buffers, which were extremely difficult to encode/ decode in the NodeJS side. Besides this, it was missing some important calls comparing to the distributed Erlang interface.\par
-	In order to proceed with the integration the following features needed to be available in the protocol buffer interface:
+	The second one uses google's protocol buffer serialization mechanism to offer an interface that can be language abstract. This would suit our needs since we want to be able to communicate with Antidote from a Legion objects server written in Javascript. In order to use this interface, some changes need to be made. Some protocol buffer message values are raw Erlang binaries, which are extremely difficult to encode/ decode in Javascript. These need to be changed to a language independent format. Also, some important methods that are available in the distributed Erlang interface need to be included in the protocol buffer API. In order to develop this integration, the following requirements need to be met on Antidote:
 	\begin{itemize}
-	\item protocol buffer messages could only contain basic data types, like numbers or strings for the interface to be language abstract.
-	\item API methods that returned not only the object's value, but also it's hidden information, like commit timestamps and unique identifiers.
+	\item protocol buffer messages can only contain basic data types, like numbers or strings for the interface to be language abstract.
+	\item API methods that besides the object's value, also return it's hidden information, like commit timestamps and unique identifiers.
 	\item An API method that returns the content of the system log since a certain timestamp. 
 	\end{itemize}
 \par
-	With the help from Antidote's development team, these requirements were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those to the exterior.\par
+	With the help from Antidote's development team, these requirements were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those.\par
 	In order to make the interface language abstract, it was implemented a JSON data structure over protocol buffer messages. This was possible by having a JSON encoding/ decoding component in Antidote's protocol buffer interface. Although this might not be the best solution, since it partially defeats the purpose of protocol buffers, it was the more practical solution regarding this thesis time span.\par
 	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the 'value' field is a JSON object with the request.\par
-	After these changes were implemented, we were able to proceed with the system integration. Algorithm \ref{antidote_interaction} shows how Antidote interacts with the other components. When handling a write request, Antidote propagates the update internally and replies with information from that transaction. When the request is a read, Antidote replies with the object itself, including unique identifiers and transaction information. The requests are always paired with a timestamp that stands for the last moment that the system was synchronized. The internal object update propagation can be intra-datacenter or inter-datacenter, depending on the current system setup.
+	These changes enable us to proceed with the system integration. Algorithm \ref{antidote_interaction} shows how Antidote interacts with the other components. When handling a write request, Antidote propagates the update internally and replies with information from that transaction. When the request is a read, Antidote replies with the object itself, including unique identifiers and transaction information. The requests can be paired with a timestamp that represents the system snapshot on which the read/ write will be executed. The internal object update propagation can be intra-datacenter or inter-datacenter, depending on the current system setup.
 	
 \begin{algorithm}
 \caption{Antidote request interaction}\label{antidote_interaction}

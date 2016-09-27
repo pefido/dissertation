@@ -44,14 +44,14 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Propagation time scaling with operations per message\relax }}{38}{figure.caption.8}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Propagation time scaling with operations per message\relax }}{40}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Propagation time scaling with message size\relax }}{38}{figure.caption.9}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Propagation time scaling with message size\relax }}{40}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Propagation time scaling with operations per message between two Legion groups\relax }}{39}{figure.caption.10}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Propagation time scaling with operations per message between two Legion groups\relax }}{41}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Propagation time scaling with message size between two Legion groups\relax }}{40}{figure.caption.11}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Propagation time scaling with message size between two Legion groups\relax }}{42}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Meta-data size scaling with propagated operations\relax }}{41}{figure.caption.12}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Meta-data size scaling with propagated operations\relax }}{43}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}

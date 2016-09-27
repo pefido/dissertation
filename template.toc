@@ -124,22 +124,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.1}Legion to Antidote flow}{32}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Antidote to Legion flow}{33}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Antidote to Legion flow}{34}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Proxy Development}{35}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Evaluation}{37}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{39}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Operation Propagation Time}{37}{section.5.1}
+\contentsline {section}{\numberline {5.1}Operation Propagation Time}{39}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Meta-Data Size}{40}{section.5.2}
+\contentsline {section}{\numberline {5.2}Meta-Data Size}{42}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion}{43}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}Conclusion}{45}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Technical decisions}{44}{section.6.1}
+\contentsline {section}{\numberline {6.1}Technical decisions}{46}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Future Work}{44}{section.6.2}
+\contentsline {section}{\numberline {6.2}Future Work}{46}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{45}{section*.14}
+\contentsline {chapter}{Bibliography}{47}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Webography}{49}{section*.16}
+\contentsline {chapter}{Webography}{51}{section*.16}

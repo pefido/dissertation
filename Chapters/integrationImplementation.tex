@@ -123,8 +123,8 @@ The majority of the code from the implementation was developed in Legion, more s
 
 \subsection{Legion to Antidote flow}
 \label{sec:legion_changes_legion_to_antidote_flow}
-As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by a Legion node will be caught in the objects server. Algorithm \ref{objects_server_update_propagation} shows the steps needed for the objects server to propagate each message. A message that reaches the objects server can be of several types, but the ones that interests us are the ones having the type 'contentFromNetwork'. By catching this event we know that an update has been issued, so now we can parse the message and get the details that we need in order to propagate the operation to Antidote. Listing \ref{lst:update_example} shows an example of an incoming update message.\par
-	After parsing the message, a request is sent to the integration proxy, containing the element, the operation and the unique identifiers needed. The remaining process is then handled by the integration proxy, that returns when the update propagation was successful.
+As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by a Legion node will be caught in the objects server. Algorithm \ref{objects_server_update_propagation} shows the steps needed for the objects server to propagate each message. A message that reaches the objects server can be of several types, we want to parse the ones having the type 'contentFromNetwork'. By catching this event we know that an update has been issued, so now we can parse the message and get the details that we need in order to propagate the operation to Antidote. Listing \ref{lst:update_example} shows an example of an incoming update message.\par
+	After parsing the message, a request is made to Antidote in order to check if that operation was already done. In case it was not, two separate requests are sent to Antidote, one for the actual data, and the other for the meta-data. To write the data in Antidote, the protocol buffer interface is used by calling the "updateObjects" method with the element and operation. To write the meta-data, we rely on the ZooKeeper service to guarantee mutual exclusion when updating meta-data objects. Legion's objects server needs to obtain a lock before the update is done, releasing it after. ZooKeeper acts as a centralized coordination service, by granting locks and maintaining the locking state per object. The meta-data held in Antidote represents the operations that were already propagated from Legion to Antidote, as well as CRDT specific unique identifiers.
 	
 \begin{algorithm}
 \caption{Objects Server Legion to Antidote update propagation}\label{objects_server_update_propagation}
@@ -132,11 +132,25 @@ As mentioned before in \ref{sec:legion_to_antidote_flow}, every update issued by
 \algblock{Upon}{End}
 \Upon { message:}
   \If {$message.type$ = "contentFromNetwork"}
-      \State {$operationInfo$ $\gets$ parse($message.content$)}
-      \State {Send request($operationInfo$)}
-      \Upon { $answer$:}
-        \Return {$answer$}
-      \End
+      \State {$opInfo$ $\gets$ parse($message.content$)}
+      \State {$doneOps$ $\gets$ antidote.getObjects($doneOps$)}
+      \If {!($opInfo.id$ in $doneOps$)}
+        %\State {zooKeeper.lock($opInfo.objectId$)}
+        \State {antidote.updateObjects($doneOps$, add, $opInfo.id$)}
+        %\State {zooKeeper.unlock($opInfo.objectId$)}
+        \State {antidote.updateObjects($opInfo.objectID$, $opInfo.op$, $lastSeenTimestamp$)}
+        \Upon { reply($txInfo$):}
+          \State {zooKeeper.lock($opInfo.objectId$)}
+          \If {$opInfo.CRDTType$ = 'set'}
+            \State {$metadata$ $\gets$ parse($opInfo$, $txInfo$)}
+            \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.tokens$)}
+          \ElsIf {$opInfo.CRDTType$ = 'counter'}
+            \State {$metadata$ $\gets$ parse($opInfo$, $txInfo$)}
+            \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.opId$)}
+          \EndIf
+          \State {zooKeeper.unlock($opInfo.objectId$)}
+        \End
+      \EndIf
   \EndIf
 \End
 \end{algorithmic}

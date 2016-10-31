@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.7 $
+% $ biblatex bbl format version 2.8 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -21,27 +21,27 @@
     \name{author}{4}{}{%
       {{hash=AD}{%
          family={Agrawal},
-         family_i={A\bibinitperiod},
+         familyi={A\bibinitperiod},
          given={Divyakant},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
       {{hash=AG}{%
          family={Alonso},
-         family_i={A\bibinitperiod},
+         familyi={A\bibinitperiod},
          given={Gustavo},
-         given_i={G\bibinitperiod},
+         giveni={G\bibinitperiod},
       }}%
       {{hash=EAA}{%
          family={El\bibnamedelima Abbadi},
-         family_i={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+         familyi={E\bibinitperiod\bibinitdelim A\bibinitperiod},
          given={Amr},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=SI}{%
          family={Stanoi},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Ioana},
-         given_i={I\bibinitperiod},
+         giveni={I\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -63,21 +63,21 @@
     \name{author}{3}{}{%
       {{hash=AS}{%
          family={Almeida},
-         family_i={A\bibinitperiod},
+         familyi={A\bibinitperiod},
          given={S{\'e}rgio},
-         given_i={S\bibinitperiod},
+         giveni={S\bibinitperiod},
       }}%
       {{hash=LJ}{%
          family={Leit{\~a}o},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Jo{\~a}o},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
       {{hash=RL}{%
          family={Rodrigues},
-         family_i={R\bibinitperiod},
+         familyi={R\bibinitperiod},
          given={Lu{\'\i}s},
-         given_i={L\bibinitperiod},
+         giveni={L\bibinitperiod},
       }}%
     }
     \list{organization}{1}{%
@@ -112,15 +112,15 @@
     \name{author}{2}{}{%
       {{hash=BP}{%
          family={Bailis},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={Peter},
-         given_i={P\bibinitperiod},
+         giveni={P\bibinitperiod},
       }}%
       {{hash=GA}{%
          family={Ghodsi},
-         family_i={G\bibinitperiod},
+         familyi={G\bibinitperiod},
          given={Ali},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -156,21 +156,21 @@
     \name{author}{3}{}{%
       {{hash=BA}{%
          family={Bergkvist},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={Adam},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=BD}{%
          family={Burnett},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={D},
-         given_i={D},
+         giveni={D},
       }}%
       {{hash=JC}{%
          family={Jennings},
-         family_i={J\bibinitperiod},
+         familyi={J\bibinitperiod},
          given={Cullen},
-         given_i={C\bibinitperiod},
+         giveni={C\bibinitperiod},
       }}%
     }
     \strng{namehash}{BA+1}
@@ -189,9 +189,9 @@
     \name{author}{1}{}{%
       {{hash=BT}{%
          family={Bray},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={Tim},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
     }
     \strng{namehash}{BT1}
@@ -209,33 +209,33 @@
     \name{author}{5}{}{%
       {{hash=BT}{%
          family={Bray},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={Tim},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
       {{hash=PJ}{%
          family={Paoli},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={Jean},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
       {{hash=SMCM}{%
          family={Sperberg-McQueen},
-         family_i={S\bibinitperiod-M\bibinitperiod},
+         familyi={S\bibinitperiod-M\bibinitperiod},
          given={C\bibnamedelima Michael},
-         given_i={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
       }}%
       {{hash=ME}{%
          family={Maler},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
          given={Eve},
-         given_i={E\bibinitperiod},
+         giveni={E\bibinitperiod},
       }}%
       {{hash=YF}{%
          family={Yergeau},
-         family_i={Y\bibinitperiod},
+         familyi={Y\bibinitperiod},
          given={Fran{\c{c}}ois},
-         given_i={F\bibinitperiod},
+         giveni={F\bibinitperiod},
       }}%
     }
     \strng{namehash}{BT+1}
@@ -256,9 +256,9 @@
     \name{author}{1}{}{%
       {{hash=CJL}{%
          family={Carlson},
-         family_i={C\bibinitperiod},
+         familyi={C\bibinitperiod},
          given={Josiah\bibnamedelima L.},
-         given_i={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -282,57 +282,57 @@
     \name{author}{9}{}{%
       {{hash=CF}{%
          family={Chang},
-         family_i={C\bibinitperiod},
+         familyi={C\bibinitperiod},
          given={Fay},
-         given_i={F\bibinitperiod},
+         giveni={F\bibinitperiod},
       }}%
       {{hash=DJ}{%
          family={Dean},
-         family_i={D\bibinitperiod},
+         familyi={D\bibinitperiod},
          given={Jeffrey},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
       {{hash=GS}{%
          family={Ghemawat},
-         family_i={G\bibinitperiod},
+         familyi={G\bibinitperiod},
          given={Sanjay},
-         given_i={S\bibinitperiod},
+         giveni={S\bibinitperiod},
       }}%
       {{hash=HWC}{%
          family={Hsieh},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={Wilson\bibnamedelima C},
-         given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod},
+         giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod},
       }}%
       {{hash=WDA}{%
          family={Wallach},
-         family_i={W\bibinitperiod},
+         familyi={W\bibinitperiod},
          given={Deborah\bibnamedelima A},
-         given_i={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
       {{hash=BM}{%
          family={Burrows},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={Mike},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
       {{hash=CT}{%
          family={Chandra},
-         family_i={C\bibinitperiod},
+         familyi={C\bibinitperiod},
          given={Tushar},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
       {{hash=FA}{%
          family={Fikes},
-         family_i={F\bibinitperiod},
+         familyi={F\bibinitperiod},
          given={Andrew},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=GRE}{%
          family={Gruber},
-         family_i={G\bibinitperiod},
+         familyi={G\bibinitperiod},
          given={Robert\bibnamedelima E},
-         given_i={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -356,9 +356,9 @@
     \name{author}{1}{}{%
       {{hash=CEF}{%
          family={Codd},
-         family_i={C\bibinitperiod},
+         familyi={C\bibinitperiod},
          given={E.\bibnamedelima F.},
-         given_i={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+         giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -397,21 +397,21 @@
     \name{author}{3}{}{%
       {{hash=CGF}{%
          family={Coulouris},
-         family_i={C\bibinitperiod},
+         familyi={C\bibinitperiod},
          given={George\bibnamedelima F},
-         given_i={G\bibinitperiod\bibinitdelim F\bibinitperiod},
+         giveni={G\bibinitperiod\bibinitdelim F\bibinitperiod},
       }}%
       {{hash=DJ}{%
          family={Dollimore},
-         family_i={D\bibinitperiod},
+         familyi={D\bibinitperiod},
          given={Jean},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
       {{hash=KT}{%
          family={Kindberg},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={Tim},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -431,57 +431,57 @@
     \name{author}{9}{}{%
       {{hash=DG}{%
          family={DeCandia},
-         family_i={D\bibinitperiod},
+         familyi={D\bibinitperiod},
          given={Giuseppe},
-         given_i={G\bibinitperiod},
+         giveni={G\bibinitperiod},
       }}%
       {{hash=HD}{%
          family={Hastorun},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={Deniz},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
       {{hash=JM}{%
          family={Jampani},
-         family_i={J\bibinitperiod},
+         familyi={J\bibinitperiod},
          given={Madan},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
       {{hash=KG}{%
          family={Kakulapati},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={Gunavardhan},
-         given_i={G\bibinitperiod},
+         giveni={G\bibinitperiod},
       }}%
       {{hash=LA}{%
          family={Lakshman},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Avinash},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=PA}{%
          family={Pilchin},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={Alex},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=SS}{%
          family={Sivasubramanian},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Swaminathan},
-         given_i={S\bibinitperiod},
+         giveni={S\bibinitperiod},
       }}%
       {{hash=VP}{%
          family={Vosshall},
-         family_i={V\bibinitperiod},
+         familyi={V\bibinitperiod},
          given={Peter},
-         given_i={P\bibinitperiod},
+         giveni={P\bibinitperiod},
       }}%
       {{hash=VW}{%
          family={Vogels},
-         family_i={V\bibinitperiod},
+         familyi={V\bibinitperiod},
          given={Werner},
-         given_i={W\bibinitperiod},
+         giveni={W\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -517,15 +517,15 @@
     \name{author}{2}{}{%
       {{hash=GS}{%
          family={Gilbert},
-         family_i={G\bibinitperiod},
+         familyi={G\bibinitperiod},
          given={Seth},
-         given_i={S\bibinitperiod},
+         giveni={S\bibinitperiod},
       }}%
       {{hash=LN}{%
          family={Lynch},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Nancy},
-         given_i={N\bibinitperiod},
+         giveni={N\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -561,27 +561,27 @@
     \name{author}{4}{}{%
       {{hash=HN}{%
          family={Hayashibara},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={N.},
-         given_i={N\bibinitperiod},
+         giveni={N\bibinitperiod},
       }}%
       {{hash=DX}{%
          family={Defago},
-         family_i={D\bibinitperiod},
+         familyi={D\bibinitperiod},
          given={X.},
-         given_i={X\bibinitperiod},
+         giveni={X\bibinitperiod},
       }}%
       {{hash=YR}{%
          family={Yared},
-         family_i={Y\bibinitperiod},
+         familyi={Y\bibinitperiod},
          given={R.},
-         given_i={R\bibinitperiod},
+         giveni={R\bibinitperiod},
       }}%
       {{hash=KT}{%
          family={Katayama},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={T.},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
     }
     \keyw{data communication;distributed processing;fault diagnosis;fault
@@ -614,27 +614,27 @@
     \name{author}{4}{}{%
       {{hash=HP}{%
          family={Hunt},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={Patrick},
-         given_i={P\bibinitperiod},
+         giveni={P\bibinitperiod},
       }}%
       {{hash=KM}{%
          family={Konar},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={Mahadev},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
       {{hash=JFP}{%
          family={Junqueira},
-         family_i={J\bibinitperiod},
+         familyi={J\bibinitperiod},
          given={Flavio\bibnamedelima Paiva},
-         given_i={F\bibinitperiod\bibinitdelim P\bibinitperiod},
+         giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod},
       }}%
       {{hash=RB}{%
          family={Reed},
-         family_i={R\bibinitperiod},
+         familyi={R\bibinitperiod},
          given={Benjamin},
-         given_i={B\bibinitperiod},
+         giveni={B\bibinitperiod},
       }}%
     }
     \strng{namehash}{HP+1}
@@ -655,39 +655,39 @@
     \name{author}{6}{}{%
       {{hash=KD}{%
          family={Karger},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={David},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
       {{hash=LE}{%
          family={Lehman},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Eric},
-         given_i={E\bibinitperiod},
+         giveni={E\bibinitperiod},
       }}%
       {{hash=LT}{%
          family={Leighton},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Tom},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
       {{hash=PR}{%
          family={Panigrahy},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={Rina},
-         given_i={R\bibinitperiod},
+         giveni={R\bibinitperiod},
       }}%
       {{hash=LM}{%
          family={Levine},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Matthew},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
       {{hash=LD}{%
          family={Lewin},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Daniel},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
     }
     \list{organization}{1}{%
@@ -711,9 +711,9 @@
     \name{author}{1}{}{%
       {{hash=KR}{%
          family={Klophaus},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={Rusty},
-         given_i={R\bibinitperiod},
+         giveni={R\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -748,15 +748,15 @@
     \name{author}{2}{}{%
       {{hash=LA}{%
          family={Lakshman},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Avinash},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=MP}{%
          family={Malik},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
          given={Prashant},
-         given_i={P\bibinitperiod},
+         giveni={P\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -791,9 +791,9 @@
     \name{author}{1}{}{%
       {{hash=LL}{%
          family={Lamport},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Leslie},
-         given_i={L\bibinitperiod},
+         giveni={L\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -818,36 +818,36 @@
     \name{author}{5}{}{%
       {{hash=LY}{%
          family={Lin},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Yi},
-         given_i={Y\bibinitperiod},
+         giveni={Y\bibinitperiod},
       }}%
       {{hash=KB}{%
          family={Kemme},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={Bettina},
-         given_i={B\bibinitperiod},
+         giveni={B\bibinitperiod},
       }}%
       {{hash=JPR}{%
          family={Jim{\'e}nez-Peris},
-         family_i={J\bibinitperiod-P\bibinitperiod},
+         familyi={J\bibinitperiod-P\bibinitperiod},
          given={Ricardo},
-         given_i={R\bibinitperiod},
+         giveni={R\bibinitperiod},
       }}%
       {{hash=PnMM}{%
          prefix={Pati\~{n}o},
-         prefix_i={P\bibinitperiod\bibinitdelim n\bibinitperiod},
+         prefixi={P\bibinitperiod\bibinitdelim n\bibinitperiod},
          family={Mart\'{\i}nez},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
          given={Marta},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
       {{hash=AInJE}{%
          family={Armend\'{a}riz-I\~{n}igo},
-         family_i={A\bibinitperiod-I\bibinitperiod\bibinitdelim
+         familyi={A\bibinitperiod-I\bibinitperiod\bibinitdelim
   n\bibinitperiod},
          given={Jos{\'e}\bibnamedelima Enrique},
-         given_i={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -895,51 +895,51 @@
     \name{author}{8}{}{%
       {{hash=MDS}{%
          family={Milojicic},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
          given={Dejan\bibnamedelima S},
-         given_i={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+         giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
       }}%
       {{hash=KV}{%
          family={Kalogeraki},
-         family_i={K\bibinitperiod},
+         familyi={K\bibinitperiod},
          given={Vana},
-         given_i={V\bibinitperiod},
+         giveni={V\bibinitperiod},
       }}%
       {{hash=LR}{%
          family={Lukose},
-         family_i={L\bibinitperiod},
+         familyi={L\bibinitperiod},
          given={Rajan},
-         given_i={R\bibinitperiod},
+         giveni={R\bibinitperiod},
       }}%
       {{hash=NK}{%
          family={Nagaraja},
-         family_i={N\bibinitperiod},
+         familyi={N\bibinitperiod},
          given={Kiran},
-         given_i={K\bibinitperiod},
+         giveni={K\bibinitperiod},
       }}%
       {{hash=PJ}{%
          family={Pruyne},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={Jim},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
       {{hash=RB}{%
          family={Richard},
-         family_i={R\bibinitperiod},
+         familyi={R\bibinitperiod},
          given={Bruno},
-         given_i={B\bibinitperiod},
+         giveni={B\bibinitperiod},
       }}%
       {{hash=RS}{%
          family={Rollins},
-         family_i={R\bibinitperiod},
+         familyi={R\bibinitperiod},
          given={Sami},
-         given_i={S\bibinitperiod},
+         giveni={S\bibinitperiod},
       }}%
       {{hash=XZ}{%
          family={Xu},
-         family_i={X\bibinitperiod},
+         familyi={X\bibinitperiod},
          given={Zhichen},
-         given_i={Z\bibinitperiod},
+         giveni={Z\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -959,15 +959,15 @@
     \name{author}{2}{}{%
       {{hash=PJ}{%
          family={Paiva},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={J.},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
       {{hash=RL}{%
          family={Rodrigues},
-         family_i={R\bibinitperiod},
+         familyi={R\bibinitperiod},
          given={L.},
-         given_i={L\bibinitperiod},
+         giveni={L\bibinitperiod},
       }}%
     }
     \keyw{data handling;peer-to-peer computing;counter-intuitive approach;data
@@ -998,15 +998,15 @@
     \name{author}{2}{}{%
       {{hash=PS}{%
          family={Paul},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={S},
-         given_i={S},
+         giveni={S},
       }}%
       {{hash=FZ}{%
          family={Fei},
-         family_i={F\bibinitperiod},
+         familyi={F\bibinitperiod},
          given={Z},
-         given_i={Z},
+         giveni={Z},
       }}%
     }
     \keyw{Centralized control}
@@ -1046,9 +1046,9 @@
     \name{author}{1}{}{%
       {{hash=SF}{%
          family={Schenider},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={F},
-         given_i={F},
+         giveni={F},
       }}%
     }
     \strng{namehash}{SF1}
@@ -1068,27 +1068,27 @@
     \name{author}{4}{}{%
       {{hash=SM}{%
          family={Shapiro},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Marc},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
       {{hash=PN}{%
          family={Pregui{\c c}a},
-         family_i={P\bibinitperiod},
+         familyi={P\bibinitperiod},
          given={Nuno},
-         given_i={N\bibinitperiod},
+         giveni={N\bibinitperiod},
       }}%
       {{hash=BC}{%
          family={Baquero},
-         family_i={B\bibinitperiod},
+         familyi={B\bibinitperiod},
          given={Carlos},
-         given_i={C\bibinitperiod},
+         giveni={C\bibinitperiod},
       }}%
       {{hash=ZM}{%
          family={Zawirski},
-         family_i={Z\bibinitperiod},
+         familyi={Z\bibinitperiod},
          given={Marek},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
     }
     \keyw{eventual consistency ; optimistic replication ; replicated data types
@@ -1122,9 +1122,9 @@
     \name{author}{1}{}{%
       {{hash=SD}{%
          family={Skeen},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Dale},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
     }
     \strng{namehash}{SD1}
@@ -1145,15 +1145,15 @@
     \name{author}{2}{}{%
       {{hash=SA}{%
          family={Sumaray},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Audie},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
       {{hash=MSK}{%
          family={Makki},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
          given={S\bibnamedelima Kami},
-         given_i={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
       }}%
     }
     \list{organization}{1}{%
@@ -1177,9 +1177,9 @@
     \name{author}{1}{}{%
       {{hash=SM}{%
          family={Szydlo},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Michael},
-         given_i={M\bibinitperiod},
+         giveni={M\bibinitperiod},
       }}%
     }
     \list{organization}{1}{%

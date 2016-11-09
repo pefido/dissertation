@@ -1,13 +1,13 @@
 \chapter{Integration Implementation}
 \label{cha:integration_implementation}
 
-In this chapter we will focus on the implementation of the integration, describing the work done in each component, the connection between components and emphasizing some important implementation details.\par
-	To cover this chapter we will start by
+In this chapter we will focus on the implementation of the integration mechanism, describing the work done in each component, the connection between components and emphasizing some important implementation details.\par
+	This chapter starts by
 \begin{enumerate*}[(i)]
 
-\item describing the supported data types and how they translate between systems, then we will 
+\item describing the supported data types and how they translate between systems, then it will 
 
-\item enumerate the changes we deemed needed to Antidote, which are mainly an afford to make the system more language abstract. After this, we will show as well the 
+\item enumerates the changes we deemed needed to Antidote, which are mainly an afford to make the system more language abstract. After this, we will describe the 
 
 \item changes made to Legion, in the objects server. After the component's description we will get a more in depth description of the update propagation flow, from
 
@@ -23,34 +23,36 @@ This section describes the supported data types from Legion and how they transla
 
 \subsection{Sets}
 \label{sec:sets}
-This integration supports sets as one of the CRDTs that Legion offers. More precisely, the supported sets in this integration are operation sets.\par
-	Legion holds it's data types in the objectStore component and internally implements this operation set as a OR-Set, as described in \cite{crdt}. An ORSet is a CmRDT, which characterizes it self as an operation based CRDT that propagates it's changes based on the operations done. This suits our model of operation propagation.\par
-	In order to store this data type in Antidote, we naturally also chose an OR-Set, as Antidote supports it natively.\par
-	When an operation is done in a system's OR-Set, the same operation will be issued to the other system's OR-Set. This process is straight forward, but we need to keep track of the unique identifiers that pair with each element of the set. This is important, for example, when deleting an element from the set. We want to delete a particular element with a unique id, not any element that matches. Because of this, there are also metadata sets in Antidote that store this correspondence between Legion and Antidote unique tokens.
+As part of this integration, we support synchronizing sets between Legion and Antidote.\par Legion sets are an implementation of the operation-based ORSet CRDT, as described in \cite{crdt}. In the operation-based model, updates are propagated as operations. Antidote also supports the same operation-based propagation model and uses ORSets for supporting sets.\par
+	When an operation is done in a system's OR-Set, the same operation will be issued to the other system's OR-Set. This process is straight forward, but we need to keep track of the unique identifiers that pair with each element of the set. Each system creates a different identifier when an element is stored, so we keep a conversion list for the synchronizing elements. This is important, for example, when deleting an element from the set. We want to delete a particular element with a unique id, not any element that matches.\par
+	We also need to guarantee that an element is sent to Antidote only once, because it can be more than one objects server propagating the changes to the same Antidote node. This is done by keeping the propagated operations identifiers in Antidote, so it can be queried when an operation is received.
 
 \subsection{Counters}
 \label{sec:counters}
-One of the supported data types in Legion are Counters. They are internally implemented as a state based PN-Counter, as described in \cite{crdt}. Using a CvRDT means that the object will converge by propagating and merging its state. In order to match this data type in Antidote, we used an operation based PN-Counter.\par
-	To make the two counters synchronized, we must execute increments and decrements based on who issued the update. When a counter is updated in Legion, since this is a state based PN-Counter, its internal state will be propagated to at least one object server. With the counter's state in our hands, we will make a diff based on the current state of the Antidote's counter, the changes are then applied, in order to get the same state on both. When updating a counter in Antidote, since this one is operation based, we can simply apply the increments and decrements directly in the object server. In both cases we have to keep a meta data set to store the correspondence between operation IDs. This is necessary to avoid duplicated operations when more than one object server catches the same update.
+One of the supported data types in Legion are Counters. They are internally implemented as a state based PN-Counter, as described in \cite{crdt}. Using a CvRDT means that the object will converge by propagating and merging its state. In order to match this data type in Antidote, we used its Counter data type, which is implemented as an operation based PN-Counter.\par
+	To make the two counters synchronized, we must execute increments and decrements based on who issued the update, since the counter implementation of each system is different.
+	If the update is issued in Legion, the state of the counter is sent in the update and we need to apply the current value of the counter to correspondent Antidote counter. To do so, we take the difference between the update value and the Antidote value, and increment the result to the Antidote counter, in order to be the same value as in the Legion update.\par
+	If the update is issued in Antidote, the update will contain the increment or decrement. This delta is add or subtracted to the Legion counter value and stored.\par
+	Again, we have to keep a list of propagated operations in Antidote in order to avoid duplicated operations.
 
 \section{Antidote changes}
 \label{sec:antidote_changes}
-In this section we will describe the changes to Antidote that were needed in order to make this integration possible.\par
-	Antidote is a storage system based in Riak Core and it is still in a fresh stage of development. It is written in Erlang and it offers two interfaces for clients to communicate with: 
+In this section we will describe the changes to Antidote that were needed in order to make the integration process possible.\par
+	Antidote is a storage system based in Riak Core and it is still in a fresh stage of development. It is written in Erlang and it offers two interfaces for supporting clients: 
 \begin{enumerate*}[(i)]
-\item distributed Erlang interface, and 
-\item protocol buffer interface.
+\item a distributed Erlang interface and 
+\item a protocol buffer interface.
 \end{enumerate*}
 \par
-	The first one uses distributed Erlang and can only be used by an Erlang client, which is of no use to us in the integration.\par
-	The second one uses google's protocol buffer serialization mechanism to offer an interface that can be language abstract. This would suit our needs since we want to be able to communicate with Antidote from a Legion objects server written in Javascript. In order to use this interface, some changes need to be made. Some protocol buffer message values are raw Erlang binaries, which are extremely difficult to encode/ decode in Javascript. These need to be changed to a language independent format. Also, some important methods that are available in the distributed Erlang interface need to be included in the protocol buffer API. In order to develop this integration, the following requirements need to be met on Antidote:
+	The first one uses distributed Erlang and can only be used by an Erlang client, which is of no use to us in our work.\par
+	The second one uses google's protocol buffer serialization mechanism, as detailed in \ref{sec:data_serialization}, to offer an interface that can be language abstract. This would suit our needs since we want to be able to communicate with Antidote from a Legion objects server written in JavaScript. In order to use this interface, some changes had to be made. Some protocol buffer message values were raw Erlang binaries, which are extremely difficult to encode/ decode in JavaScript. So, we need to change it to use a language independent format. Also, some important methods that are available in the distributed Erlang interface need to be included in the protocol buffer API. Additionally, the following functionalities have to be supported by Antidote:
 	\begin{itemize}
-	\item protocol buffer messages can only contain basic data types, like numbers or strings for the interface to be language abstract.
-	\item API methods that besides the object's value, also return it's hidden information, like commit timestamps and unique identifiers.
-	\item An API method that returns the content of the system log since a certain timestamp. 
+	\item The protocol buffer messages can only contain basic data types, like numbers or strings for the interface to be language abstract.
+	\item API methods should return the object values but also internal metadata, such as commit timestamps and unique identifiers.
+	\item Antidote should expose an API method that returns the contents of the operation log for an object since a certain timestamp.
 	\end{itemize}
 \par
-	With the help from Antidote's development team, these requirements were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those.\par
+	With the help from Antidote's development team, these functionalities were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those.\par
 	In order to make the interface language abstract, it was implemented a JSON data structure over protocol buffer messages. This was possible by having a JSON encoding/ decoding component in Antidote's protocol buffer interface. Although this might not be the best solution, since it partially defeats the purpose of protocol buffers, it was the more practical solution regarding this thesis time span.\par
 	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the 'value' field is a JSON object with the request.\par
 	These changes enable us to proceed with the system integration. Algorithm \ref{antidote_interaction} shows how Antidote interacts with the other components. When handling a write request, Antidote propagates the update internally and replies with information from that transaction. When the request is a read, Antidote replies with the object itself, including unique identifiers and transaction information. The requests can be paired with a timestamp that represents the system snapshot on which the read/ write will be executed. The internal object update propagation can be intra-datacenter or inter-datacenter, depending on the current system setup.

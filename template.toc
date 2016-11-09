@@ -122,7 +122,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Legion changes}{32}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Legion to Antidote flow}{32}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Legion to Antidote flow}{33}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}Antidote to Legion flow}{34}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  9 NOV 2016 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  11 NOV 2016 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2648,48 +2648,48 @@ put line 85.
 (./Chapters/integrationImplementation.tex [27] [28
 
 ] [29] [30]
-(/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-) [31]
+Underfull \vbox (badness 4001) has occurred while \output is active []
+
+ [31]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 )
-Underfull \vbox (badness 1546) has occurred while \output is active []
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+)
+Underfull \vbox (badness 2932) has occurred while \output is active []
 
  [32]
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-[] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
-:objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
-n/10.95 (+10) ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-[] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
-:objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
-n/10.95 (+10) ,
- []
-
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [33]
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 [] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
 :objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
 n/10.95 (+10) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+[] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
+:objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
+n/10.95 (+10) ,
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 [] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
 :objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
 n/10.95 (+10) ,
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+[] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
+:objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
+n/10.95 (+10) ,
+ []
 
- [34]
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 )) (./Chapters/evaluation.tex
@@ -2770,7 +2770,7 @@ Here is how much of TeX's memory you used:
  42454 multiletter control sequences out of 15000+600000
  200542 words of font info for 312 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,13n,92p,1953b,3910s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,13n,92p,1953b,3881s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share
 /texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/publ
 ic/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbne
@@ -2784,7 +2784,7 @@ blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
 sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 533012 bytes).
+Output written on template.pdf (66 pages, 533384 bytes).
 PDF statistics:
  973 PDF objects out of 1000 (max. 8388607)
  859 compressed objects within 9 object streams

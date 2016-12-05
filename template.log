@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  11 NOV 2016 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  5 DEC 2016 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2618,14 +2618,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [14] [15] [16] [17] [18]) (./Chapters/integrationDesign.tex [19] [20
 
 ] [21]
-<files/legionArchitecture.png, id=569, 491.8375pt x 740.7675pt>
+<files/legionArchitecture.png, id=572, 491.8375pt x 740.7675pt>
 File: files/legionArchitecture.png Graphic file (type png)
 
 <use files/legionArchitecture.png>
 Package pdftex.def Info: files/legionArchitecture.png used on input line 19.
 (pdftex.def)             Requested size: 147.55238pt x 222.23196pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [22 <./files/legionArchitecture.png>]
-<files/antidoteArchitecture.png, id=577, 571.13374pt x 540.0175pt>
+<files/antidoteArchitecture.png, id=584, 571.13374pt x 540.0175pt>
 File: files/antidoteArchitecture.png Graphic file (type png)
 
 <use files/antidoteArchitecture.png>
@@ -2635,7 +2638,7 @@ Package pdftex.def Info: files/antidoteArchitecture.png used on input line 31.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./files/antidoteArchitecture.png>]
-<files/architecture.png, id=584, 636.3775pt x 566.115pt>
+<files/architecture.png, id=592, 636.3775pt x 566.115pt>
 File: files/architecture.png Graphic file (type png)
 
 <use files/architecture.png>
@@ -2695,7 +2698,7 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 )) (./Chapters/evaluation.tex
 [35] [36
 
-] <files/graph1.png, id=749, 602.25pt x 372.39125pt>
+] <files/graph1.png, id=756, 602.25pt x 372.39125pt>
 File: files/graph1.png Graphic file (type png)
 
 <use files/graph1.png>
@@ -2705,20 +2708,20 @@ Package pdftex.def Info: files/graph1.png used on input line 13.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-<files/chart2.png, id=754, 602.25pt x 372.39125pt>
+<files/chart2.png, id=761, 602.25pt x 372.39125pt>
 File: files/chart2.png Graphic file (type png)
  <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 20.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
 [38 <./files/graph1.png> <./files/chart2.png>]
-<files/chart4.png, id=765, 602.25pt x 372.39125pt>
+<files/chart4.png, id=772, 602.25pt x 372.39125pt>
 File: files/chart4.png Graphic file (type png)
  <use files/chart4.png>
 Package pdftex.def Info: files/chart4.png used on input line 31.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-<files/chart5.png, id=766, 602.25pt x 372.39125pt>
+<files/chart5.png, id=773, 602.25pt x 372.39125pt>
 File: files/chart5.png Graphic file (type png)
  <use files/chart5.png>
 Package pdftex.def Info: files/chart5.png used on input line 38.
@@ -2726,7 +2729,7 @@ Package pdftex.def Info: files/chart5.png used on input line 38.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./files/chart4.png>] <files/chart3.png, id=775, 602.25pt x 372.39125pt>
+ [39 <./files/chart4.png>] <files/chart3.png, id=782, 602.25pt x 372.39125pt>
 File: files/chart3.png Graphic file (type png)
 
 <use files/chart3.png>
@@ -2784,10 +2787,10 @@ blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
 sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 533384 bytes).
+Output written on template.pdf (66 pages, 533214 bytes).
 PDF statistics:
- 973 PDF objects out of 1000 (max. 8388607)
- 859 compressed objects within 9 object streams
+ 980 PDF objects out of 1000 (max. 8388607)
+ 866 compressed objects within 9 object streams
  287 named destinations out of 1000 (max. 500000)
  60858 words of extra memory for PDF output out of 61914 (max. 10000000)
 

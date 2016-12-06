@@ -47,7 +47,7 @@ As explained in section \ref{sec:integration_challenges}, in order to keep a cor
 	As expected, the meta-data size stored increases with the number of operations. In the red workload, the growing is continuously linear. The blue workload also grows continuously, but needs less memory. This is due to the unique tokens that are erased when a delete operation is issued, making the only stored data the operation identifiers.\par
 	The always growing tendency of the meta-data derives from the operation identifiers that will keep stacking as the system runs. This calls for the need of including a garbage collector to clean the metadata that is no longer needed from time to time.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{files/chart3.png}
 \caption{Meta-data size scaling with propagated operations}

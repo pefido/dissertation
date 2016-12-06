@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  6 DEC 2016 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  6 DEC 2016 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2638,12 +2638,12 @@ Package pdftex.def Info: files/antidoteArchitecture.png used on input line 31.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./files/antidoteArchitecture.png>]
-<files/architecture.png, id=592, 636.3775pt x 566.115pt>
+<files/architecture.png, id=592, 711.65875pt x 918.43124pt>
 File: files/architecture.png Graphic file (type png)
 
 <use files/architecture.png>
 Package pdftex.def Info: files/architecture.png used on input line 43.
-(pdftex.def)             Requested size: 318.18797pt x 283.05681pt.
+(pdftex.def)             Requested size: 355.8285pt x 459.2145pt.
  [24 <./files/architecture.png>] [25]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 87.
@@ -2698,19 +2698,24 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 )) (./Chapters/evaluation.tex
 [35] [36
 
-] [37] <files/graph1.png, id=761, 602.25pt x 372.39125pt>
+] [37] <files/graph1.png, id=761, 671.50874pt x 415.5525pt>
 File: files/graph1.png Graphic file (type png)
 
 <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 14.
-(pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
- <files/chart2.png, id=762, 602.25pt x 372.39125pt>
-File: files/chart2.png Graphic file (type png)
+(pdftex.def)             Requested size: 470.05292pt x 290.88477pt.
 
-<use files/chart2.png>
+Overfull \hbox (44.05292pt too wide) in paragraph at lines 14--15
+ [][] 
+ []
+
+<files/chart2.png, id=762, 602.25pt x 372.39125pt>
+File: files/chart2.png Graphic file (type png)
+ <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 21.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
- [38 <./files/graph1.png> <./files/chart2.png>]
+
+[38 <./files/graph1.png> <./files/chart2.png>]
 <files/chart4.png, id=773, 602.25pt x 372.39125pt>
 File: files/chart4.png Graphic file (type png)
  <use files/chart4.png>
@@ -2735,11 +2740,8 @@ File: files/chart3.png Graphic file (type png)
 Package pdftex.def Info: files/chart3.png used on input line 52.
 (pdftex.def)             Requested size: 421.57211pt x 260.67209pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./Chapters/conclusion.tex [39] [40 <./files/chart4.png> <./files/chart5.png>
-] [41 <./files/chart3.png>] [42
+[39]) (./Chapters/conclusion.tex [40 <./files/chart4.png> <./files/chart3.png>]
+[41 <./files/chart5.png>] [42
 
 ] [43]) [44] [45
 
@@ -2787,7 +2789,7 @@ blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
 sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 546504 bytes).
+Output written on template.pdf (66 pages, 556154 bytes).
 PDF statistics:
  981 PDF objects out of 1000 (max. 8388607)
  867 compressed objects within 9 object streams

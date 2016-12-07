@@ -124,13 +124,19 @@ This section explains the process of propagating an update issued by an Antidote
     \ForEach {$operation \in logOperations$}
       \If {!($operation.id$ $\in$ objectsServer.$doneOps$)}
         \State {zooKeeper.lock($operation.objectId$)}
-        \State {antidote.write($metadata$)}
-        \State {zooKeeper.unlock($metadata.objectId$)}
-        \State {objectsServer.Apply($operation$)}
-        \State {legion.Propagate($operation$)}
+          \If {antidote.hasKey("OP\_MAP", $operation.id$) }
+            \State {$(antId, legId)$ $\gets$ antidote.get("OP\_MAP", $operation.id$)}
+            \State {$update$ $\gets$ convertToLegion($operation$, $legId$)}
+          \Else {}
+            \State {$update$ $\gets$ convertToLegion($operation$)}
+            \State {antidote.put("OP\_MAP", $operation.id$, $update.id$) }
+          \EndIf
+        \State {objectsServer.apply($update$)}
+        \State {legion.propagate($update$)}
       \EndIf
     \EndFor
     \State {objectsServer.update($lastSeenTimestamp$)}
+    \State {zooKeeper.unlock($metadata.objectId$)}
     \State {return}
   \End
 \end{algorithmic}

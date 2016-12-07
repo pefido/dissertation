@@ -64,13 +64,27 @@ In this section we will describe the changes to Antidote that were needed in ord
   \algblock{Switch}{End}
   \Switch { $request.type$}
     \algblock{case}{End}
+    \case { "beginTransaction"}
+      \State {$txId$ $\gets$ beginTransaction($request.timestamp$)}
+      \State {Send reply($txID$)}
+    \End
+    \case { "commitTransaction"}
+      \State {$(txInfo, content)$ $\gets$ commitTransaction($request.txId$)}
+      \State {Send reply($txInfo, content$)}
+    \End
     \case { "write"}
-      \State {$answer$ $\gets$ updateObjects($request.objectId$, $request.timestamp$)}
-      \State {Send reply($answer$)}
+      \State {$answer$ $\gets$ updateObjects($request.objectId$)}
+      \If {answer}
+        \State {Send reply(OK)}
+      \EndIf
     \End
     \case { "read"}
-    \State {$answer$ $\gets$ getObjects($request.objectId, request.timestamp$)}
-    \State {Send reply($answer$)}
+      \State {$result$ $\gets$ getObjects($request.objectId$)}
+       \State {Send reply($result$)}
+    \End
+    \case { "getLogOperations"}
+      \State {$logOps$ $\gets$ getLogOperations($request.timestamp$)}
+      \State {Send reply($logOps$)}
     \End
   \End
 \End
@@ -160,11 +174,11 @@ As mentioned before in secton \ref{sec:legion_to_antidote_flow}, every update is
 \Upon { message:}
   \If {$message.type$ = "contentFromNetwork"}
       \State {$opInfo$ $\gets$ parse($message.content$)}
-      \State {$doneOps$ $\gets$ antidote.getObjects($doneOps$)}
+      \State {$doneOps$ $\gets$ antidote.getObjects("DONE\_OPS")}
       \If {!($opInfo.id$ in $doneOps$)}
       	\State {zooKeeper.lock($opInfo.objectId$)}
       	\State {$txId$ $\gets$ antidote.beginTx($lastSeenTimestamp$)}
-        \State {antidote.updateObjects($doneOps$, add, $opInfo.id$)}
+        \State {antidote.updateObjects("DONE\_OPS", add, $opInfo.id$)}
         %\State {zooKeeper.unlock($opInfo.objectId$)}
         \State {antidote.updateObjects($opInfo.objectID$, $opInfo.op$)}
         \State {antidote.commit($txId$)}
@@ -191,7 +205,7 @@ As mentioned before in secton \ref{sec:legion_to_antidote_flow}, every update is
 As mentioned in section \ref{sec:antidote_to_legion_flow}, the process of propagating updates from Antidote to the Legion network is based on periodic polling.\par
 	Algorithm \ref{objects_server_update_propagation2} shows the pseudo-code of the objects server work in propagating updates from Antidote to Legion. In order to periodically check for new updates in Antidote, there is a method that starts running when a Legion's objects server starts. This method will fire an event every two seconds and fetches Antidote's operations log. This request is done via the protocol buffer interface and it contains the object identifiers to search for, as well as a given system timestamp that represents the last seen snapshot of Antidote by that Legion objects server. The reply will be a list of executed operations since the given timestamp. An example of the operations log response is shown in listing \ref{lst:log_example}.\par
 	If there exists new updates to those objects, we first check if each update was already propagated to Legion. If not, these will be locally executed in the objects server, and then propagated to the all the Legion nodes in the group. Another request is made to Antidote, in order to keep the track of the unique identifiers from Antidote to Legion. This includes updating the correspondence between operation identifiers and CRDT specific tokens.\par
-	At the end of this process we also need to update the last seen timestamp of Antidote's state in the objects server. This timestamp corresponds to the commit time of the last update in the operations log.
+	At the end of this process we also need to update the last seen timestamp of Antidote's state in the objects server. This timestamp corresponds to the commit time of the last update in the operations log. These operations are performed in mutual exclusion per object, using the ZooKeeper service.
 	
 \begin{algorithm}[H]
 \caption{Objects Server Antidote to Legion update propagation}\label{objects_server_update_propagation2}
@@ -202,20 +216,28 @@ As mentioned in section \ref{sec:antidote_to_legion_flow}, the process of propag
       \ForEach {$op \in opList$}
         \State {$doneOps$ $\gets$ antdote.getObjects($doneOps$)}
         \If {!($op.id$ in $doneOps$)}
-          \State {$opInfo$ $\gets$ apply($op$)}
-          \State {zooKeeper.lock($opInfo.objectId$)}
-          \If {$opInfo.CRDTType$ = 'set'}
-            \State {$metadata$ $\gets$ parse($opInfo$, $txInfo$)}
+          \State {zooKeeper.lock($op.objectId$)}
+          %\State {$opInfo$ $\gets$ apply($op$)}
+          
+          \If {antidote.hasKey("OP\_MAP", $op.id$) }
+            \State {$(antId, legId)$ $\gets$ antidote.getObjects("OP\_MAP", $op.id$)}
+            \State {$update$ $\gets$ convertToLegion($op$, $legId$)}
+          \Else {}
+            \State {$update$ $\gets$ convertToLegion($op$)}
+            \State {antidote.updateObjects("OP\_MAP", $op.id$, $update.id$) }
+          \EndIf          
+          
+          \If {$op.CRDTType$ = 'set'}
+            \State {$metadata$ $\gets$ parse($op$, $txInfo$)}
             \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.tokens$)}
-          \ElsIf {$opInfo.CRDTType$ = 'counter'}
-            \State {$metadata$ $\gets$ parse($opInfo$, $txInfo$)}
-            \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.opId$)}
+          
+          
           \EndIf
-          \State {zooKeeper.unlock($opInfo.objectId$)}
           \State {propagate($op$)}
+          \State {$lastSeenTimestamp \gets opList.last.timestamp$}
+          \State {zooKeeper.unlock($op.objectId$)}
         \EndIf
       \EndFor
-      \State {$lastSeenTimestamp \gets opList.last.timestamp$}
 \End
 \end{algorithmic}
 \end{algorithm}

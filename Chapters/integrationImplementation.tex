@@ -162,12 +162,14 @@ As mentioned before in secton \ref{sec:legion_to_antidote_flow}, every update is
       \State {$opInfo$ $\gets$ parse($message.content$)}
       \State {$doneOps$ $\gets$ antidote.getObjects($doneOps$)}
       \If {!($opInfo.id$ in $doneOps$)}
-        %\State {zooKeeper.lock($opInfo.objectId$)}
+      	\State {zooKeeper.lock($opInfo.objectId$)}
+      	\State {$txId$ $\gets$ antidote.beginTx($lastSeenTimestamp$)}
         \State {antidote.updateObjects($doneOps$, add, $opInfo.id$)}
         %\State {zooKeeper.unlock($opInfo.objectId$)}
-        \State {antidote.updateObjects($opInfo.objectID$, $opInfo.op$, $lastSeenTimestamp$)}
+        \State {antidote.updateObjects($opInfo.objectID$, $opInfo.op$)}
+        \State {antidote.commit($txId$)}
         \Upon { reply($txInfo$):}
-          \State {zooKeeper.lock($opInfo.objectId$)}
+          \State {$txId$ $\gets$ antidote.beginTx($lastSeenTimestamp$)}
           \If {$opInfo.CRDTType$ = 'set'}
             \State {$metadata$ $\gets$ parse($opInfo$, $txInfo$)}
             \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.tokens$)}
@@ -175,6 +177,7 @@ As mentioned before in secton \ref{sec:legion_to_antidote_flow}, every update is
             \State {$metadata$ $\gets$ parse($opInfo$, $txInfo$)}
             \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.opId$)}
           \EndIf
+          \State {antidote.commit($txId$)}
           \State {zooKeeper.unlock($opInfo.objectId$)}
         \End
       \EndIf

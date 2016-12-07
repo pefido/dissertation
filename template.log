@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  6 DEC 2016 17:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  7 DEC 2016 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2638,19 +2638,22 @@ Package pdftex.def Info: files/antidoteArchitecture.png used on input line 31.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./files/antidoteArchitecture.png>]
-<files/architecture.png, id=592, 711.65875pt x 918.43124pt>
+<files/architecture.png, id=592, 711.65875pt x 967.615pt>
 File: files/architecture.png Graphic file (type png)
 
 <use files/architecture.png>
 Package pdftex.def Info: files/architecture.png used on input line 43.
-(pdftex.def)             Requested size: 355.8285pt x 459.2145pt.
+(pdftex.def)             Requested size: 355.8285pt x 483.80632pt.
  [24 <./files/architecture.png>] [25]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 87.
- [26])
-(./Chapters/integrationImplementation.tex [27] [28
 
-] [29] [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26])
+(./Chapters/integrationImplementation.tex [27] [28] [29
+
+] [30]
 Underfull \vbox (badness 1990) has occurred while \output is active []
 
  [31]
@@ -2666,28 +2669,28 @@ Underfull \vbox (badness 2932) has occurred while \output is active []
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ) [33]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 [] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
 :objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
 n/10.95 (+10) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 [] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
 :objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
 n/10.95 (+10) ,
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 [] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
 :objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
 n/10.95 (+10) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 [] \T1/jkp/m/n/10.95 (+10) antidote.updateObjects($\OML/jkp/m/it/10.95 metadata
 :objectID$\T1/jkp/m/n/10.95 (+10) , $\OML/jkp/m/it/10.95 metadata:op$\T1/jkp/m/
 n/10.95 (+10) ,
@@ -2695,13 +2698,13 @@ n/10.95 (+10) ,
 
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
-)) (./Chapters/evaluation.tex
-[35] [36
+) [35])
+(./Chapters/evaluation.tex [36] [37
 
-] [37] <files/graph1.png, id=761, 671.50874pt x 415.5525pt>
+]
+<files/graph1.png, id=761, 671.50874pt x 415.5525pt>
 File: files/graph1.png Graphic file (type png)
-
-<use files/graph1.png>
+ <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 14.
 (pdftex.def)             Requested size: 470.05292pt x 290.88477pt.
 
@@ -2769,10 +2772,10 @@ Package logreq Info: Writing requests to 'template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40205 strings out of 493013
- 690596 string characters out of 6139316
+ 40207 strings out of 493013
+ 690628 string characters out of 6139316
  1348269 words of memory out of 5000000
- 42454 multiletter control sequences out of 15000+600000
+ 42456 multiletter control sequences out of 15000+600000
  200542 words of font info for 312 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,13n,92p,1953b,3881s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2789,7 +2792,7 @@ blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
 sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 556154 bytes).
+Output written on template.pdf (66 pages, 569858 bytes).
 PDF statistics:
  981 PDF objects out of 1000 (max. 8388607)
  867 compressed objects within 9 object streams

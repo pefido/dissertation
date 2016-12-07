@@ -83,21 +83,23 @@ When integrating both systems, there are some challenges that need to be tackled
 This section details the process of propagating an update issued by a Legion node into Antidote, which is presented in Algorithm \ref{legion_to_antidote_algorithm}.\par
 	In order to send the updates from Legion to Antidote we must first detect these updates. Since every update issued by a Legion node is propagated to at least one of the objects servers, we implement this process in the objects server. Our algorithm processes each event that occurs in he objects server. If the event is an update, it will be checked if that operation was already propagated to Antidote, since more than one objects server can exist. If it was not, the operation is propagated in a transaction that adds the Legion ID of he operation to the set of operations done, and executes he correspondent operation in the Antidote object. This process is executed in mutual exclusion, enforced by using ZooKeeper to guarantee that a Legion operation only generates a single Antidote operation.
 	
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Legion to Antidote flow}
 \label{legion_to_antidote_algorithm}
 \begin{algorithmic}[1]
 \algblock{Upon}{End}
 \Upon { $event$:}
-  \If {$event.type$ = $update$}
-    \State {objectsServer.apply($update$)}
-    \State {$metaData$ $\gets$ parse($update$)}
-    \State {$doneOperation$ $\gets$ antidote.read($doneOperations$)}
-    \If {!($update.id$ in $doneOperations$)}
-      \State {zooKeeper.lock($metadata.objectId$)}
-      \State {antidote.write($metadata$)}
-      \State {zooKeeper.unlock($metadata.objectId$)}
-      \State {antidote.write($update.operations, lastSeenTimestamp$)}
+  \If {$event.type$ = $UPDATE$}
+    \State {$update$ $\gets$ $event.operation$}
+    \State {objectServer.apply($update.operation$)}
+    \State {$doneOps$ $\gets$ antidote.read($"doneOps"$)}
+    \If {!($update.id$ in $doneOps$)}
+      \State {zooKeeper.lock($update.objectId$)}
+      \State {$txId$ $\gets$ antidote.beginTx($lastSeenTimestamp$)}
+      \State {doneOps.add($update.id$)}
+      \State {antidote.write($doneOps$)}
+      \State {antidote.addOp($update.objectId, update.operation$)}
+      \State {antidote.commit($txId$)}
       \State {return}
     \EndIf
   \EndIf
@@ -118,11 +120,10 @@ This section explains the process of propagating an update issued by an Antidote
 \begin{algorithmic}[1]
   \algblock{Every}{End}
   \Every { 2 seconds:}
-  \State {$logOperations$ $\gets$ antidote.get($logOperations$, $lastSeenTimeStamp$)}
+  \State {$logOps$ $\gets$ antidote.get($"logOps"$, $lastSeenTimeStamp$)}
     \ForEach {$operation \in logOperations$}
-      \If {!($operation.id$ in objectsServer.$doneOperations$)}
-        \State {$metadata$ $\gets$ parse($operation$)}
-        \State {zooKeeper.lock($metadata.objectId$)}
+      \If {!($operation.id$ $\in$ objectsServer.$doneOps$)}
+        \State {zooKeeper.lock($operation.objectId$)}
         \State {antidote.write($metadata$)}
         \State {zooKeeper.unlock($metadata.objectId$)}
         \State {objectsServer.Apply($operation$)}

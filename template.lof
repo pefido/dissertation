@@ -50,7 +50,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Propagation time scaling with operations per message between two Legion groups\relax }}{40}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Propagation time scaling with message size between two Legion groups\relax }}{41}{figure.caption.11}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Propagation time scaling with message size between two Legion groups\relax }}{40}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Meta-data size scaling with propagated operations\relax }}{41}{figure.caption.12}
 \defcounter {refsection}{0}\relax 

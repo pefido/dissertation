@@ -1,13 +1,13 @@
 \chapter{Integration Implementation}
 \label{cha:integration_implementation}
 
-In this chapter we will focus on the implementation of the integration mechanism, describing the work done in each component, the connection between components and emphasizing some important implementation details.\par
+In this chapter we will focus in the implementation of the integration mechanism, describing the work done in each component, the connection between components and emphasizing some important implementation details.\par
 	This chapter starts by
 \begin{enumerate*}[(i)]
 
 \item describing the supported data types and how they translate between systems, then it will 
 
-\item enumerate the changes we deemed needed to Antidote, which are mainly making the system more language abstract to the exterior. After this, we will describe the 
+\item enumerate the changes we deemed needed to Antidote, which are mainly making the system more language independent to the exterior. After this, we will describe the 
 
 \item changes made to Legion, in the objects server. After the component's description we will get a more in depth description of the update propagation flow, from
 
@@ -30,7 +30,7 @@ As part of this integration, we support synchronizing sets between Legion and An
 \subsection{Counters}
 \label{sec:counters}
 One of the supported data types in Legion are Counters. They are internally implemented as a state based PN-Counter, as described in \cite{crdt}. An operation includes the full object state. The execution of an operation in a remote site is equivalent to the merge function of CvRDTs. In order to match this data type in Antidote, we used its Counter data type, which is implemented as an operation based PN-Counter.\par
-	To synchronize the two counters, we must execute increments and decrements based on who issued the update. Since the counter implementation of each system is different, if the update is issued in Legion, the state of the counter is sent in the update and we need to apply the current change in the counter to the correspondent Antidote counter. To do so, we take the difference between the current value of the Legion object and the value of the counter in the last time the counter was synchronized with Antidote. The difference is the value added/ subtracted from the counter by Legion clients, which should be added to the Antidote counter.\par
+	To synchronize the two counters, we must execute increments and decrements based on who issued the update. Since the counter implementation of each system is different, if the update is issued in Legion, the state of the counter is sent in the update and we need to apply the current change in the counter to the correspondent Antidote counter. To do so, we take the difference between the current value of the Legion object and the value of the counter in the last time the counter was synchronized with Antidote. The difference is the value added/subtracted from the counter by Legion clients, which should be added to the Antidote counter.\par
 	If the update is issued in Antidote, the update will contain the increment or decrement. This delta is added or subtracted to the Legion counter value and stored.\par
 	Again, we have to keep a list of propagated operations in Antidote in order to avoid duplicated operations. We also need to keep with the Legion counter, the information of the last Antidote version a given Legion replica synchronized with.
 
@@ -44,7 +44,7 @@ In this section we will describe the changes to Antidote that were needed in ord
 \end{enumerate*}
 \par
 	The first one uses distributed Erlang and can only be used by an Erlang client, which is of no use to us in our work.\par
-	The second one uses Google's protocol buffer serialization mechanism, as detailed in section \ref{sec:data_serialization}, to offer an interface that can be language independent. This would suit our needs since we want to be able to communicate with Antidote from a Legion objects server written in JavaScript. In order to use this interface, some changes had to be made. Some protocol buffer message values were raw Erlang binaries, which are extremely difficult to encode/ decode in JavaScript. So, we need to change it to use a language independent format. Also, some important methods that are available in the distributed Erlang interface need to be included in the protocol buffer API, such as the operations that read objects in its raw state, including internal metadata instead of returning only the value of the objects. In summary, the following functionalities had to be supported by Antidote:
+	The second one uses Google's protocol buffer serialization mechanism, as detailed in section \ref{sec:data_serialization}, to offer an interface that can be language independent. This would suit our needs since we want to be able to communicate with Antidote from a Legion objects server written in JavaScript. In order to use this interface, some changes had to be made. Some protocol buffer message values were raw Erlang binaries, which are extremely difficult to encode/decode in JavaScript. So, we need to change it to use a language independent format. Also, some important methods that are available in the distributed Erlang interface need to be included in the protocol buffer API, such as the operations that read objects in its raw state, including internal metadata instead of returning only the value of the objects. In summary, the following functionalities had to be supported by Antidote:
 	\begin{itemize}
 	\item The protocol buffer messages can only contain basic data types, like numbers or strings for the interface to be language independent.
 	\item API methods have to return the object values but also internal metadata, such as commit timestamps and unique identifiers from operations and data structure elements like sets.
@@ -52,9 +52,9 @@ In this section we will describe the changes to Antidote that were needed in ord
 	\end{itemize}
 \par
 	With the help from Antidote's development team, these functionalities were implemented. The missing interface methods were already implemented internally, so it was only required to make an interface method to export those.\par
-	In order to make the interface language independent, it uses a JSON data structure over protocol buffer messages. This was possible by adding a JSON encoding/ decoding component in Antidote's protocol buffer interface. Although this might not be the best solution, since it partially defeats the purpose of protocol buffers, it was the more practical solution regarding this thesis time span. The result of this new interface is a single protocol buffer method that encapsulates every JSON message sent as a request to Antidote. This JSON request is then parsed internally in Antidote.\par
+	In order to make the interface language independent, it uses a JSON data structure over protocol buffer messages. This was possible by adding a JSON encoding/decoding component in Antidote's protocol buffer interface. Although this might not be the best solution, since it partially defeats the purpose of protocol buffers, it was the more practical solution regarding this thesis time span. The result of this new interface is a single protocol buffer method that encapsulates every JSON message sent as a request to Antidote. This JSON request is then parsed internally in Antidote.\par
 	Summing up, in listing \ref{lst:proto1} we show the protocol buffer interface methods before this change, and listing \ref{lst:proto2} shows the only method that these were encapsulated into, where the 'value' field is a JSON object with the request.\par
-	These changes enabled us to proceed with the system integration. Algorithm \ref{antidote_interaction} allow us to understand the flow that Antidote takes after receiving a request by showing how Antidote handles the incoming requests from both clients and Legion nodes. When handling a write request, Antidote propagates the update internally and replies with information from that transaction. When the request is a read, Antidote replies with the object itself, including unique identifiers and transaction information. The requests can include a timestamp that represents the system snapshot on which the read/ write will be executed.
+	These changes enabled us to proceed with the system integration. Algorithm \ref{antidote_interaction} allow us to understand the flow that Antidote takes after receiving a request by showing how Antidote handles the incoming requests from both clients and Legion nodes. When handling a write request, Antidote propagates the update internally and replies with information from that transaction. When the request is a read, Antidote replies with the object itself, including unique identifiers and transaction information. The requests can include a timestamp that represents the system snapshot on which the read/write will be executed. A request to get Antidote's operation log can also be done, returning the operation log of an object since a certain timestamp. To execute the previous requests, Antidote uses interactive transactions that can be request explicitly. The begin transaction request returns the transaction identifier, and the commit transaction request returns the content of the request, plus information regarding the transaction, like the commit timestamp.
 	
 \begin{algorithm}[H]
 \caption{Antidote request interaction}\label{antidote_interaction}
@@ -83,7 +83,7 @@ In this section we will describe the changes to Antidote that were needed in ord
        \State {Send reply($result$)}
     \End
     \case { "getLogOperations"}
-      \State {$logOps$ $\gets$ getLogOperations($request.timestamp$)}
+      \State {$logOps$ $\gets$ getLogOperations($request.objectId$, $request.timestamp$)}
       \State {Send reply($logOps$)}
     \End
   \End
@@ -204,7 +204,7 @@ As mentioned before in secton \ref{sec:legion_to_antidote_flow}, every update is
 \label{sec:legion_changes_antidote to legion flow}
 As mentioned in section \ref{sec:antidote_to_legion_flow}, the process of propagating updates from Antidote to the Legion network is based on periodic polling.\par
 	Algorithm \ref{objects_server_update_propagation2} shows the pseudo-code of the objects server work in propagating updates from Antidote to Legion. In order to periodically check for new updates in Antidote, there is a method that starts running when a Legion's objects server starts. This method will fire an event every two seconds and fetches Antidote's operations log. This request is done via the protocol buffer interface and it contains the object identifiers to search for, as well as a given system timestamp that represents the last seen snapshot of Antidote by that Legion objects server. The reply will be a list of executed operations since the given timestamp. An example of the operations log response is shown in listing \ref{lst:log_example}.\par
-	If there exists new updates to those objects, we first check if each update was already propagated to Legion. If not, these will be locally executed in the objects server, and then propagated to the all the Legion nodes in the group. Another request is made to Antidote, in order to keep the track of the unique identifiers from Antidote to Legion. This includes updating the correspondence between operation identifiers and CRDT specific tokens.\par
+	If there exists new updates to those objects, we first check if each update was already propagated to Legion. If not, these will be locally executed in the objects server, and then propagated to all the Legion nodes in the group. Another request is made to Antidote, in order to keep track of the unique identifiers from Antidote to Legion. This includes updating the correspondence between operation identifiers and CRDT specific tokens.\par
 	At the end of this process we also need to update the last seen timestamp of Antidote's state in the objects server. This timestamp corresponds to the commit time of the last update in the operations log. These operations are performed in mutual exclusion per object, using the ZooKeeper service.
 	
 \begin{algorithm}[H]
@@ -241,7 +241,9 @@ As mentioned in section \ref{sec:antidote_to_legion_flow}, the process of propag
 \End
 \end{algorithmic}
 \end{algorithm}
-	
+
+\clearpage 
+
 \begin{lstlisting}[caption={Antidote log response example},label={lst:log_example}]
 {log_operations:[
   {

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  9 DEC 2016 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.10.26)  9 DEC 2016 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2618,7 +2618,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [14] [15] [16] [17] [18]) (./Chapters/integrationDesign.tex [19] [20
 
 ] [21]
-<files/legionArchitecture.png, id=572, 491.8375pt x 740.7675pt>
+<files/legionArchitecture.png, id=573, 491.8375pt x 740.7675pt>
 File: files/legionArchitecture.png Graphic file (type png)
 
 <use files/legionArchitecture.png>
@@ -2628,7 +2628,7 @@ Package pdftex.def Info: files/legionArchitecture.png used on input line 19.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22 <./files/legionArchitecture.png>]
-<files/antidoteArchitecture.png, id=584, 571.13374pt x 540.0175pt>
+<files/antidoteArchitecture.png, id=585, 571.13374pt x 540.0175pt>
 File: files/antidoteArchitecture.png Graphic file (type png)
 
 <use files/antidoteArchitecture.png>
@@ -2638,7 +2638,7 @@ Package pdftex.def Info: files/antidoteArchitecture.png used on input line 31.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./files/antidoteArchitecture.png>]
-<files/architecture.png, id=592, 711.65875pt x 967.615pt>
+<files/architecture.png, id=593, 711.65875pt x 967.615pt>
 File: files/architecture.png Graphic file (type png)
 
 <use files/architecture.png>
@@ -2696,7 +2696,7 @@ File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 ] [37
 
 ]
-<files/graph1.png, id=761, 671.50874pt x 415.5525pt>
+<files/graph1.png, id=762, 671.50874pt x 415.5525pt>
 File: files/graph1.png Graphic file (type png)
  <use files/graph1.png>
 Package pdftex.def Info: files/graph1.png used on input line 14.
@@ -2706,7 +2706,7 @@ Overfull \hbox (44.05292pt too wide) in paragraph at lines 14--15
  [][] 
  []
 
-<files/chart2.png, id=763, 602.25pt x 372.39125pt>
+<files/chart2.png, id=764, 602.25pt x 372.39125pt>
 File: files/chart2.png Graphic file (type png)
  <use files/chart2.png>
 Package pdftex.def Info: files/chart2.png used on input line 23.
@@ -2714,7 +2714,7 @@ Package pdftex.def Info: files/chart2.png used on input line 23.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./files/graph1.png>] <files/chart4.png, id=772, 602.25pt x 372.39125pt>
+ [38 <./files/graph1.png>] <files/chart4.png, id=773, 602.25pt x 372.39125pt>
 File: files/chart4.png Graphic file (type png)
 
 <use files/chart4.png>
@@ -2723,7 +2723,7 @@ Package pdftex.def Info: files/chart4.png used on input line 33.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./files/chart2.png>] <files/chart5.png, id=779, 602.25pt x 372.39125pt>
+ [39 <./files/chart2.png>] <files/chart5.png, id=780, 602.25pt x 372.39125pt>
 File: files/chart5.png Graphic file (type png)
 
 <use files/chart5.png>
@@ -2733,7 +2733,7 @@ Package pdftex.def Info: files/chart5.png used on input line 40.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40 <./files/chart4.png> <./files/chart5.png>]
-<files/chart3.png, id=788, 602.25pt x 372.39125pt>
+<files/chart3.png, id=789, 602.25pt x 372.39125pt>
 File: files/chart3.png Graphic file (type png)
  <use files/chart3.png>
 Package pdftex.def Info: files/chart3.png used on input line 53.
@@ -2787,10 +2787,10 @@ blic/kpfonts/jkpmsc8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkp
 sy.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on template.pdf (66 pages, 550683 bytes).
+Output written on template.pdf (66 pages, 550755 bytes).
 PDF statistics:
- 981 PDF objects out of 1000 (max. 8388607)
- 867 compressed objects within 9 object streams
+ 982 PDF objects out of 1000 (max. 8388607)
+ 868 compressed objects within 9 object streams
  287 named destinations out of 1000 (max. 500000)
  60858 words of extra memory for PDF output out of 61914 (max. 10000000)
 

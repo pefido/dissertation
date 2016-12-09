@@ -100,6 +100,7 @@ This section details the process of propagating an update issued by a Legion nod
       \State {antidote.write($doneOps$)}
       \State {antidote.addOp($update.objectId, update.operation$)}
       \State {antidote.commit($txId$)}
+      \State {zooKeeper.unlock($update.objectId$)}
       \State {return}
     \EndIf
   \EndIf
@@ -133,10 +134,10 @@ This section explains the process of propagating an update issued by an Antidote
           \EndIf
         \State {objectsServer.apply($update$)}
         \State {legion.propagate($update$)}
+        \State {zooKeeper.unlock($metadata.objectId$)}
       \EndIf
     \EndFor
     \State {objectsServer.update($lastSeenTimestamp$)}
-    \State {zooKeeper.unlock($metadata.objectId$)}
     \State {return}
   \End
 \end{algorithmic}

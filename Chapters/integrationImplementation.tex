@@ -192,8 +192,8 @@ As mentioned before in secton \ref{sec:legion_to_antidote_flow}, every update is
             \State {antidote.updateObjects($metadata.objectID$, $metadata.op$, $metadata.opId$)}
           \EndIf
           \State {antidote.commit($txId$)}
-          \State {zooKeeper.unlock($opInfo.objectId$)}
         \End
+        \State {zooKeeper.unlock($opInfo.objectId$)}
       \EndIf
   \EndIf
 \End

@@ -100,9 +100,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Legion}{21}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Antidote}{23}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Antidote}{22}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Architecture Overview}{24}{section.3.2}
+\contentsline {section}{\numberline {3.2}Architecture Overview}{23}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Integration challenges}{25}{section.3.3}
 \defcounter {refsection}{0}\relax 

@@ -10,7 +10,7 @@ Web applications have taken a central role in access to remote services. Traditi
 	\item availability, because a service doesn't need to stop if the central server is temporarily down.\end{enumerate*}
 Recent technology developments in this area, such as WebRTC, STUN and TURN, allowed  browser-to-browser communication with no need for native applications or browser plugins.\par
 	As an example of this, Legion is a newly created framework which explores these technologies and allows client web applications to replicate data from servers, and synchronize these replicas directly among them. Browser-to-browser communication is useful in web applications that exhibit frequent interchange of information or sharing of contents between clients, such as collaborative editing.\par
-	Although replicating data between web clients is a promising approach, personal devices can be unstable compared to the use of a centralized component server because they join and leave a network very often, so data persistency cannot be fully delegated to these devices. There is a need store data periodically in a more stable storage system.
+	Although replicating data between web clients is a promising approach, personal devices can be unstable compared to the use of a centralized component server because they join and leave a network very often, so data persistency cannot be fully delegated to these devices. There is a need to store data periodically in a more stable storage system.
 
 \section{Motivating Problem and Solution}
 \label{sec:motivating_problem_and_solution}
@@ -22,14 +22,14 @@ The processing power and the amount of storage of user devices allow current sys
 		\item identifying the updates that have been executed in the central server and in Legion; 
 		\item propagate the updates across systems efficiently. 
 	\end{enumerate*}
-	Besides this, and based on the study of distributed storage systems techniques, an important topic is consistency guarantees in the data propagation. Most well known storage systems offer some sort of consistency policy, whether this is atomic transactions, eventual consistency, or causal consistency. Currently, Legion support causal consistency for each object, but not across objects. In this work, we will need to settle the best relation between Legion's and the storage systems' consistency model. This will help peer-to-peer application developers to have an easier time reasoning about data propagation between nodes.
+	Besides this, and based on the study of distributed storage systems techniques, an important topic is consistency guarantees in the data propagation. Most well known storage systems offer some sort of consistency policy, whether this is atomic transactions, eventual consistency, or causal consistency. Currently, Legion supports causal consistency for each object, but not across objects. In this work, we will need to settle the best relation between Legion's and the storage systems' consistency model. This will help peer-to-peer application developers to have an easier time reasoning about data propagation between nodes.
 
 \section{Expected Contributions}
 \label{sec:expected_contributions}
-The planned work for this thesis will be based on the understanding of Legion and the study of well known legacy distributed storage systems. The expected contributions of this work will be:
+The work planned for this thesis will be based on the understanding of Legion and the study of well known legacy distributed storage systems. The contributions for this work are:
 	
 \begin{itemize}
-\item Contribute to Antidote's development by extending the support to a more language agnostic client interface.
+\item Contribute to the Antidote data store system development by extending the support to a more language abstract client interface.
 
 \item Develop a javascript client for Antidote.
 

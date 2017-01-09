@@ -13,7 +13,7 @@ In this chapter, will be presented various aspect that will help with the work t
 \section{WebRTC}
 \label{sec:webrtc}
 WebRTC\cite{webrtc} is a framework for the web that enables Real Time Communications among browsers. Before the availability of WebRTC, real time communication was either done via native applications or plugins, which demanded large downloads and/or a great effort for both developers and users to install and keep updated. These disadvantages would make web-based applications that resort to direct communication among clients not viable for both operators and users alike. With WebRTC, the final user can have a much better experience on its browser and the developers can benefit from a structured and easy to use API to develop Web applications.\par
-	WebRTC includes three main components: audio, video and network. In the network component are mechanisms that to deal with network related practical issues. Also included are components for facilitating the establishment of peer-to-peer connections using ICE / STUN / Turn / RTP-over-TCP as well as support for proxies.\par
+	WebRTC includes three main components: audio, video and network. In the network component are mechanisms that deal with network related practical issues. Also included are components for facilitating the establishment of peer-to-peer connections using ICE / STUN / Turn / RTP-over-TCP as well as support for proxies.\par
 	Although WebRTC was design to be used in Peer-to-Peer contexts, it relies on a centralized component for particular interactions:
 	\begin{itemize}
 	\item Before any connection can be made, WebRTC clients (peers) need to exchange network information (signaling protocol).
@@ -37,7 +37,7 @@ This signaling process needs a way for clients to pass messages back and forth. 
 \subsection{STUN}
 \label{sec:stun}
 NATs provide a device with an IP address for use within a private local network, but this address can't be used externally. Without a public address, there's no way for WebRTC peers to communicate. To get around this problem WebRTC uses STUN.\par
-	STUN severs have the task of checking the IP address and port of an incoming request from an application behind a NAT, and send that address back as response. This makes possible for an application to find its IP address and port from a public perspective.
+	STUN servers have the task of checking the IP address and port of an incoming client request from an application behind a NAT, and send that address back as response. This makes possible for an application to find its IP address and port from a public perspective.
 	
 \subsection{TURN}
 \label{sec:turn}
@@ -50,7 +50,7 @@ Storage is a fundamental aspect for the majority of applications and web applica
 \subsection{Data Models}
 \label{sec:data_models}
 A data model that a storage system uses as internal representation will influence the outcome performance of the system at many levels: \begin{enumerate*}[(i)]
-	\item querying speed, as the organization of data will influence how fast can the system find it;
+	\item querying speed, as the organization of data will influence how fast the system can find it;
 	\item scalability, because different amounts of data requires different data structures;
 	\item querying functionalities/operations, because how the data is stored will influence the different ways of searching and operating with that information.
 \end{enumerate*}
@@ -62,7 +62,7 @@ The relational model\cite{relational_model} is vastly used in traditional databa
 
 \subsubsection{Key-Value Model}
 \label{sec:key-value_model}
-Key-Value stores use keys associated with values, making a collection of pairs. Storing and retrieving information from a key-value database can be very efficient, because it can rely on a dictionary to keep track of all the keys, using a hash function to access a position of the dictionary. Although more efficient in certain conditions, this model doesn't support such powerful querying as the relational model.\par
+Key-Value stores use keys associated with values, making a collection of pairs. Storing and retrieving information from a key-value database can be very efficient, because it can rely on a dictionary to keep track of all the keys, using a hash function to access a position of the dictionary. Although more efficient in certain conditions, this model does not support such powerful querying as the relational model.\par
 	The key-value model has been getting more traction recently, as multiple databases and storage systems use it due to its scalability potential.
 	
 \subsubsection{Bigtable Model}
@@ -84,7 +84,7 @@ There is a well known trade-of between performance and consistency in replicated
   
   \item[Snapshot Isolation] Snapshot isolation\cite{snapshot_integrity} guarantees that all reads made in a transaction will see a consistent snapshot of the system taken in the start of that transaction. This transaction will be successful if the updated values have not been changed since the beginning of the transaction, when the snapshot was taken.
   
-  \item[Eventual Consistency] Eventual consistency\cite{eventual} guarantees that all updates will reach every replica eventually and that the state of all replicas will eventually converge. This usually means that update operations (i.e. operations that modify the state of the system) can usually be executed locally at one replica without resorting to coordination(in the critical path of operation execution). This implies that operations return their replies to clients before the operation becomes known by all replicas in the system.\par
+  \item[Eventual Consistency] Eventual consistency\cite{eventual} guarantees that all updates will reach every replica eventually and that the state of all replicas will eventually converge. This usually means that update operations (i.e. operations that modify the state of the system) can usually be executed locally at one replica without resorting to coordination (in the critical path of operation execution). This implies that operations return their replies to clients before the operation becomes known by all replicas in the system.\par
 	This allows clients that issue read operations, to observe old, or divergent versions (from other clients reading the same content) of the data depending on which replica processes the client read operation.
 	
   \item[Causal Consistency] Causal consistency is a consistency model, whose guarantees lie somewhere in between strong consistency and eventual consistency. While it allows clients to observe divergent values, contrary to eventual consistency, it guarantees that clients observe values that respect causal relationships between them\cite{chainreaction, lamport_time}. A causal dependency is formed, for example, when a node performs a read followed later by a write, even on a different variable, the first operation is said to be causally ordered before the second, because the value stored by the write may have been dependent upon the result of the read.\par
@@ -93,7 +93,7 @@ There is a well known trade-of between performance and consistency in replicated
 
 \subsubsection{Partitioning}
 \label{sec:partitioning}
-In distributed storage systems, multiple nodes materialize the state of the database. This is done to achieve both load balancing and scalability (due to fault tolerance it is also crucial to replicate the same data across multiple nodes). Bellow are presented the main methods to do this:
+In distributed storage systems, multiple nodes materialize the state of the database. This is done to achieve both load balancing and scalability (due to fault tolerance it is also crucial to replicate the same data across multiple nodes). Below the main methods to do this are presented:
 
 \begin{description}
 \item[Consistent Hashing] Consistent Hashing\cite{consistent_hashing} is about using a hash function to map each data item to a location(node) in the system. The range of values of the hash function can form a ring by overlapping the highest hash value with the lowest value. Each node in the system is assigned a random value within this range. Searching an entry in such system can be very efficient, because it only requires to apply the hash function to find the item location. Keeping this structure has maintenance costs, because the system needs to update the active nodes as they leave or join.
@@ -105,7 +105,7 @@ In distributed storage systems, multiple nodes materialize the state of the data
 \subsubsection{Replication}
 \label{sec:replication}
 For fault tolerance and to guarantee the persistence of data\cite{data_replication_p2p}, each item in the system is replicated across $N$ storage nodes in most distributed storage systems.\par
-	The number of individual replicas $N$, controls a trade-off between performance and fault tolerance. With higher values of $N$, each data item is replicated across more nodes, so the system becomes more tolerant to individual node failures. With lower values of $N$, the system becomes more performant, as write operations have to be propagated to less machines. This trade-off has been explored in the past\cite{cap}, leading to the proposal of multiple replication protocols, such as quorum systems\cite{quorum_commit} among others \cite{state_machine_replication, atomic_broadcast}.\par
+	The number of individual replicas $N$, controls a trade-off between performance and fault tolerance. With higher values of $N$, each data item is replicated across more nodes, so the system becomes more tolerant to individual node failures. With lower values of $N$, the system becomes more performant, as write operations have to be propagated to less machines. This trade-off has been explored in the past \cite{cap}, leading to the proposal of multiple replication protocols, such as quorum systems \cite{quorum_commit} among others \cite{state_machine_replication, atomic_broadcast}.\par
 	To determine how to distribute the load of $N$ replicas across all nodes, one can use the following techniques:
 	
 \begin{description}
@@ -141,12 +141,12 @@ Some systems that allow weaker consistency, other than serializability, resort t
 \subsubsection{Version Reconciliation and Conflict Resolution}
 \label{sec:conflict_resolution}
 
-When concurrent (and not coordinated) updates are issued over two replicas of a given data object, these replicas will potentially evolve to divergent states, that at some point must be resolved into a single converged state, ideally are that the effects of all operations that generated the divergences. To take this action there are mainly two aspects to consider: how to do it and when to do it. Multiple techniques address this issue, being the main ones briefly described below:
+When concurrent (and not coordinated) updates are issued over two replicas of a given data object, these replicas will potentially evolve to divergent states, that at some point must be resolved into a single converged state, ideally, the effects of all operations that generated the divergences. To take this action there are mainly two aspects to consider: how to do it and when to do it. Multiple techniques address this issue, and the main ones are briefly described below:
 
 \begin{description}
 \item[Last Writer Wins] With this simple approach the last update based on some notion of time is the one that is adopted by the system. While this is trivial to implement, using local machine clocks, they are usually not synchronized across nodes, which can lead to incorrect decisions and to lost updates.
 	
-\item[Programmatic Merge] This technique leverages on the programmer to specify what happens when two versions conflict. Every node is required to either have a piece of code that decides how to merge divergent versions of an object or to show both states to the end user on-line and delegate on the user the decision concerning the final converged state.
+\item[Programmatic Merge] This technique leverages the programmer to specify what happens when two versions conflict. Every node is required to either have a piece of code that decides how to merge divergent versions of an object or to show both states to the end user on-line and delegate on the user the decision concerning the final converged state.
 
 \item[Commutative Operations] \hfill \\
 Another approach is to design the system by only allowing commutative operations to be performed, this means that despite the order in which operations are executed, the final result will be the same, as long as all replicas execute all operations. If we can make every update commutative, then conflict resolution becomes only a matter of ensuring that all replicas executed all operations.\par
@@ -192,7 +192,7 @@ In this section, we will present some of the distributed storage systems that ar
 \begin{description}
 \item[Dynamo~\cite{dynamo}] Dynamo is a distributed storage system used by several services at Amazon, it uses the key-value storage model, the interface supports get and put operations and it guarantees eventual consistency across data replicas.\par
 	It uses an always writable policy for updates, with conflict reconciliation on reads. To do so, data is partitioned and replicated using consistent hashing where the hash values are mapped into node identifiers, that are organized in a circular ring formed by their identifiers, this is done by overlapping the highest hash value next to the lowest one.\par
-	Replication of each data item is configurable with the number of replicas $N$. So besides being stored in the responsible node (according to their hash value) each data object is replicated using neighbor replication. Load balancing is achieved by using virtual servers mapped to the same physical node. It is also possible to adjust the number of nodes that are used to serve read or write operations using parameters $R$ and $W$.\par
+	Replication of each data item is configurable with the number of replicas $N$. So besides being stored in the responsible node (according to their hash value) each data object is replicated using neighbor replication. Load balancing is achieved using virtual servers \ref{sec:replication} mapped to the same physical node. It is also possible to adjust the number of nodes that are used to serve read or write operations using parameters $R$ and $W$.\par
 	To keep track of multiple versions of the same item, Dynamo uses vector clocks for version tracking and executes version reconciliation when read operations are submitted on an object. This technique favors write performance.\par
 	To handle temporary node failures Dynamo uses a sloppy quorum. Upon the need to recover from a failed node, it uses an anti entropy mechanism backed by Merkle trees to calculate differences between replicas.\par
 	Membership is maintained in a distributed way using a gossip protocol.
@@ -202,10 +202,10 @@ In this section, we will present some of the distributed storage systems that ar
 
 \item[Cassandra]\cite{cassandra} Cassandra is a distributed storage system for managing very large \\*amounts of structured data spread out across many commodity servers.\par
 	Cassandra uses tables similarly to Bigtable. Table columns can have colums inside themselves. To access these, Cassandra offers an API with \verb|insert|, \verb|get|, and \verb|delete| methods.\par
-	To distribute data across the system nodes, it uses consistent hashing with a ring layout, similar to Dynamo. Replication is handled with three different policies. "Rack Unaware" replicates each item using neighbor replication, "Rack Aware" and "Datacenter Aware" use a system node as a leader to coordinate the ranges of the replicas and spreads the copies of each object across machines that are either on different racks on the same datacenter or in different datacenters. To achieve load balancing it uses resilient load-balancing, based on the analysis of the load information of the ring.\par
-	Membership is handled with an anti-entropy gossip protocol and it further relies on accrual failure detection for failure detection and handling.
+	To distribute data across the system nodes, it uses consistent hashing with a ring layout, similar to Dynamo. Replication is handled with three different policies. "Rack Unaware" replicates each item using neighbor replication, "Rack Aware" and "Datacenter Aware" use a system node as a leader to coordinate the ranges of the replicas and spreads the copies of each object across machines that are either on different racks on the same datacenter or in different datacenters. To achieve load balancing it uses resilient load-balancing \ref{sec:replication}, based on the analysis of the load information of the ring.\par
+	Membership is handled with an anti-entropy gossip protocol \ref{sec:membership_failure_handling} and it further relies on accrual failure detection \ref{sec:membership_failure_handling} for failure detection and handling.
 	
-\item[Riak]\cite{riak_core} Riak is a distributed key-value data store system that provides high availability by allowing to chose between strong and eventual consistency. Eventual consistency in Riak uses CRDTs at its core, providing CRDT data types that include counters, sets, flags, registers, and maps.\par
+\item[Riak]\cite{riak_core} Riak is a distributed key-value data store system that provides high availability by allowing to choose between strong and eventual consistency. Eventual consistency in Riak uses CRDTs at its core, providing CRDT data types that include counters, sets, flags, registers, and maps.\par
 	It uses many of Dynamo's concepts, such as consistent hashing for partitioning data around the replicas ring, neighbor replication with virtual nodes to guarantee data availability, vector clocks for object versioning, a gossip protocol to communicate membership changes and an anti-entropy mechanism based on Merkle Trees to detect differences between replicas.\par
 	Besides the common interface methods GET, PUT and, DELETE, it also offers Map-reduce querying, secondary indexes, and full-text search functionalities.
 	
@@ -213,7 +213,7 @@ In this section, we will present some of the distributed storage systems that ar
 	Antidote has direct support for read and writing operations over CRDTs, this makes it easier for the programmer to reason about and work with these data structures.\par
 	The system architecture is divided in the following layers: 
 \begin{enumerate*}[(i)]
-	\item across DCs replication layer, is responsible for replicating updates to other DC and include both components need in the sender and the receiver DC. The update propagation is done in a FIFO (First in first out) order;
+	\item across DCs replication layer, is responsible for replicating updates to other DC and include both components needed in the sender and the receiver DC. The update propagation is done in a FIFO (First in first out) order;
 	\item transaction layer, is responsible for providing transaction support, Snapshot Isolation and causality tracking between objects;
 	\item materializer, is in charge of forming the objects from the set of operations returned by the logging layer;
 	\item logging layer, is used to provide fast write operations, as it appends an operation to the log before the actual update propagation;
@@ -225,14 +225,14 @@ In this section, we will present some of the distributed storage systems that ar
 
 \subsection{Distributed Caching Systems}
 \label{sec:distributed_caching_systems}
-Traditional caching is about using the main memory to temporarily store the most frequently accessed data, in order to speed up te process of fetching data. Caching in a network context has been used for a long time with the main purpose of improving web access times and reducing traffic and load to the storage to the storage service. With a distributed caching architecture one can achieve better hit ratio, response times, and load balancing\cite{distributed_caching}.\par
+Traditional caching is about using the main memory to temporarily store the most frequently accessed data, in order to speed up the process of fetching data. Caching in a network context has been used for a long time with the main purpose of improving web access times and reducing traffic and load to the storage service. With a distributed caching architecture one can achieve better hit ratio, response times, and load balancing\cite{distributed_caching}.\par
 	Distributed Caching is becoming more popular since main memory prices have been lowering. Hence, caching is becoming a more relevant layer of the storage service of web applications. Here are some examples of Distributed Caching Systems:
 	
 	\begin{description}
 	\item[Memcached]\cite{site_memcached} Memcached is a high-performance, distributed memory object caching system originally intended for use in speeding up dynamic web applications by alleviating the database load.\par
 	In Memcached, instead of having a dedicated amount of memory for each node, the whole available memory of the distributed caching service is shared by all the nodes.
 	
-\item[Redis] Redis can also be used as a caching system if configured to only use the main memory, not dumping periodically to disc.
+\item[Redis] Redis, also described earlier, can also be used as a caching system if configured to only use the main memory, not dumping periodically to disc.
 	\end{description}
 
 \section{Peer-to-Peer Systems}
@@ -256,7 +256,7 @@ Partly Centralized systems have a centralized component that stores information 
 \end{description}
 
 \subsection{Structured vs Unstructured}
-This design option is usually based on how useful it is to have a performant exact match querying mechanism and the amount of churn in the network.
+This design option is usually based on how useful it is to have a performant querying mechanism and the amount of churn in the network.
 
 \begin{description}
 \item[Structured Network] \hfill \\
@@ -279,7 +279,7 @@ In large scale distributed applications, there is a need for some sort of coordi
 \item concurrency control,
 \item deadlock handling,
 \item leader election,
-\item reaching an agreement.
+\item agreement reaching.
 \end{enumerate*}
 
 \subsection{Distributed Coordination Services}
@@ -291,9 +291,9 @@ In large scale distributed applications, there is a need for some sort of coordi
 \item configuration management, allowing to implement dynamic configuration in distributed applications;
 \item rendezvous, this is useful to share information between a master process and several workers;
 \item group membership, in order to keep track of the operational nodes in the system;
-\item locks, as a method to modify a certain variable in mutual exclusion mode. Besides this, there can also be implemented read and write locks.
+\item locks, as a method to modify a certain variable in mutual exclusion mode. Besides this, read and write locks can also be implemented.
 \end{enumerate*}\par
-	ZooKeeper provides to it's clients an abstraction of a set of data nodes that are organized by hierarchical name spaces. This data structure can be manipulated by the clients in order to implement the coordination mechanisms mentioned before.
+	ZooKeeper provides to its clients an abstraction of a set of data nodes that are organized by hierarchical name spaces. This data structure can be manipulated by the clients in order to implement the coordination mechanisms mentioned before.
 
 \end{description}
 
@@ -308,15 +308,15 @@ In a distributed system messages are constantly being sent and received between 
 \begin{description}
 
 \item[XML ~\cite{xml}] XML is a serialization mechanism that is expressed as a markup language. XML was developed by members of the W3C and has been around for a while, thus creating a large user base around the world.\par
-	XML was developed having in mind a straightforwardly use over the internet, so it is widely supported. The message's format allows to be parsed without knowing it's schema in advance and it is human readable.\par
-	Despite it's easy usability and support, one of it's drawbacks is the very verbose syntax.
+	XML was developed having in mind a straightforwardly use over the Internet, so it is widely supported. The message's format allows it to be parsed without knowing its schema in advance and it is human readable.\par
+	Despite its easy usability and support, one of its drawbacks is the very verbose syntax.
 
-\item[JSON ~\cite{json}] JSON, JavaScript Object Notation is a lightweight format to serialize data. JSON expresses the content of a javascript object and so it can represent four primitive data types (string, numbers, booleans and null) and two structured types (objects and arrays).\par
+\item[JSON ~\cite{json}] JSON, JavaScript Object Notation is a lightweight format to serialize data. JSON expresses the content of a JavaScript object and so it can represent four primitive data types (string, numbers, booleans and null) and two structured types (objects and arrays).\par
 	It is widely used in a browser context, and as well as XML, it is human readable, but it removes the overhead of the verbose markup.\par
-	However, JSON also has it's shortcomings, such as extensibility drawbacks and lack of input validation.
+	However, JSON also has its shortcomings, such as extensibility drawbacks and lack of input validation.
 
 \item[Protocol Buffers ~\cite{protocol_buffers}]
-Protocol buffers is the google's solution for data serialization. Opposingly to XML and JSON, it encodes data into a binary format, so it can have a smaller size going through the network. Also, the message format are defined in a .proto file, that will be used to serialize and parse the content of the message. Without the knowledge of the it's format it is not trivial to decode the message.\par
+Protocol buffers is Google's solution for data serialization. Opposingly to XML and JSON, it encodes data into a binary format, so it can have a smaller size going through the network. Also, the message format are defined in a .proto file, that will be used to serialize and parse the content of the message. Without the knowledge of the its format it is not trivial to decode the message.\par
 	The message format specification is done a syntax similar to JSON. The field types can be numbers (integer or floating-point), booleans, strings, raw bytes, or even other protocol buffer message.\par
 	This binary format suits the needs of modern distributed applications by reducing the size of the messages traded between nodes. A drawback of using a binary serialization is not being human readable.
 
@@ -328,5 +328,4 @@ Protocol buffers is the google's solution for data serialization. Opposingly to 
 This chapter has covered the existing work that will support, influence, and help the development of this thesis.\par
 	The main focus is around storage systems and the many techniques they use to tackle different challenges in the design and operation of those distributed systems. The major aspects surround consistency, partitioning, replication, object/update versioning, version reconciliation and membership/failure handling.\par
 	This chapter also discussed peer-to-peer systems and some aspects of overlay networks, since they are widely used in many distributed systems and in particular to implement storage systems.\par
-	Besides that, the fundamentals of WebRTC, a crucial aspect for the work done on the Legion framework that is also one of the goals of the work to be developed in this thesis, was briefly introduced.\par
-	In the next chapter, we discuss the planned work for this thesis, with its major goals and time planning.
+	Besides that, the fundamentals of WebRTC, a crucial aspect for the work done on the Legion framework that is also one of the goals of the work developed in this thesis, was briefly introduced.
